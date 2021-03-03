@@ -1,0 +1,151 @@
+@import './fonts/all.scss';
+@import './mixins.scss';
+
+html body{
+        background-color: #FFDD00;
+    }
+
+.title{
+    padding: 60px 0 25px;
+}
+h1{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 900;
+    @include adaptiv-font(36, 44);
+    //font-size: 36px;
+    //line-height: 1.22rem;
+    /* identical to box height */
+
+    text-transform: uppercase;
+
+    color: #10417B;
+}
+h2{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 900;
+    @include adaptiv-font(42, 51);
+    //font-size: 42px;
+    //line-height: 51px;
+    text-align: center;
+    text-transform: uppercase;
+color: #10417B;
+}
+h3{
+    font-family: 'Gotham Pro';
+font-style: normal;
+font-weight: 900;
+//font-size: 24px;
+@include adaptiv-font(24);
+line-height: 23px;
+/* identical to box height */
+
+text-align: center;
+text-transform: uppercase;
+
+color: #FFDD00;
+}
+
+
+// button.MuiButton-textPrimary{
+//     background: #fff;
+//     width: 100%;
+//     color:#10417B;
+// }
+// button.MuiButton-textSecondary{
+//     background: #10417B;
+//     width: 100%;
+//     color:#fff;
+// }
+
+html, body {
+    height: 100%;
+  }
+body {
+    display: flex;
+    flex-direction: column;
+  }
+  .FAQ {
+    flex: 1 0 auto;
+  }
+  .footer {
+    flex-shrink: 0;
+  }
+
+  //Buttons
+body button.MuiButton-root{
+  color: #10417B;
+  background:#FFF;
+  font-family: 'Gotham Pro';
+  font-style: normal;
+  font-weight: bold;
+  @include adaptiv-font(16, 16);
+  //font-size: 16px;
+  //line-height: 16px;
+  padding: 14px 25px 15px;
+  box-shadow: none;
+  border-radius: 8px;
+  &:hover{
+    background-color:#fff;
+
+  }
+  &.MuiButton-textPrimary{
+      color: #004088;
+  background:#FFDD00;
+  &:hover{
+      color: #FFDD00;
+      background-color:#004088;
+      box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.45);
+  }
+  }
+  
+  &.MuiButton-sizeLarge{
+      font-weight: 900;
+      @include adaptiv-font(24, 23);
+      //font-size: 24px;
+      //line-height: 23px;
+      padding: 20px;
+  }
+  &.MuiButton-sizeSmall{
+      font-weight: normal;
+      @include adaptiv-font(14, 18);
+      //font-size: 14px;
+      //line-height: 18px;
+      padding: 4px 10px 2px;
+      border-radius: 3px;
+      &:hover{
+          color: #FFF;
+          background:#10417B;
+      }
+      &.MuiButton-textPrimary{
+        color: #FFF;
+    background:#10417B;
+    &:hover{
+        color: #10417B;
+        background:#FFF;
+    }
+    }
+
+  }
+  &.MuiButton-outlined{
+      background: transparent;
+      color: #fff;
+      border: 2px solid #FFFFFF;
+      &.MuiButton-outlinedPrimary{
+        font-style: normal;
+        font-weight: normal;
+        @include adaptiv-font(12, 15);
+        //font-size: 12px;
+        //line-height: 15px;
+        color: #FFDD00;
+        border-color: #FFDD00;
+        padding-bottom: 8px;
+    &:hover{
+        color: #004088;
+        border-color:#004088;
+        background-color: #FFDD00; 
+    }}
+  }
+}
+

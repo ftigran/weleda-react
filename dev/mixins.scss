@@ -1,0 +1,56 @@
+@mixin fieldStyle{
+    background: #0F396A;
+    border-radius: 3px;
+    height: 55px;
+    width: 100%;
+    input{
+        padding: 16px 15px;
+    }
+    label, input{
+    color: #fff;
+    font-family: 'Gotham Pro';
+    font-style: normal;
+    font-weight: normal;
+    @include adaptiv-font(18, 17);
+
+    //font-size: 18px;
+    //line-height: 17px;
+    &.Mui-focused{
+        color: #FFDD00;
+        }
+        &.Mui-error{
+            color: #FF2832;
+        }
+    }
+    .MuiInputLabel-outlined.MuiInputLabel-shrink {
+        transform: translate(14px, 6px) scale(0.66);
+    }
+    .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+        border: 1px solid #FF2832;
+        top: 0px;
+        height: 100%;
+        legend{
+            display: none;
+            
+        }
+        &.Mui-error{
+
+        }
+    }
+    fieldset{
+        
+        border: none;
+
+    }
+}
+
+$maxWidth: 1920;
+@mixin adaptiv-font($pcSize, $lineHeight:0) {
+ $mobSize: $pcSize*0.7;
+ $addSize: $pcSize - $mobSize;
+ $maxWidth: $maxWidth - 320;
+ font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+ @if $lineHeight{
+    line-height: $lineHeight/$pcSize * 1em;
+ }
+}

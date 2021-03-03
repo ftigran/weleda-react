@@ -1,0 +1,29 @@
+.wrap{
+
+    .top{
+        width: 100%;
+        .bg{
+            img{
+                width: 100%;
+            }
+        }
+
+    }
+}
+body{
+    margin:0;
+}
+//!
+.checker{
+    margin: auto;
+    width: 800px;
+    z-index: 100;
+    &::after{
+        width: 800px;
+        position: absolute;
+        border: 1px solid black;
+        height: 10000px;
+        content: '';
+    }
+
+}
