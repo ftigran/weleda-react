@@ -129,22 +129,22 @@ body button.MuiButton-root{
     //     color: #FFF;
     //     background:#10417B;
     // }
-  //   &.MuiButton-textPrimary{
-  //     color: #FFF;
-  // background:#10417B;
-  // &:hover{
-  //     color: #10417B;
-  //     background:#FFF;
-  // }
+    //   &.MuiButton-textPrimary{
+    //     color: #FFF;
+    // background:#10417B;
+    // &:hover{
+    //     color: #10417B;
+    //     background:#FFF;
+    // }
+    }
+    &.MuiButton-sizeLarge{
+      //font-weight: 900;
+      //@include adaptiv-font(24, 23);
+      //font-size: 24px;
+      //line-height: 23px;
+      //padding: 20px;
+      min-width: 410px;
   }
-  &.MuiButton-sizeLarge{
-    //font-weight: 900;
-    //@include adaptiv-font(24, 23);
-    //font-size: 24px;
-    //line-height: 23px;
-    //padding: 20px;
-    min-width: 410px;
-}
   // font-family: 'Gotham Pro';
   // font-style: normal;
   // font-weight: bold;

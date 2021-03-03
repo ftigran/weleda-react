@@ -18,7 +18,7 @@ import './App.scss'
 //import ScrollSection from './scroll-section/scroll-section'
 
 //import FAQ from '../pages/faq/faq'
-
+import CB from '../Checkbox/Checkbox'
 const App = () => {
         const {location} = useReactRouter()
         console.log(location);
@@ -27,6 +27,7 @@ const App = () => {
         return (
             <>
                 <h1> HEllo</h1>
+                <CB/>
                 <Button variant='contained'>
                     Получить
                 </Button>
@@ -41,6 +42,9 @@ const App = () => {
                 </Button>
                 <Button size='large' variant='contained'>
                     Зарегистрироваться
+                </Button>
+                <Button >
+                    Где найти промокод?
                 </Button>
                 {/* <Header/>
                     <Switch location={location}>
