@@ -19,13 +19,16 @@ import './App.scss'
 
 //import FAQ from '../pages/faq/faq'
 import CB from '../Checkbox/Checkbox'
+import Header from '../Header/Header'
+
 const App = () => {
         const {location} = useReactRouter()
         console.log(location);
         console.log('location');
 
         return (
-            <>
+            <>  
+                <Header/>
                 <h1> HEllo</h1>
                 <CB/>
                 <Button variant='contained'>
