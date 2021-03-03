@@ -21,6 +21,7 @@ import './App.scss'
 import CB from '../Checkbox/Checkbox'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import Top from '../Top/Top'
 import Roadmap from '../Roadmap/Roadmap'
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
         return (
             <>  
                 <Header/>
+                <Top/>
                 <Roadmap/>
                 <div className={'aas'}/>
                 <h1> HEllo</h1>
