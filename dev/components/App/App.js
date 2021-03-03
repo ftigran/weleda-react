@@ -6,6 +6,7 @@ import {
     Link
   } from "react-router-dom";
   import useReactRouter from 'use-react-router'
+  import Button from '@material-ui/core/Button';
 
 // import Main from '../pages/main/main'
 // import Header from './Header/Header'
@@ -26,6 +27,21 @@ const App = () => {
         return (
             <>
                 <h1> HEllo</h1>
+                <Button variant='contained'>
+                    Получить
+                </Button>
+                <Button disabled variant='contained'>
+                    Получить
+                </Button>
+                <Button size='small'variant='contained'>
+                    Войти
+                </Button>
+                <Button size='small' variant='outlined'>
+                    Войти
+                </Button>
+                <Button size='large' variant='contained'>
+                    Зарегистрироваться
+                </Button>
                 {/* <Header/>
                     <Switch location={location}>
                         <Route key='faq' location={location} path={"/faq"}
