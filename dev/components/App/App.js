@@ -20,7 +20,7 @@ import './App.scss'
 //import FAQ from '../pages/faq/faq'
 import CB from '../Checkbox/Checkbox'
 import Header from '../Header/Header'
-
+import Footer from '../Footer/Footer'
 const App = () => {
         const {location} = useReactRouter()
         console.log(location);
@@ -49,6 +49,7 @@ const App = () => {
                 <Button >
                     Где найти промокод?
                 </Button>
+                <Footer/>
                 {/* <Header/>
                     <Switch location={location}>
                         <Route key='faq' location={location} path={"/faq"}
