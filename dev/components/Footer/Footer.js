@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Grid from '@material-ui/core/Grid';
 
 import './Footer.scss'
-import logo from '../../img/100Years.svg';
+import logo from '../../img/100Years.png';
 
 export default class Main extends Component {
     render() {

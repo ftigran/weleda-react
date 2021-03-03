@@ -1,0 +1,30 @@
+@font-face {
+	font-family: 'Neo Sans Weleda';
+	src: local('Neo Sans Weleda'), local('Neo Sans Weleda'),
+		url('./NeoSansWeleda-Bd.eot') format('embedded-opentype'),
+		url('./NeoSansWeleda-Bd.woff') format('woff'),
+		url('./NeoSansWeleda-Bd.woff2') format('woff2'),
+		url('./NeoSansWeleda-Bd.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Neo Sans Weleda';
+	src: local('Neo Sans Weleda'), local('Neo Sans Weleda'),
+		url('./NeoSansWeleda-Md.eot') format('embedded-opentype'),
+		url('./NeoSansWeleda-Md.woff') format('woff'),
+		url('./NeoSansWeleda-Md.woff2') format('woff2'),
+		url('./NeoSansWeleda-Md.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Neo Sans Weleda';
+	src: local('Neo Sans Weleda'), local('Neo Sans Weleda'),
+		url('./NeoSansWeleda-Rg.eot') format('embedded-opentype'),
+		url('./NeoSansWeleda-Rg.woff') format('woff'),
+		url('./NeoSansWeleda-Rg.woff2') format('woff2'),
+		url('./NeoSansWeleda-Rg.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}

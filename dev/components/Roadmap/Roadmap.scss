@@ -1,0 +1,183 @@
+@import '../../mixins.scss';
+p, h3{
+    margin: 0;
+}
+
+.Roadmap{
+    padding-top: 150px;
+    padding-left: 5px;
+    max-width: 1132px;
+    margin: auto;
+    font-family: 'Neo Sans Weleda';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    h3{
+        font-size: 32px;
+        line-height: 48px;
+        margin: 6px 0 10px;
+    }
+
+    &Block{
+        position: relative;
+        &:nth-child(1){
+            border-bottom: 3px solid #000000;
+            margin-right: 6px;
+            padding-bottom: 91px;
+            padding-left: 51px;
+            .RoadmapNumb{
+                color: rgba(244, 186, 86, 0.25);
+                left: -26px;
+                bottom: -9px;
+                span{
+                    left: -13px;
+                    bottom: -9px;
+                    border-color: #F4BA56;
+                    background: rgba(244, 186, 86, 0.5);
+                    &::after{
+                        left: 7px;
+                        top: -120px;
+                        height: 99px;
+                        border-left: 2px dashed #F4BA56;
+                    }
+                    &::before{
+                        left: 0px;
+                        top: -138px;
+                        border-color: #F4BA56;
+                    }
+                }
+            }
+        }
+        &:nth-child(2){
+            border-right: 3px solid #000000;
+            margin: 23px 0 24px;
+            display: grid;
+            grid-template-columns: 5fr 3fr;
+            grid-gap: 20px;
+            align-items: stretch;
+            min-height: 316px;
+            &::before{
+                content: '';
+                position: absolute;
+                background-color: #fff;
+                width: 5px;
+                height: 72px;
+                bottom: 34px;
+                right: -4px;
+                z-index: 0;
+            }
+            .RoadmapTextContainer{
+                grid-column: 2 / 3;
+                grid-row: 1 / 2;
+                align-self: center;
+                padding-bottom: 17px;
+                p:last-child{
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: rgba(0, 0, 0, 0.25);
+                    max-width: 250px;
+                }
+                
+            }
+            .RoadmapImgContainer{
+                grid-area: auto;
+                background: url('../../img/prizes.png') no-repeat;
+                margin-left: 2%;
+                margin-top: 0.55%;
+                background-size: contain;
+            }
+            .RoadmapNumb{
+                color: rgba(240, 90, 41, 0.25);
+                right: 3px;
+                top: -33px;
+                span{
+                    right: -18px;
+                    bottom: -6px;
+                    border-color: #F05A29;
+                    background: rgba(240, 90, 41, 0.5);
+                    &::after{
+                        left: -134px;
+                        top: 7px;
+                        width: 112px;
+                        border-bottom: 2px dashed #F05A29;
+                    }
+                    &::before{
+                        top: 0px;
+                        left: -153px;
+                        border-color: #F05A29;
+                    }
+                }
+            }
+        }
+        &:nth-child(3){
+            border-top: 3px solid #000000;
+            margin-right: 3px;
+            padding-top: 12px;
+            padding-left: 55px;
+            &::before{
+                content: '';
+                position: absolute;
+                background-color: #fff;
+                width: 87px;
+                height: 5px;
+                top: -4px;
+                left: 54px;
+                z-index: 0;
+            }
+            .RoadmapNumb{
+                color: rgba(0, 171, 136, 0.25);
+                top: -100px;
+                left: -24px;
+                z-index: 1;
+                span{
+                    left: -16px;
+                    top: 84px;
+                    border-color: #00AB88;
+                    background: rgba(0, 171, 136, 0.5);
+                    &::after{
+                        left: 7px;
+                        top: 36px;
+                        height: 99px;
+                        border-left: 2px dashed #00AB88;
+                    }
+                    &::before{
+                        left: 1px;
+                        top: 139px;
+                        border-color: #00AB88;
+                    }
+                }
+            }
+            .RoadmapImgContainer{
+                margin-top: -75px;
+            }
+        }
+    }
+    &Numb{
+        font-family: 'Neo Sans Weleda';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 288px;
+        line-height: 1em;
+        position: absolute;
+
+        span{
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 8px solid;
+            border-radius: 50%;
+            &::after, &::before{
+                content: '';
+                position: absolute;
+            }
+
+            &::before{
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                border: 2px solid;
+            }
+        }
+    }
+}

@@ -21,6 +21,8 @@ import './App.scss'
 import CB from '../Checkbox/Checkbox'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import Roadmap from '../Roadmap/Roadmap'
+
 const App = () => {
         const {location} = useReactRouter()
         console.log(location);
@@ -29,6 +31,8 @@ const App = () => {
         return (
             <>  
                 <Header/>
+                <Roadmap/>
+                <div className={'aas'}/>
                 <h1> HEllo</h1>
                 <CB/>
                 <Button variant='contained'>
