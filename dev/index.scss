@@ -18,6 +18,9 @@ html body{
           text-transform: uppercase;
           color: #58595B;
       }
+      h3{
+        font-size: 24px;
+      }
     }
 
 // .title{
@@ -176,13 +179,28 @@ body button.MuiButton-root{
   //padding: 14px 25px 15px;
   //border-radius: 8px;
   
-  &.MuiButton-textPrimary{
-      color: #004088;
-  background:#FFDD00;
+  &.MuiButton-text{
+    font-size: 16px;
+    line-height: 150%;
+    /* identical to box height, or 24px */
+    text-decoration-line: underline;
+    color: #008F3F;
+
+    background: none;
+    height: auto;
+    min-width: auto;
+    padding: inherit;
+    &.MuiButton-textPrimary{
+      color:#000000;
+      font-weight: normal;
+      margin-top: 4px;
+    }
   &:hover{
-      color: #FFDD00;
-      background-color:#004088;
-      box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.45);
+      border: none;
+
+      // color: #FFDD00;
+      // background-color:#004088;
+      // box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.45);
   }
   }
   

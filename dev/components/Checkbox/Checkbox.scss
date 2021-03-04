@@ -1,15 +1,36 @@
 @import '../../mixins.scss';
 
 label.checkboxContainer{
+    align-self: center;
     margin:0;
-    font-family: 'Gotham Pro';
-    font-style: normal;
-    font-weight: normal;
-    @include adaptiv-font(16, 19);
+    // font-family: 'Gotham Pro';
+    // font-style: normal;
+    // font-weight: normal;
+    // @include adaptiv-font(16, 19);
 
+    .MuiButtonBase-root, .MuiIconButton-label{
+        width: 20px;
+        height: 20px;
+        padding: 0;
+    }
+    .MuiButtonBase-root{
+        padding-left:104px;
+
+    }
+    .MuiTypography-root{
+        font-family: Neo Sans Weleda;
+
+font-size: 24px;
+line-height: 28px;
+/* or 117% */
+
+text-decoration-line: underline;
+
+color: #000000;
+    }
     //font-size: 16px;
     //line-height: 19px;
-    color: #FFFFFF;
+    //color: #FFFFFF;
     //max-width: 300px;
     // span.checkbox{
     //     width: 30px;

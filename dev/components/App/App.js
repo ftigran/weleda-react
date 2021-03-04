@@ -7,6 +7,7 @@ import {
   } from "react-router-dom";
   import useReactRouter from 'use-react-router'
   import Button from '@material-ui/core/Button';
+  import Grid from '@material-ui/core/Grid';
 
 // import Main from '../pages/main/main'
 // import Header from './Header/Header'
@@ -24,13 +25,49 @@ import Footer from '../Footer/Footer'
 import Top from '../Top/Top'
 import Roadmap from '../Roadmap/Roadmap'
 import Main from './pages/main/main'
+import LkInfo from '../lkInfo/lkInfo'
 
+import Carousel, { arrowsPlugin } from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
+import Slider from "react-slick";
+import arrow from  '../../img/sliderArrow.svg'
+
+//import "slick-carousel/slick/slick.css";
+//import "slick-carousel/slick/slick-theme.css";
 const App = () => {
         const {location} = useReactRouter()
         return (
             <>  
                 <Header/>
-                <Main/>
+                <LkInfo/>
+                {/* <Grid className='tasks'>
+                <Carousel
+                    plugins={[
+                        'arrows',
+                        'infinite',
+                    // {
+                    //     resolve: arrowsPlugin,
+                    //     options: {
+                    //     arrowLeft: <Button><img src={arrow}/></Button>,
+                    //     arrowLeftDisabled:<button>qqds</button>,
+                    //     arrowRight: <Button><img src={arrow}/></Button>,
+                    //     arrowRightDisabled: <button>qq</button>,
+                    //     addArrowClickHandler: true,
+                    //     }
+                    // }
+                    ]}
+                    
+                >
+                    <h1>dasd</h1>
+                    <h1>dasd</h1>
+                    <h2>qq dsaaaa</h2>
+
+                </Carousel>
+                
+                
+                </Grid> */}
+                {/* <Main/> */}
+                
                 {/* <div className={'aas'}/>
                 <h1> HEllo</h1>
                 <CB/>
