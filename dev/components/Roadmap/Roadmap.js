@@ -13,7 +13,7 @@ export default class Main extends Component {
                 {/* <Grid item xs={8} className={'RoadmapContainer'}> */}
                     <div className='RoadmapBlock'>
                         <span className='RoadmapNumb'>1
-                        <span lassName='RoadmapNumbLine'/>
+                        <span className='RoadmapNumbLine'/>
                         </span>
                             <h3>
                             Зарегистрируй свой уникальный промокод
@@ -25,7 +25,7 @@ export default class Main extends Component {
                     <Grid container direction='row-reverse' alignItems='center' justify='space-between' className='RoadmapBlock'>
                         <Grid item className='RoadmapTextContainer'>
                         <span className='RoadmapNumb'>2
-                        <span lassName='RoadmapNumbLine'/>
+                        <span className='RoadmapNumbLine'/>
                         </span>
 
                             <p>
@@ -47,7 +47,7 @@ export default class Main extends Component {
                     <Grid container  className='RoadmapBlock'>
                         <Grid item xs={6}>
                             <span className='RoadmapNumb'>3
-                            <span lassName='RoadmapNumbLine'/>                            </span>
+                            <span className='RoadmapNumbLine'/>                            </span>
                             <h3>
                             Выиграй поездку в Германию
                             в сады Weleda

@@ -11,17 +11,25 @@ export default class Main extends Component {
     render() {
         return (
             <div className='Top'>
-                <img src={top} width='100%'/>
-                <Grid container justify='flex-end' className='TopContainer'>
-                    <Grid container justify='center' xs={6}>
-                        <img src={logo}/>
-                        <h1>
-                            Стань амбассадором бренда
-                            и выиграй призы от Weleda
-                        </h1>
-                        <Button variant='contained'>
-                            Выполнить задание
-                        </Button>
+                <img src={top} width='100%' className='TopImg' />
+                <Grid container alignItems='flex-start' justify='center' className='TopContainer1'>
+                    <Grid container alignItems='flex-start' justify='flex-end' className='TopContainer2'>
+                        <Grid container justify='center' xs={6} className='TopContainer3'>
+                            <Grid container alignItems='center' className='TopContainer4' direction='column'>
+                            <img src={logo}/>
+                            <h1>
+                                Стань амбассадором бренда <br/>
+                                и выиграй призы от Weleda
+                            </h1>
+                            <Button variant='contained'>
+                                Выполнить задание
+                            </Button>
+                            <div id="cta">
+                                <span className="arrow primera next "></span>
+                                <span className="arrow segunda next "></span>
+                            </div>
+                            </Grid>
+                        </Grid>
                     </Grid>
                 </Grid>
             </div>
