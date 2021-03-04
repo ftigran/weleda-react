@@ -1,0 +1,28 @@
+@import '../../../mixins.scss';
+
+.SimpleModal{
+    &Text{
+        font-family: 'Gotham Pro';
+        font-style: normal;
+        font-weight: normal;
+        @include adaptiv-font(20,24);
+        //font-size: 20px;
+        //line-height: 24px;
+        text-align: center;
+        margin: 35px 0;
+        color: #FFFFFF;
+    }
+    
+    
+}
+
+button.SimpleModalBtn{
+    width: 100%;
+}
+@media (max-width:420px){
+    .SimpleModal{
+            padding-left: 15px;
+            padding-right: 15px;
+
+        }
+}

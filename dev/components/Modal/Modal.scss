@@ -1,0 +1,79 @@
+@import '../../mixins.scss';
+
+.modalContainer .modalBtn, .modalWindow .modalBtn{
+    // font-family: "Gotham Pro";
+    // font-style: normal;
+    // font-weight: bold;
+    // text-align: center;
+    // text-transform: uppercase;
+    // height: 45px;
+    // border: none;
+    // background: #FFFFFF;
+    // border-radius: 8px;
+    // color: #10417B;
+    // font-weight: bold;
+    // //font-size: 16px;
+    // @include adaptiv-font(16, 15);
+    // //line-height: 15px;
+    // box-sizing: border-box;
+    .modalBtn{
+        // width: 200px;
+        // box-sizing: border-box;
+    }
+}
+.modalContainer{
+    // box-sizing: border-box;
+}
+.modalWindow{
+    background: #FFFFFF;
+    border-radius: 8px;
+    max-width: 1414px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    .modalWindowClose{
+        color:#000;
+        position: absolute;
+        right: 25px;
+        top: 20px;
+        svg{
+            // width: 31px;
+            // height: 31px;
+        }
+    }
+    .modalBtn{
+        // width: 200px;
+    }
+//    background: #10417B;
+    padding: 58px 145px 61px;
+//    max-width: 600px;
+//    box-sizing: border-box;
+    margin: auto;
+//
+//    border-radius: 8px;
+
+    h2{
+        
+ //       font-family: "Montserrat";
+ //       font-style: normal;
+ //       font-weight: bold;
+ //       @include adaptiv-font(24, 29);
+ //       //font-size: 24px;
+ //       //line-height: 29px;
+ //       text-align: center;
+      //  text-transform: uppercase;
+      //  margin: 0;
+      //  color: #FFFFFF;
+    }
+}
+.modal{
+    display: flex;
+    padding: 10px;
+}
+
+.modalWindow:focus{
+    outline: none;
+}

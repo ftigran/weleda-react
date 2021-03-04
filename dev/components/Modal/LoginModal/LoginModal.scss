@@ -1,0 +1,59 @@
+@import '../../../mixins.scss';
+
+.LoginModal{
+    .LoginModalEmail{
+        margin: 35px 0 15px;
+    }
+    
+    .modalContainer{
+        align-self: flex-end;
+    }
+    button{
+        &.LoginModalReg, &.LoginModalEnter{
+            border-radius: 5px;
+            height: 45px;
+        }
+        &.LoginModalReg{
+            margin-top: 20px;
+        }
+        &.sbrosButton{
+        font-weight: normal;
+        @include adaptiv-font(18,17);
+        //font-size: 18px;
+        //line-height: 17px;
+        /* identical to box height */
+        text-transform: inherit;
+
+        text-decoration-line: underline;
+        background: transparent;
+        padding: 0;
+        color: #FFFFFF;
+        margin: 21px 0;
+        &:hover{
+            background: transparent;
+        }
+        }
+
+    }
+    
+}
+.LoginModalReset{
+    font-family: 'Gotham Pro';
+    font-style: normal;
+    font-weight: normal;
+    @include adaptiv-font(18, 22);
+    //font-size: 18px;
+    //line-height: 22px;
+    text-align: center;
+    
+    color: #fff;
+    .MuiTextField-root {
+        margin: 35px 0 15px;
+    }
+    .modalContainer{
+        width: 100%;
+        button{
+            width: 100%;
+        }
+    }
+}

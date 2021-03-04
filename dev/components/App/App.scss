@@ -51,6 +51,41 @@ body{
         }
     }
 }
+
+.prizi{
+    &Container{
+        margin-top: 85px;
+    }
+    &Item{
+        &Container{
+            min-height: 632px;
+            padding: 8px;
+            box-sizing: content-box !important;
+            //height: 100%;
+            text-align: center;
+        }
+        &Wrap{
+            max-width: 268px;
+        }
+        &Cost{
+            font-weight: bold;
+            line-height: 30px;
+            text-transform: uppercase;
+            color: #008F3F;
+            margin-bottom: 41px;
+        }
+        &Title{
+            line-height: 30px;
+            margin: 24px 0 13px;
+        }
+        &Subtitle{
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+    
+}
+
 //!!
 .tasks{
     max-width: 1126px;
