@@ -23,18 +23,15 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import Top from '../Top/Top'
 import Roadmap from '../Roadmap/Roadmap'
+import Main from './pages/main/main'
 
 const App = () => {
         const {location} = useReactRouter()
-        console.log(location);
-        console.log('location');
-
         return (
             <>  
                 <Header/>
-                <Top/>
-                <Roadmap/>
-                <div className={'aas'}/>
+                <Main/>
+                {/* <div className={'aas'}/>
                 <h1> HEllo</h1>
                 <CB/>
                 <Button variant='contained'>
@@ -54,7 +51,7 @@ const App = () => {
                 </Button>
                 <Button >
                     Где найти промокод?
-                </Button>
+                </Button> */}
                 <Footer/>
                 {/* <Header/>
                     <Switch location={location}>
