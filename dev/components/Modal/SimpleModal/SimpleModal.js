@@ -21,6 +21,33 @@ export class SimpleModal extends React.Component{
     )
 }
 }
+
+
+export const TaskSend = ()=>
+{
+    return (
+        <Modal 
+        className={'ModalInsta SimpleModal'} 
+        title={'Загрузка работы'} 
+        btnText={'Отправить задание'}
+        childBtnText={'OK'}
+        isOpen={true}
+        mainBtnVariant='contained'
+        mainBtnSize='large'
+        btnSize='large'
+        //mainBtnFull={this.props.mainBtnFull}
+        //btnFull={this.props.btnFull}
+        >
+            <p className={'SimpleModalText'}>
+                Спасибо, ссылка принята для проверки.
+            </p>
+            <p className={'SimpleModalText'}>
+                Результат проверки станет доступен в твоем Личном кабинете в течение ближайших 3-х рабочих дней.
+            </p>
+        </Modal>
+    )
+}
+
 export const sbros= <SimpleModal
 title={'Восстановление пароля'}
 text={'Пароль к твоему Личному кабинету отправленна указанный e-mail'}

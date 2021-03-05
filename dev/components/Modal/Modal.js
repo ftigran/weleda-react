@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 
 import './Modal.scss'
 
-export default function TransitionsModal({disableScrollLock=false,  btnFull=false,mainBtnFull=false, mainBtnVariant='text', mainBtnColor='default', className='', isOpen=false, btnText='', title, btnClass='',childBtnText, children, mainBtnClass=''}) {
+export default function TransitionsModal({btnSize='medium' ,mainBtnSize ='medium', disableScrollLock=false,  btnFull=false,mainBtnFull=false, mainBtnVariant='text', mainBtnColor='default', className='', isOpen=false, btnText='', title, btnClass='',childBtnText, children, mainBtnClass=''}) {
   const [open, setOpen] = React.useState(isOpen);
   const handleOpen = () => {
     setOpen(true);
@@ -19,7 +19,7 @@ export default function TransitionsModal({disableScrollLock=false,  btnFull=fals
   };
   return (
     <div className='modalContainer'>
-      {getBtn(btnText, handleOpen, mainBtnClass, mainBtnVariant, mainBtnColor, mainBtnFull)}
+      {getBtn(btnText, handleOpen, mainBtnClass, mainBtnVariant, mainBtnColor, mainBtnFull, mainBtnSize)}
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -31,7 +31,7 @@ export default function TransitionsModal({disableScrollLock=false,  btnFull=fals
         BackdropProps={{
           timeout: 500,
         }}
-        disableScrollLock={true}
+        // disableScrollLock={true}
       >
         <Fade in={open}>
           <div className={'modalWindow '+className}>
@@ -44,7 +44,7 @@ export default function TransitionsModal({disableScrollLock=false,  btnFull=fals
                     <CloseIcon/>
                 </IconButton>
             {children}
-            {getBtn(childBtnText, handleClose, btnClass,'','', btnFull)}
+            {getBtn(childBtnText, handleClose, btnClass,'','', btnFull, btnSize)}
             
           </div>
         </Fade>
@@ -53,7 +53,7 @@ export default function TransitionsModal({disableScrollLock=false,  btnFull=fals
   );
 }
 
-function getBtn(name, handle, btnClass='', variant='', color='', isFull=false){
+function getBtn(name, handle, btnClass='', variant='', color='', isFull=false, mainBtnSize){
   if (name){
     return <Button 
     className={'modalBtn '+btnClass} 
@@ -62,6 +62,7 @@ function getBtn(name, handle, btnClass='', variant='', color='', isFull=false){
     variant={variant}
     color={color}
     fullWidth={isFull}
+    size={mainBtnSize}
     >
       {name}
     </Button>

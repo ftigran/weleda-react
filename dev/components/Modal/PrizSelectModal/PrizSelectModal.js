@@ -61,9 +61,11 @@ const itemsArr=[
 const PSM = () => {
     return(
         <Modal 
-            brnText='Выбрать приз'
+            btnText='Выбрать приз'
             isOpen={false}
             title='Витрина призов'
+            mainBtnVariant='contained'
+            mainBtnSize='large'
             >
                 <Grid container justify='space-between' className='priziContainer'>
                     {itemsArr.map((item, id)=>{

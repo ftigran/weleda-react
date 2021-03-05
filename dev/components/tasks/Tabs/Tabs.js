@@ -59,7 +59,7 @@ export default function SimpleTabs() {
     { 
         id: 'date',
         label: 'Дата отправки',
-        params: {width: 250}
+        params: {width: 237}
         },
       { 
         id: 'task',
@@ -69,12 +69,12 @@ export default function SimpleTabs() {
       {
         id: 'stat',
         label: 'Статус',
-        params: {width: 250}
+        params: {width: 257}
         
       },{
         id: 'points',
         label: 'Баллы',
-        params: {width: 250}
+        params: {width: 230}
       },
   ]
   const ColumnsPrizi = [
@@ -82,14 +82,17 @@ export default function SimpleTabs() {
       { 
         id: 'date',
         label: 'Дата',
+        params: {width: 240}
      },
      { 
       id: 'name',
       label: 'Приз',
+      params: {width: 572}
       },
       {
         id: 'points',
         label: 'Баллы',
+      params: {width: 248}
       },
   ]
   const rowsPrizi = [

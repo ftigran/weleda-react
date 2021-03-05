@@ -1,28 +1,42 @@
 @import '../../../mixins.scss';
 
 .SimpleModal{
+    text-align: center;
     &Text{
-        font-family: 'Gotham Pro';
-        font-style: normal;
-        font-weight: normal;
-        @include adaptiv-font(20,24);
-        //font-size: 20px;
-        //line-height: 24px;
-        text-align: center;
-        margin: 35px 0;
-        color: #FFFFFF;
+        
+        // font-family: 'Gotham Pro';
+        // font-style: normal;
+        // font-weight: normal;
+        // @include adaptiv-font(20,24);
+        // //font-size: 20px;
+        // //line-height: 24px;
+        // text-align: center;
+        // margin: 35px 0;
+        // color: #FFFFFF;
     }
     
-    
-}
-
-button.SimpleModalBtn{
-    width: 100%;
-}
-@media (max-width:420px){
-    .SimpleModal{
-            padding-left: 15px;
-            padding-right: 15px;
-
+    &.ModalInsta{
+        max-width: 840px;
+        p:first-of-type{
+            margin: 20px 0 35px
         }
+        .MuiButton-sizeLarge{
+            margin-top: 37px;
+        }
+        .modalWindowClose{
+            right: 8px;
+            top: 6px;
+        }
+    }
 }
+
+// button.SimpleModalBtn{
+//     width: 100%;
+// }
+// @media (max-width:420px){
+//     .SimpleModal{
+//             padding-left: 15px;
+//             padding-right: 15px;
+
+//         }
+// }
