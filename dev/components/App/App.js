@@ -29,6 +29,7 @@ import LkInfo from '../lkInfo/lkInfo'
 import Carousel from '../carousel/carousel'
 import PSM from '../lkInfo/lkInfo'
 import Slider from "../slider/slider";
+import Cabinet from './pages/cabinet/cabinet'
 
 import '@brainhubeu/react-carousel/lib/style.css';
 //import Slider from "react-slick";
@@ -45,12 +46,13 @@ const App = () => {
         return (
             <>  
                 <Header/>
-                <LkInfo/>
+                <Cabinet/>
+                {/* <LkInfo/>
                 <div className='qq'>
 
                 <Button> Где найти промокод?</Button>
                 </div>
-                <Task/>
+                <Task/> */}
                 {/* <Grid className='tasks'>
                 <Carousel
                     plugins={[

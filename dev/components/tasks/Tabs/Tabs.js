@@ -59,17 +59,22 @@ export default function SimpleTabs() {
     { 
         id: 'date',
         label: 'Дата отправки',
+        params: {width: 250}
         },
       { 
         id: 'task',
         label: 'Задание',
+        params: {width: 250}
      },
       {
         id: 'stat',
         label: 'Статус',
+        params: {width: 250}
+        
       },{
         id: 'points',
         label: 'Баллы',
+        params: {width: 250}
       },
   ]
   const ColumnsPrizi = [

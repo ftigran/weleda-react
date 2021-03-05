@@ -9,7 +9,6 @@ const App = () => {
         <div className='slider'>
             <h3 className='sliderTitle'>Задание №{taskNumb}</h3>
             <Slider>
-                <Locked/>
 
                 <Grid container justify='space-between' direction='column' className='sliderContainer'>
                     <Grid item className='sliderContainerItem'>
@@ -31,6 +30,8 @@ const App = () => {
                         </li>
                     </Grid>
                 </Grid>
+                <Locked/>
+
             </Slider>
         </div>
         

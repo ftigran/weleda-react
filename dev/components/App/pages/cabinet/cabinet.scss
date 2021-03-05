@@ -1,0 +1,24 @@
+.cabinet{
+    max-width: 1414px;
+
+    &SelectPriz{
+    font-weight: bold;
+    color: #000000;
+    span{
+        font-weight: 500;
+    }
+    &Container{
+        margin-bottom: 62px;
+    }
+}
+}
+.pageBG{
+    background-image: url('../../../../img/pattern.svg');
+    .pageWrapper{
+        max-width: 1414px;
+        background-color: #fff;
+        .pageContainer{
+            max-width: 1126px;
+        }
+    }
+}

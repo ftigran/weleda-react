@@ -31,22 +31,20 @@ import Tabs from './Tabs/Tabs'
 
 const task = () => {
         return (
-            <>
+            <div className='tasksContainer'>
                     <h3>Задания</h3>
-                    <PrizSelectModal/>
                     <Slider/>
-                    <Grid container wrap='nowrap'>
-                        <Grid item>
+                    <Grid container wrap='nowrap' justify='space-between'>
+                        <Grid item className='taskInput'>
                             <TextField placeholder='Ссылка на пост в Instagram' type='instalink'/>
-                            <p>Загрузите ссылку на пост в Instagram для проверки выполнения задания</p>
+                            <p className='taskInputLegend'>Загрузите ссылку на пост в Instagram для проверки выполнения задания</p>
                         </Grid>
                         <Button className='taskBtn' variant='contained' size='large'>
                             Отправить задание
                         </Button>
                     </Grid>
                     <Tabs/>
-
-                </>
+            </div>
         )
 }
 export default task;

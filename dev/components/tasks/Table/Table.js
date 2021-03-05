@@ -29,7 +29,7 @@ export default function StickyHeadTable(props) {
               {props.columns.map((column) => (
                 <TableCell
                   key={column.id}
-                  align={column.align}
+                  {...column.params}
                 >
                   {column.label}
                 </TableCell>

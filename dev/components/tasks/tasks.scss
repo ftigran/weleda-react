@@ -1,0 +1,22 @@
+.tasksContainer{
+    margin-top: 33px;
+}
+.taskBtn{
+    
+}
+.taskInput{
+    padding-top:2px;
+    padding-right: 20px;
+    width: 100%;
+    .MuiTextField-root {
+        max-width: none;
+    }
+    &Legend{
+        margin-top: -20px;
+        font-family: Neo Sans Weleda;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 150%;
+    }
+}

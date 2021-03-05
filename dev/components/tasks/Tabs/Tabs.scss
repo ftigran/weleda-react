@@ -194,6 +194,13 @@
 //         //line-height: 22px;
 //     }
 // }
+.tabpage{
+    margin-top: 40px;
+
+    .MuiBox-root-13{
+        padding: 45px 0 25px;
+    }
+}
 header.TabBar{
     .MuiTabs-indicator{
         background-color: transparent;
@@ -218,6 +225,7 @@ button{
 align-items: flex-start;
 }
     &:first-child{
+        margin-left: 60px;
         span{
             align-items: flex-end;
             }
