@@ -27,7 +27,7 @@ import PrizSelectModal from '../Modal/PrizSelectModal/PrizSelectModal'
 //import "slick-carousel/slick/slick-theme.css";
 import TextField from '../TextField/TextField'
 import Tabs from './Tabs/Tabs'
-import {TaskSend} from '../Modal/SimpleModal/SimpleModal'
+import {TaskSend, Sbros} from '../Modal/SimpleModal/SimpleModal'
 
 
 const task = () => {
@@ -41,6 +41,7 @@ const task = () => {
                             <p className='taskInputLegend'>Загрузите ссылку на пост в Instagram для проверки выполнения задания</p>
                         </Grid>
                         <TaskSend/>
+                        <Sbros/>
                     </Grid>
                     <Tabs/>
             </div>

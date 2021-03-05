@@ -2,8 +2,13 @@
 
 .SimpleModal{
     text-align: center;
+    max-width: 840px;
+    .MuiButton-sizeLarge{
+        margin-top: 25px;
+    }
     &Text{
-        
+        margin: 20px 0;
+        max-width: 510px;
         // font-family: 'Gotham Pro';
         // font-style: normal;
         // font-weight: normal;
@@ -16,7 +21,9 @@
     }
     
     &.ModalInsta{
-        max-width: 840px;
+        p{
+            margin: 0;
+        }
         p:first-of-type{
             margin: 20px 0 35px
         }

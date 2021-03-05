@@ -13,6 +13,9 @@ export class SimpleModal extends React.Component{
         isOpen={this.props.isOpen}
         mainBtnFull={this.props.mainBtnFull}
         btnFull={this.props.btnFull}
+        mainBtnVariant='contained'
+        mainBtnSize='large'
+        btnSize='large'
         >
             <p className={'SimpleModalText'}>
                 {this.props.text}
@@ -31,7 +34,6 @@ export const TaskSend = ()=>
         title={'Загрузка работы'} 
         btnText={'Отправить задание'}
         childBtnText={'OK'}
-        isOpen={true}
         mainBtnVariant='contained'
         mainBtnSize='large'
         btnSize='large'
@@ -48,11 +50,11 @@ export const TaskSend = ()=>
     )
 }
 
-export const sbros= <SimpleModal
+export const Sbros= ()=><SimpleModal
 title={'Восстановление пароля'}
-text={'Пароль к твоему Личному кабинету отправленна указанный e-mail'}
-btnText={'Восстановить'}
-btnFull={true}
+text={'Пароль к твоему Личному кабинету отправлен на указанный e-mail'}
+btnText={'OK'}
+isOpen={true}
 />
 
 export const verify= <SimpleModal
