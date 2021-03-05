@@ -37,7 +37,7 @@ import PrizSelectModal from '../Modal/PrizSelectModal/PrizSelectModal'
 //import "slick-carousel/slick/slick.css";
 //import "slick-carousel/slick/slick-theme.css";
 import TextField from '../TextField/TextField'
-
+import Task from '../tasks/tasks'
 
 
 const App = () => {
@@ -48,13 +48,9 @@ const App = () => {
                 <LkInfo/>
                 <div className='qq'>
 
-                <TextField placeholder='Nam' type='name'/>
+                <Button> Где найти промокод?</Button>
                 </div>
-                <>
-                    <h3>Задания</h3>
-                    <PrizSelectModal/>
-                    <Slider/>
-                </>
+                <Task/>
                 {/* <Grid className='tasks'>
                 <Carousel
                     plugins={[

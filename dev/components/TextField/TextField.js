@@ -36,6 +36,10 @@ export default function TextFieldTemplate(props){
             maxLenght = 6;
             type = 'tel'
             break;
+        case 'instalink':
+            regular=new RegExp(/instagram.com\/p\/[a-zA-z0-9]{1,}/g)
+            error='Введите пароль из 6 цифр'
+            break;
         default:
             console.log( "Нет таких значений" );
 

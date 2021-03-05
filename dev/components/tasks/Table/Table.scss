@@ -1,0 +1,104 @@
+@import '../../../mixins.scss';
+
+div .table{
+    margin: auto;
+    box-shadow: none;
+    background-color: transparent;
+    //max-width: 996px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: transparent;
+
+    .tableHeader th{
+        font-family: Neo Sans Weleda;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 150%;
+        border: none;
+        background: #008F3F;
+        
+        text-align: center;
+        
+        color: #FFFFFF;
+        // // font-family: 'Montserrat';
+        // // font-style: normal;
+        // // font-weight: 800;
+        // //font-size: 24px;
+        // //@include adaptiv-font(24, 29);
+        // //line-height: 29px;
+        // text-align: center;
+        // text-transform: uppercase;
+
+        // color: #004088;
+
+        // &:nth-child(1){
+        //     width: 25%;
+        // }
+        // &:nth-child(2){
+        //     width: 31%;
+        // }
+        // &:nth-child(3){
+        //     width: 20%;
+        // }
+        // &:nth-child(4){
+        //     width: 24%;
+        // }
+    }
+    .tableCell{
+        // font-family: 'Gotham Pro';
+        // font-style: normal;
+        // font-weight: normal;
+        // //font-size: 18px;
+        // //@include adaptiv-font(18, 17);
+        // //line-height: 17px;
+        // text-align: center;
+        // text-transform: uppercase;
+
+        // color: #004088;
+    }
+    tr, .tablePagination, .tableHeader th{
+        // background-color: #FFDD00;
+    }
+    tr, .tableHeader th{
+        // height: 53px;
+    }
+    tbody{
+        background: rgba(0, 143, 63, 0.25);
+        tr{
+            height: 70px;
+            //border:none
+            border-bottom: 30px solid #fff;
+            &:last-child{
+                border: none
+            }
+            td{
+                font-family: "Neo Sans Weleda";
+                font-style: normal;
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 150%;
+                border: none;
+                text-align: center;
+    
+                color: #000000;
+            }
+            
+        }
+    }
+    
+    
+    tr:nth-child(2n+1){
+        // background-color: #fff;
+    td:first-child{
+    // border-radius: 7px 0 0 7px;
+    }
+    td:last-child{
+        // border-radius: 0 7px 7px 0;
+    }
+
+    }
+}
+
+
+//@media
