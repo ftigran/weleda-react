@@ -1,0 +1,52 @@
+import React, { Component } from "react";
+import Grid from '@material-ui/core/Grid';
+
+import Slider from "react-slick";
+import './slider.scss'
+let taskNumb = 1;
+const App = () => {
+    return (
+        <div className='slider'>
+            <h3 className='sliderTitle'>Задание №{taskNumb}</h3>
+            <Slider>
+                <Locked/>
+
+                <Grid container justify='space-between' direction='column' className='sliderContainer'>
+                    <Grid item className='sliderContainerItem'>
+                        <h3>Сделай фото с набором «100 лет экспертизы Weleda»</h3>
+                        <p>Подробности о задании и сроки приема работ смотри <a href='empty'>здесь</a></p>
+                    </Grid>
+                    <Grid item component='ul' className='sliderContainerItem'>
+                        <li>
+                            - Сделай красивое фото набора.
+                        </li>
+                        <li>
+                            - Опубликуй фото или видео в Stories или в ленте Instagram.
+                        </li>
+                        <li>
+                            - Не забудь про хештег <b>#WELEDA100YEARS</b> и отметь <b>@weledarussia.</b>
+                        </li>
+                        <li>
+                            - Убедись, что на время конкурса твой аккаунт остается открытым.                     
+                        </li>
+                    </Grid>
+                </Grid>
+            </Slider>
+        </div>
+        
+    )
+}
+export default App;
+import locked from '../../img/locked.svg'
+const Locked = (date)=>{
+    return(
+        <Grid container justify='space-between' alignItems='center'  direction='column' className='sliderContainerLocked sliderContainer' >
+            <h3>Расскажи о своем знакомстве с продуктом Weleda</h3>
+            <img src={locked}/> 
+            <p>Доступ к данному заданию откроется
+            <br/><b>01.06.2021</b>
+            </p>
+
+        </Grid>
+    )
+}

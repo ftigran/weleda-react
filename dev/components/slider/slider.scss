@@ -1,0 +1,99 @@
+.slick{
+    &-slider{
+        margin:auto;
+        margin-top: 200px;
+        margin-bottom: 100px;
+        border-radius: 8px;
+        border: 6px solid #008F3F;
+        min-height: 363px;
+    max-width: 1126px;
+    padding: 24px 7.15% 30px;
+    box-sizing: border-box;
+    grid-column-start: 2;
+    position: relative;
+    overflow: hidden;
+    &:hover .slick-arrow{
+    opacity: 1;
+    transition: opacity 0.3s;
+    }
+    }
+    &-slide{
+        opacity: 0;
+        transition: opacity 0.1s;
+    }
+    &-current{
+        opacity: 1;
+        transition: opacity 0s;
+
+    }
+    &-track{
+        display: flex;
+    }
+    &-arrow{
+    cursor: pointer;
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    z-index: 1;
+    font-size: 0px;
+    border: none;
+    outline: none;
+    //top:calc(50% - 10px);
+    height: 100%;
+    width: 12.2%;
+    top: 0;
+    }
+    &-prev{
+        left: -1px;
+        background: url('../../img/sliderArrow.svg') no-repeat;
+        background-position: calc(50% - 16px) center;
+    }
+    &-next{
+        right: -1px;
+        background: url('../../img/sliderArrow.svg') no-repeat;
+        transform: rotate(180deg);
+        background-position: calc(50% - 10px);
+    }
+}
+.slider{
+    position: relative;
+    &Title{
+        position: absolute;
+        top: -20px;
+        width: 265px;
+        background: #fff;
+        text-align: center;
+        left: calc(50% - 132.5px);
+        z-index: 1;
+    }
+    &Container{
+        outline: none;
+        &Locked{
+            img{
+                margin: 40px 0 35px;
+            }
+        }
+        b{
+            font-weight: 500;
+        }
+        text-align: center;
+    &Item{
+    &:first-child{
+        
+        margin-bottom: 45px;
+        p{
+            margin-top: 37px;
+            font-weight: 500;
+            a{
+                color:#008F3F;
+            }
+        }
+        
+    }
+    &:last-child{
+        list-style: none;
+        padding: 0;
+        text-align: start;
+    }
+}}
+}

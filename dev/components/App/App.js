@@ -28,6 +28,7 @@ import Main from './pages/main/main'
 import LkInfo from '../lkInfo/lkInfo'
 import Carousel from '../carousel/carousel'
 import PSM from '../lkInfo/lkInfo'
+import Slider from "../slider/slider";
 
 import '@brainhubeu/react-carousel/lib/style.css';
 //import Slider from "react-slick";
@@ -44,8 +45,10 @@ const App = () => {
             <>  
                 <Header/>
                 <LkInfo/>
-                <Carousel/>
                 <PrizSelectModal/>
+                    <Slider>
+                    </Slider>
+                
                 {/* <Grid className='tasks'>
                 <Carousel
                     plugins={[
@@ -116,13 +119,5 @@ const App = () => {
                 <ScrollSection/> */}
             </>
         );
-    }
-
-// const GetItems=(){
-//     let
-// return(
-    
-// )
-// }
-
+}
 export default App;
