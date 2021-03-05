@@ -36,6 +36,7 @@ import arrow from  '../../img/sliderArrow.svg'
 import PrizSelectModal from '../Modal/PrizSelectModal/PrizSelectModal'
 //import "slick-carousel/slick/slick.css";
 //import "slick-carousel/slick/slick-theme.css";
+import TextField from '../TextField/TextField'
 
 
 
@@ -45,10 +46,15 @@ const App = () => {
             <>  
                 <Header/>
                 <LkInfo/>
-                <PrizSelectModal/>
-                    <Slider>
-                    </Slider>
-                
+                <div className='qq'>
+
+                <TextField placeholder='Nam' type='name'/>
+                </div>
+                <>
+                    <h3>Задания</h3>
+                    <PrizSelectModal/>
+                    <Slider/>
+                </>
                 {/* <Grid className='tasks'>
                 <Carousel
                     plugins={[
