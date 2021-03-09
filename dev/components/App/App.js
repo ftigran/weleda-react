@@ -30,6 +30,8 @@ import Carousel from '../carousel/carousel'
 import PSM from '../lkInfo/lkInfo'
 import Slider from "../slider/slider";
 import Cabinet from './pages/cabinet/cabinet'
+import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 
 import '@brainhubeu/react-carousel/lib/style.css';
 //import Slider from "react-slick";
@@ -42,21 +44,24 @@ import Task from '../tasks/tasks'
 import {Input} from '../Input/Input'
 import * as yup from "yup";
 const DataContext = createContext()
+import { yupResolver } from "@hookform/resolvers";
 
-export const DataProvider = ({children}) => {
-  const [data, setData] = useState({});
+// export const DataProvider = ({children}) => {
+//   const [data, setData] = useState({});
 
-  const setValues = (values) => {
-    setData(prevData => ({
-      ...prevData,
-      ...values
-    }))
-  }
+//   const setValues = (values) => {
+//     setData(prevData => ({
+//       ...prevData,
+//       ...values
+//     }))
+//   }
 
-  return <DataContext.Provider value={{data, setValues}}>
-    {children}
-  </DataContext.Provider>
-}
+//   return <DataContext.Provider value={{data, setValues}}>
+//     {children}
+//   </DataContext.Provider>
+// }
+//const useData = () => useContext(DataContext)
+
 const schema = yup.object().shape({
     firstName: yup
       .string()
@@ -83,48 +88,71 @@ const schema = yup.object().shape({
       .matches(/^([^0-9]*)$/, "Last name should not contain numbers")
       .required("Last name is a required field"),
   });
-const App = () => {
-    const { setValues, data } = useData();
-  const history = useHistory();
-  const { register, handleSubmit, errors } = useForm({
-    defaultValues: { 
-        firstName: data.firstName,
-        lastName: data.lastName, 
-        instagram: data.instagram, 
-        PhoneNumber: data.PhoneNumber, 
-        email: data.email, 
-        promocode: data.promocode, 
-    },
-    mode: "onBlur",
-    resolver: yupResolver(schema),
-  });
-        const {location} = useReactRouter()
+  import { Field, reduxForm } from 'redux-form'
+
+  import {regUser, setPopup} from '../../store/actions'
+
+  import {useDispatch, useSelector} from "react-redux";
+//   const Reg = ()=>{
+//     const dispatch = useDispatch()
+//     //console.log('props')
+
+//     const user = useSelector(state => state.user)
+
+//     //const { setValues, data } = useData();
+//     const history = useHistory();
+//     //const { register, handleSubmit, errors } = useForm({
+//       // defaultValues: {
+//       //   firstName: user.firstName,
+//       //   lastName: user.lastName 
+//       // },
+//     //   mode: "onBlur",
+//     //   resolver: yupResolver(schema),
+//     // });
+//     const handleSubmit = (data) => {
+//       //history.push("./step2");
+//       dispatch(regUser(data));
+//       console.log(user)
+//       console.log(data)
+//     };
+
+// return(
+// <>
+//   <h3>{user.firstName}</h3>
+//          <form noValidate onSubmit={handleSubmit}>
+//          <Field
+//          name='firstName'
+//          type="text"
+//          component='input'
+//           ></Field>
+//           <Button
+//             type="submit"
+//             variant="contained"
+//             color="primary"
+//           >
+//             children
+//           </Button>
+//       </form>
+// </>
+
+// )
+// }
+
+import Reg from './pages/reg'
+
+class App extends React.Component{
+  render(){
+    //const { setValues, data } = useData();
+  
+  //const {location} = useReactRouter()
         return (
             <>  
-                <Header/>
+              <Reg/>
+
+
+                {/* <Header/> */}
                 {/* <Cabinet/> */}
-                <h3>Регистрация</h3>
-        <Form noValidate onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          ref={register}
-          id="firstName"
-          type="text"
-          label="First Name"
-          name="firstName"
-          error={!!errors.firstName}
-          helperText={errors?.firstName?.message}
-        />
-        <Input
-          ref={register}
-          id="lastName"
-          type="text"
-          label="Last Name"
-          name="lastName"
-          error={!!errors.lastName}
-          helperText={errors?.lastName?.message}
-        />
-        <PrimaryButton>Next</PrimaryButton>
-      </Form>
+                
                 {/* <LkInfo/>
                 <div className='qq'>
 
@@ -202,4 +230,42 @@ const App = () => {
             </>
         );
 }
+}
 export default App;
+import { createStore, combineReducers } from 'redux';
+import { reducer as reduxFormReducer } from 'redux-form';
+
+const reducer = combineReducers({
+  form: reduxFormReducer, // mounted under "form"
+});
+const store = (window.devToolsExtension
+  ? window.devToolsExtension()(createStore)
+  : createStore)(reducer);
+
+import {Provider, connect} from 'react-redux';
+import {bindActionCreators} from 'redux'
+
+// const mapStateToProps=(state)=>{
+//   return {
+//       user: state.user,
+//       popupOpen: state.popupOpen
+//   }
+// };
+// const putActionsToProps=(dispatch)=>{
+//   return {
+//       regUser: bindActionCreators(regUser, dispatch),
+//       setPopup: bindActionCreators(setPopup, dispatch),
+//   }
+// }
+
+// const WrapedUser = connect(({ firstName, lastName }) => ({ firstName, lastName }), regUser)(Reg)
+
+// export default class UserWithStore extends React.Component{
+//   render(){
+//   return (
+//       <Provider store={store}>
+//           <Reg/>
+//       </Provider>
+//   )
+// }
+// }
