@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { createContext, useState, useContext } from 'react'
 import {
     BrowserRouter as Router,
     Switch,
@@ -39,14 +39,92 @@ import PrizSelectModal from '../Modal/PrizSelectModal/PrizSelectModal'
 //import "slick-carousel/slick/slick-theme.css";
 import TextField from '../TextField/TextField'
 import Task from '../tasks/tasks'
+import {Input} from '../Input/Input'
+import * as yup from "yup";
+const DataContext = createContext()
 
+export const DataProvider = ({children}) => {
+  const [data, setData] = useState({});
 
+  const setValues = (values) => {
+    setData(prevData => ({
+      ...prevData,
+      ...values
+    }))
+  }
+
+  return <DataContext.Provider value={{data, setValues}}>
+    {children}
+  </DataContext.Provider>
+}
+const schema = yup.object().shape({
+    firstName: yup
+      .string()
+      .matches(/^([^0-9]*)$/, "First name should not contain numbers")
+      .required("First name is a required field"),
+    lastName: yup
+      .string()
+      .matches(/^([^0-9]*)$/, "Last name should not contain numbers")
+      .required("Last name is a required field"),
+    instagram: yup
+      .string()
+      .matches(/^([^0-9]*)$/, "Last name should not contain numbers")
+      .required("Last name is a required field"),
+    PhoneNumber: yup
+      .string()
+      .matches(/^([^0-9]*)$/, "Last name should not contain numbers")
+      .required("Last name is a required field"),
+    email: yup
+      .string()
+      .matches(/^([^0-9]*)$/, "Last name should not contain numbers")
+      .required("Last name is a required field"),
+    promocode: yup
+      .string()
+      .matches(/^([^0-9]*)$/, "Last name should not contain numbers")
+      .required("Last name is a required field"),
+  });
 const App = () => {
+    const { setValues, data } = useData();
+  const history = useHistory();
+  const { register, handleSubmit, errors } = useForm({
+    defaultValues: { 
+        firstName: data.firstName,
+        lastName: data.lastName, 
+        instagram: data.instagram, 
+        PhoneNumber: data.PhoneNumber, 
+        email: data.email, 
+        promocode: data.promocode, 
+    },
+    mode: "onBlur",
+    resolver: yupResolver(schema),
+  });
         const {location} = useReactRouter()
         return (
             <>  
                 <Header/>
-                <Cabinet/>
+                {/* <Cabinet/> */}
+                <h3>Регистрация</h3>
+        <Form noValidate onSubmit={handleSubmit(onSubmit)}>
+        <Input
+          ref={register}
+          id="firstName"
+          type="text"
+          label="First Name"
+          name="firstName"
+          error={!!errors.firstName}
+          helperText={errors?.firstName?.message}
+        />
+        <Input
+          ref={register}
+          id="lastName"
+          type="text"
+          label="Last Name"
+          name="lastName"
+          error={!!errors.lastName}
+          helperText={errors?.lastName?.message}
+        />
+        <PrimaryButton>Next</PrimaryButton>
+      </Form>
                 {/* <LkInfo/>
                 <div className='qq'>
 

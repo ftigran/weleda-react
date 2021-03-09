@@ -69,6 +69,7 @@
     "react-use": "^17.1.1",
     "redux": "^4.0.5",
     "slick-carousel": "^1.8.1",
-    "use-react-router": "^1.0.7"
+    "use-react-router": "^1.0.7",
+    "yup": "^0.32.9"
   }
 }

@@ -41,7 +41,7 @@ const task = () => {
                             <p className='taskInputLegend'>Загрузите ссылку на пост в Instagram для проверки выполнения задания</p>
                         </Grid>
                         <TaskSend/>
-                        <Sbros/>
+                        {/* <Sbros/> */}
                     </Grid>
                     <Tabs/>
             </div>

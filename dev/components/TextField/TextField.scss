@@ -9,12 +9,12 @@
 
 .MuiTextField-root{
     width: 100%;
-    height: 99px;
+    min-height: 99px;
     max-width:554px;
     .MuiOutlinedInput-notchedOutline{
         border: 1px solid #008F3F;
     border-radius: 8px;
-    height: 73px;
+    min-height: 73px;
     }
     input{
         padding: 16px 20px;
