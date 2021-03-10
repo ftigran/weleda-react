@@ -138,7 +138,7 @@ const schema = yup.object().shape({
 // )
 // }
 
-import Reg from './pages/reg'
+import Reg from './pages/reg/reg'
 
 class App extends React.Component{
   render(){

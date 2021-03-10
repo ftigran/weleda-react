@@ -1,6 +1,4 @@
 import {ACTION_CHANGE_USER, ACTION_TOGGLE_ERROR, ACTION_SET_POPUP, ACTION_REGISTRATION_USER} from './actions'
-import { reducer as reduxFormReducer } from 'redux-form';
-
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 // Or with Immutablejs:
@@ -10,7 +8,7 @@ const reducers = {
   rootRedducer,
   form: formReducer
 };
-const reducer = combineReducers(reducers);
+export const reducer = combineReducers(reducers);
 
   export const rootRedducer = (state, action)=>{
     console.log('stas.payload')

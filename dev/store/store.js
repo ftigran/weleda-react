@@ -1,5 +1,5 @@
 import {createStore, bindActionCreators} from 'redux'
-import {rootRedducer} from './reducers'
+import {reducer} from './reducers'
 
 const user={
   firstName: 'Владимир',
@@ -13,6 +13,6 @@ const initialState = {
     error: false,
     popupOpen: false,
   }
-export const store = createStore(rootRedducer, initialState)
+export const store = createStore(reducer, initialState)
 
 
