@@ -8,11 +8,8 @@ const user={
   phone: '+7 888 555 6666',
   email: 'sqs@sa.ssa',
 };
-const initialState = {
-    user: user,
-    error: false,
-    popupOpen: false,
-  }
-export const store = createStore(reducer, initialState)
+
+export const store = createStore(reducer)
+console.log(store.getState())
 
 

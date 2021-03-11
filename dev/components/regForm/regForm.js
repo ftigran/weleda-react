@@ -1,16 +1,32 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { renderTextField as TextField } from '../TextField/renderTextField'
+import { renderTextField as TextField } from './renderTextField'
 import {required, phoneNumber, promoNumber, email, maxLength, minLength, kirilicName, instaUser} from '../TextField/validation'
 import { Grid } from '@material-ui/core';
 import './regForm.scss'
+import { useSelector, useDispatch } from 'react-redux'
+import {setRegEmailApproveModal} from '../../store/actions'
+import { useHistory } from 'react-router';
+import RegEmailApproveModal from '../Modal/RegEmailApproveModal/RegEmailApproveModal'
 const SimpleForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
+  const counter = useSelector(state => state)
+  const history = useHistory;
+  //console.log(counter)
+  const dispatch = useDispatch()
+
+//   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+// //dispatch({ type: 'ACTION_SET_EMAIL_APPROVE_MODAL', payload: 55 })
+//   async const handler= (e)=>{
+//     await sleep(500); // simulate server latency
+//     window.alert(`You submitted:`);
+//   }
+//console.log(counter)
   return (
     <form onSubmit={handleSubmit} className='regForm'>
       <Grid container justify='space-between'>
         <Grid item xs={6} className='FormTextFieldContainer'>
-          <Field
+          {/* <Field
               name="firstName"
               component={TextField}
               type="text"
@@ -32,10 +48,10 @@ const SimpleForm = props => {
               type="text"
               label="@instagram"
               validate={[required, instaUser]}
-            />
+            /> */}
         </Grid>
         <Grid item xs={6} className='FormTextFieldContainer'>
-          <Field
+          {/* <Field
               name="phone"
               component={TextField}
               type="tel"
@@ -49,7 +65,7 @@ const SimpleForm = props => {
               type="email"
               label="Email"
               validate={[required, email]}
-            />
+            /> */}
             <Field
               name="promocode"
               component={TextField}
@@ -60,6 +76,7 @@ const SimpleForm = props => {
         </Grid>
       </Grid>
       <div>
+        <RegEmailApproveModal/>
         <button type="submit" >Submit</button>
         <button type="button" disabled={pristine || submitting} onClick={reset}>
           Clear Values
@@ -70,5 +87,5 @@ const SimpleForm = props => {
 };
 
 export default reduxForm({
-  form: 'simple', // a unique identifier for this form
+  form: 'regForm', // a unique identifier for this form
 })(SimpleForm);

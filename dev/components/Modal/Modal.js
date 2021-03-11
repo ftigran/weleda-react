@@ -8,9 +8,10 @@ import Button from '@material-ui/core/Button';
 
 import './Modal.scss'
 
-export default function TransitionsModal({btnSize='medium' ,mainBtnSize ='medium', disableScrollLock=false,  btnFull=false,mainBtnFull=false, mainBtnVariant='text', mainBtnColor='default', className='', isOpen=false, btnText='', title, btnClass='',childBtnText, children, mainBtnClass=''}) {
+export default function TransitionsModal({ mainBtnProps,btnSize='medium' ,mainBtnSize ='medium', disableScrollLock=false,  btnFull=false,mainBtnFull=false, mainBtnVariant='text', mainBtnColor='default', className='', isOpen=false, btnText='', title, btnClass='',childBtnText, children, mainBtnClass=''}) {
   const [open, setOpen] = React.useState(isOpen);
-  const handleOpen = () => {
+  const handleOpen = (event) => {
+    event.preventDefault()
     setOpen(true);
   };
 
@@ -19,7 +20,7 @@ export default function TransitionsModal({btnSize='medium' ,mainBtnSize ='medium
   };
   return (
     <div className='modalContainer'>
-      {getBtn(btnText, handleOpen, mainBtnClass, mainBtnVariant, mainBtnColor, mainBtnFull, mainBtnSize)}
+      {getBtn(btnText, handleOpen, mainBtnClass, mainBtnVariant, mainBtnColor, mainBtnFull, mainBtnSize, mainBtnProps)}
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -53,7 +54,7 @@ export default function TransitionsModal({btnSize='medium' ,mainBtnSize ='medium
   );
 }
 
-function getBtn(name, handle, btnClass='', variant='', color='', isFull=false, mainBtnSize){
+function getBtn(name, handle, btnClass='', variant='', color='', isFull=false, mainBtnSize, Props){
   if (name){
     return <Button 
     className={'modalBtn '+btnClass} 
@@ -63,6 +64,7 @@ function getBtn(name, handle, btnClass='', variant='', color='', isFull=false, m
     color={color}
     fullWidth={isFull}
     size={mainBtnSize}
+    {...Props}
     >
       {name}
     </Button>

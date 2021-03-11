@@ -1,18 +1,18 @@
-import {ACTION_CHANGE_USER, ACTION_TOGGLE_ERROR, ACTION_SET_POPUP, ACTION_REGISTRATION_USER} from './actions'
+import {ACTION_CHANGE_USER,ACTION_SET_EMAIL_APPROVE_MODAL, ACTION_TOGGLE_ERROR, ACTION_SET_POPUP, ACTION_REGISTRATION_USER} from './actions'
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 // Or with Immutablejs:
 // import { reducer as formReducer } from 'redux-form/immutable';
 
-const reducers = {
-  rootRedducer,
-  form: formReducer
-};
-export const reducer = combineReducers(reducers);
 
-  export const rootRedducer = (state, action)=>{
-    console.log('stas.payload')
 
+const initialState = {
+  error: false,
+  popupOpen: false,
+  RegEmailApproveModalOpen: false,
+
+}
+  export const rootRedducer = (state=initialState, action)=>{
       switch (action.type){
           case ACTION_CHANGE_USER:
             return {...state, user: action.payload}
@@ -24,11 +24,21 @@ export const reducer = combineReducers(reducers);
           case ACTION_REGISTRATION_USER:
             console.log('userLog')
             return {...state, user: action.payload}
+          case ACTION_SET_EMAIL_APPROVE_MODAL:
+            console.log(action)
+
+            return {...state, RegEmailApproveModalOpen: action.payload}
       }
-      console.log('stasadate.payload')
       
     return state
   }
+
+  const reducers = {
+    data: rootRedducer,
+    form: formReducer,
+    
+  };
+export const reducer = combineReducers(reducers);
 
 
   

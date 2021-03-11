@@ -45,6 +45,7 @@ import {Input} from '../Input/Input'
 import * as yup from "yup";
 const DataContext = createContext()
 import { yupResolver } from "@hookform/resolvers";
+import {store} from '../../store/store';
 
 // export const DataProvider = ({children}) => {
 //   const [data, setData] = useState({});
@@ -147,7 +148,10 @@ class App extends React.Component{
   //const {location} = useReactRouter()
         return (
             <>  
+                    <Provider store={store}>
+
               <Reg/>
+              </Provider>
 
 
                 {/* <Header/> */}
@@ -238,9 +242,9 @@ import { reducer as reduxFormReducer } from 'redux-form';
 const reducer = combineReducers({
   form: reduxFormReducer, // mounted under "form"
 });
-const store = (window.devToolsExtension
-  ? window.devToolsExtension()(createStore)
-  : createStore)(reducer);
+// const store = (window.devToolsExtension
+//   ? window.devToolsExtension()(createStore)
+//   : createStore)(reducer);
 
 import {Provider, connect} from 'react-redux';
 import {bindActionCreators} from 'redux'

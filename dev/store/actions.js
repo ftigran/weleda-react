@@ -2,6 +2,7 @@ export const ACTION_CHANGE_USER='ACTION_CHANGE_USER'
 export const ACTION_TOGGLE_ERROR='ACTION_TOGGLE_ERROR'
 export const ACTION_SET_POPUP='ACTION_SET_POPUP'
 export const ACTION_REGISTRATION_USER='ACTION_REGISTRATION_USER'
+export const ACTION_SET_EMAIL_APPROVE_MODAL='ACTION_SET_EMAIL_APPROVE_MODAL'
 
 export const regUser = (user)=>{
   return {
@@ -25,5 +26,11 @@ export const setPopup = (popupOpen)=>{
   return {
       type: ACTION_SET_POPUP,
       payload: popupOpen
+    }
+}
+export const setRegEmailApproveModal = (bool)=>{
+  return {
+      type: ACTION_SET_EMAIL_APPROVE_MODAL,
+      payload: bool
     }
 }
