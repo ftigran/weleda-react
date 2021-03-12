@@ -9,7 +9,7 @@ import priz from '../../img/prizes.png';
 export default class Main extends Component {
     render() {
         return (
-            <Grid container direction='column' className={'Roadmap'}>
+            <Grid container direction='column' className={'Roadmap'} id='c_rules'>
                 {/* <Grid item xs={8} className={'RoadmapContainer'}> */}
                     <div className='RoadmapBlock'>
                         <span className='RoadmapNumb'>1

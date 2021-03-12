@@ -30,32 +30,32 @@ const List=()=> {
         scroll.scrollToTop()
     }
 
-    // const scrollLinks = {
-    //     c_main: 'Главная',
-    //     c_rules: 'Правила',
+    const scrollLinks = {
+        c_main: 'Главная',
+        c_rules: 'Правила',
     //     c_prizes: 'Призы',
-    //     c_winners: 'Победители',
-    // }
+        c_winners: 'Победители',
+     }
     return(
         <nav className={'headerList'}>
             <ul>
-            {/* {Object.entries(scrollLinks).map(([key, val]) => (
+            {Object.entries(scrollLinks).map(([key, val]) => (
                             <li key={key}>
                                 <ScrollLink
-                                    onClick={() => handleClick('c_main')}
+                                    onClick={() => handleClick(key)}
                                     activeClass="active"
-                                    to={'c_main'}
+                                    to={key}
                                     spy
                                     smooth
                                     duration={700}
                                     //ignoreCancelEvents
                                 >
-                                    Главная
+                                    {val}
                                 </ScrollLink>
                             </li>
-                        ))} */}
+                        ))}
                         <li>
-                                <ScrollLink
+                                {/* <ScrollLink
                                     onClick={() => handleClick('c_main')}
                                     activeClass="active"
                                     to={'c_main'}
@@ -65,9 +65,9 @@ const List=()=> {
                                     //ignoreCancelEvents
                                 >
                                     Главная
-                                </ScrollLink>
+                                </ScrollLink> */}
                         </li>
-                        <li >
+                        {/* <li >
                             <Link component={NavLink} to="/rules" onClick={scrollToTop}>
                                 Правила
                             </Link>
@@ -76,18 +76,18 @@ const List=()=> {
                             <Link component={NavLink} to="/winners" onClick={scrollToTop}>
                                 Победители
                             </Link>
-                        </li>
+                        </li> */}
                         <li >
                             <Link component={NavLink} to="/reg" onClick={scrollToTop}>
                                 Регистрация
                             </Link>
                         </li>
                         <li >
-                            <Link component={NavLink} to="/cabinet" onClick={scrollToTop}>
+                            <Link component={NavLink} to="/cabinet" onClick={scrollToTop} spy>
                                 Личный кабинет
-                                {/* <Provider store={store}>
+                                <Provider store={store}>
                                     <LoginModal/>
-                                </Provider> */}
+                                </Provider>
                             </Link>
                         </li>
                 {/* {<li>

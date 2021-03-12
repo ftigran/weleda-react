@@ -11,7 +11,7 @@ import './cabinet.scss'
 const main = () => {
     return (
         <>  
-            <Grid className='pageBG' container justify='center'>
+            <Grid className='pageBG' container justify='center' id='cabinet'>
                 <Grid container  justify='center' className='pageWrapper'>
                         <Grid item className='pageContainer'>
                         <Lkinfo/>

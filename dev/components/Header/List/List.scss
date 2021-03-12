@@ -27,13 +27,12 @@
     }
     a{
         text-decoration: none;
+        font-weight: 500;
         
         color: #000;
-        &.active a{
 
             // border-bottom: 2px solid #fff;
             // transition: all 0.4s;
-        }
     }
 
     .headerListIcoTablet, .headerListMenu{

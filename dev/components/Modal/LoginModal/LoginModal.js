@@ -5,7 +5,7 @@ import Modal from '../Modal'
 import { changeUser, toggleError} from "../../../store/actions";
 import './LoginModal.scss'
 //import {WrapedUserError} from '../UserLoginErrorModal/UserLoginErrorModal'
-import {sbros} from '../SimpleModal/SimpleModal'
+import {Sbros} from '../SimpleModal/SimpleModal'
 import { Field, reduxForm } from 'redux-form';
 import { renderTextField as TextField } from '../../regForm/renderTextField'
 import {required, phoneNumber, promoNumber, email, maxLength, minLength, kirilicName, instaUser, isTrue, pass} from '../../TextField/validation'
@@ -22,7 +22,51 @@ import {
   Route,
   Link
 } from "react-router-dom";
-export function LoginModal(){
+
+const logForm=(props)=>{
+  const { handleSubmit, pristine, reset, submitting } = props;
+  
+  return(
+<form onSubmit={handleSubmit} className='regForm'>
+                <Grid container justify='space-between'>
+                  <Grid item className='FormTextFieldContainer'>
+                      <Field
+                        name="email"
+                        component={TextField}
+                        type="email"
+                        label="Email"
+                        validate={[required, email]}
+                      />
+                      <Field
+                        name="password"
+                        component={TextField}
+                        type="password"
+                        label="Пароль"
+                        validate={[required, pass]}
+                      />
+                  </Grid>
+                  {/* <Sbros/> */}
+                  <Button type="submit" variant='contained' label>Войти</Button>
+                  <Button 
+            type="submit"
+            variant='contained'
+            size='large'>Зарегистрироваться</Button>
+                </Grid>
+      {/* <Grid container direction='column' className="regFormDown">
+       <RegEmailApproveModal/>
+      </Grid> */}
+    </form>
+)
+}
+// export default connect(
+//     null,
+//     {changeUser, toggleError}
+//   )(LoginModal);
+const LoginForm = reduxForm({
+  form: 'loginForm', // a unique identifier for this form
+})(logForm);
+
+export default function LoginModal(){
     const dispatch = useDispatch();
     const users = [
         createUsers('1@Q.ru', 555555, 'Юлия','+7 999 333 2775', 4, 2),
@@ -42,24 +86,25 @@ export function LoginModal(){
     let history = useHistory();
 
     function handleEnter(){
-          let name;
-          users.map((user)=>{
-              if (user.email==email&&user.pass==pass){
-                name = user;
-                console.log(name)
-              }
-          })
-        if(name){
-          dispatch(changeUser({
-              prizi: name.prizi,
-              cheki:name.cheki,
-              name: name.name,
-              phone: name.phone
-            }))
-            //history.push('/cabinet');
-        }else {
-            dispatch(toggleError())
-        }
+      console.log('enter')
+        //   let name;
+        //   users.map((user)=>{
+        //       if (user.email==email&&user.pass==pass){
+        //         name = user;
+        //         console.log(name)
+        //       }
+        //   })
+        // if(name){
+        //   dispatch(changeUser({
+        //       prizi: name.prizi,
+        //       cheki:name.cheki,
+        //       name: name.name,
+        //       phone: name.phone
+        //     }))
+        //     //history.push('/cabinet');
+        // }else {
+        //     dispatch(toggleError())
+        // }
       };
       
     function createUsers(email, pass, name,phone, cheki=0, prizi=0){
@@ -80,29 +125,10 @@ export function LoginModal(){
                     isOpen={true}
                     mainBtnVariant='outlined'
             >
-              <form onSubmit={handleEnter} className='regForm'>
-                <Grid container justify='space-between'>
-                  <Grid item className='FormTextFieldContainer'>
-                      <Field
-                        name="email"
-                        component={TextField}
-                        type="email"
-                        label="Email"
-                        validate={[required, email]}
-                      />
-                      <Field
-                        name="password"
-                        component={TextField}
-                        type="password"
-                        label="Пароль"
-                        validate={[required, pass]}
-                      />
-                  </Grid>
-                </Grid>
-      {/* <Grid container direction='column' className="regFormDown">
-       <RegEmailApproveModal/>
-      </Grid> */}
-    </form>
+              <Provider store={store}>
+                <LoginForm onSubmit={handleEnter}/>
+              </Provider>
+
             {/* <WrapedUserError/> */}
 
                 {/* <TextField handler={SetEmail} className='LoginModalEmail' type='email' placeholder='E-mail'></TextField> */}
@@ -152,11 +178,3 @@ export function LoginModal(){
         )
     }
     
-
-// export default connect(
-//     null,
-//     {changeUser, toggleError}
-//   )(LoginModal);
-export default reduxForm({
-  form: 'loginForm', // a unique identifier for this form
-})(LoginModal);

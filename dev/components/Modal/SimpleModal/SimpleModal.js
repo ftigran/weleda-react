@@ -67,17 +67,70 @@ export const WherePromocode = ()=>
         </Modal>
     )
 }
-export const Sbros= ()=><SimpleModal
-title={'Восстановление пароля'}
-text={'Пароль к твоему Личному кабинету отправлен на указанный e-mail'}
-btnText={'OK'}
-isOpen={true}
-/>
+import { Field, reduxForm } from 'redux-form';
+import {setRegEmailApproveModal} from '../../../store/actions'
+export const Sbros = ()=>
+{
+    const dispatch = useDispatch()
 
-export const verify= <SimpleModal
-title={'Подтверждение данных'}
+    const handler=()=>{
+        dispatch(setRegEmailApproveModal(true));
+    }
+
+    return (
+        <Modal 
+        className={'ModalInsta SimpleModal'} 
+        title={'Восстановление пароля?'} 
+        btnText={'Забыли пароль?'}
+        //mainBtnFull={this.props.mainBtnFull}
+        //btnFull={this.props.btnFull}
+        >
+            <p className={'SimpleModalText'}>
+                Укажи E-mail, с которым ты зарегистрирован в Акции.
+                Пароль к твоему Личqqному кабинету будет отправлен на указанный E-mail.
+            </p>
+            
+            {/* <SbrosFormWrapped/> */}
+        </Modal>
+    )
+}
+import {required, email} from '../../TextField/validation'
+import TextField from '../../regForm/renderTextField'
+import { useSelector, useDispatch } from 'react-redux'
+import Button from '@material-ui/core/Button';
+
+
+  
+const SbrosFrom= (props)=>{
+//   const handleSubmit= (e)=>{
+//     console.log(e)
+//     }
+    const { handleSubmit, pristine, reset, submitting } = props;
+    return (
+    
+        <form onSubmit={handleSubmit} className='regForm'>
+            <Field
+            name="email"
+            component={TextField}
+            type="email"
+            label="Email"
+            validate={[required, email]}
+            />
+            {/* <Button type='submit'>Восстановить</Button> */}
+        </form>
+)}
+const SbrosFormWrapped = reduxForm({
+    form: 'SbrosForm', // a unique identifier for this form
+  })(SbrosFrom);
+const SbrosSendMail =()=><SimpleModal
+title={'Восстановление пароля?'}
 text={'На указанный E-mail отправлен пароль. Для завершения регистрации в Акции войди в личный кабинет, указав полученный в письме пароль. Если письмо с паролем так и не приходит, обратись в службу поддержки Акции.'}
 btnText={'Зарегистрироваться'} 
+/>
+export const verify= <SimpleModal
+title={'Подтверждение данных'}
+text={'Пароль к твоему Личному кабинету отправлен на указанный e-mail.'}
+btnText={'ОК'} 
 />
 
 

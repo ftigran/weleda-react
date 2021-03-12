@@ -11,7 +11,6 @@ import RegEmailApproveModal from '../../../Modal/RegEmailApproveModal/RegEmailAp
 function showResults() {
 }
 const Reg = () =>{
-  const [open, setOpen] = React.useState();
   const dispatch = useDispatch()
 
     const handler=()=>{
@@ -31,7 +30,7 @@ const Reg = () =>{
                     <h3 className='regTitle'>Регистрация</h3>
                         {/* <Button onClick={handler}>qq</Button> */}
                         <Provider store={store}>
-                            <SimpleForm onSubmit={handler} />
+                            <SimpleForm onSubmit={handler}/>
                         </Provider>
                         
                         {/* onSubmit={handler} */}

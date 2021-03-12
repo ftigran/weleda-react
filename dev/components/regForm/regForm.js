@@ -12,22 +12,12 @@ import {RegEmailApproveModal} from '../Modal/RegEmailApproveModal/RegEmailApprov
 import Checkbox from '../Checkbox/Checkbox'
 import {WherePromocode} from '../Modal/SimpleModal/SimpleModal'
 import './regForm.scss'
-// const firstCheckBox=(props)=>(
-//   <Checkbox {...props}>
-//     
-//   </Checkbox>
-// )
-// const secondCheckBox=(props)=>(
-//   <Checkbox {...props}>
-//     <a href='empty'>Я согласен(а) получать Email- и SMS-рассылки</a>
-//   </Checkbox>
-// )
+
 const SimpleForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   //const counter = useSelector(state => state)
   //const history = useHistory;
   //console.log(counter)
-  const dispatch = useDispatch()
 
 //   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 // //dispatch({ type: 'ACTION_SET_EMAIL_APPROVE_MODAL', payload: 55 })
@@ -93,7 +83,6 @@ const SimpleForm = props => {
       <Grid item className="WherePromocodeWrap">
         <WherePromocode/>
       </Grid>
-
       <Field
             name="rulesCB"
             component={Checkbox}

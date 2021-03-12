@@ -32,6 +32,7 @@ import '@brainhubeu/react-carousel/lib/style.css';
 const DataContext = createContext()
 import {store} from '../../store/store';
 import {Provider, connect} from 'react-redux';
+import ScrollSection from '../scroll-section/scroll-section'
 
 import Reg from './pages/reg/reg'
 
@@ -61,7 +62,7 @@ const App = () => {
                         
                     </Switch>
                 <Footer/>
-                {/* <ScrollSection/> */}
+                <ScrollSection/>
             </>
         );
 }
