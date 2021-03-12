@@ -1,5 +1,5 @@
 import React from "react";
-import Modal from '../Modal'
+import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 import './RegEmailApproveModal.scss';
 import '../SimpleModal/SimpleModal.scss';
@@ -9,14 +9,9 @@ import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import { useSelector, useDispatch } from 'react-redux'
 import {setRegEmailApproveModal} from '../../../store/actions'
-export const RegEmailApproveModal = ({isOpen}) => {
-    const open = useSelector(state => state.RegEmailApproveModalOpen)
+export const RegEmailApproveModal = () => {
+    const open = useSelector(state => state.data.RegEmailApproveModalOpen)
     const dispatch = useDispatch()
-
-    //const [open, setOpen] = React.useState(isOpen);
-    const handleOpen = () => {
-        dispatch(setRegEmailApproveModal(true));
-    };
     const handleClose = () => {
         dispatch(setRegEmailApproveModal(false));
     };
@@ -24,7 +19,7 @@ export const RegEmailApproveModal = ({isOpen}) => {
         <div className='modalContainer'>
             <Button 
             type="submit"
-            variant='contained' 
+            variant='contained'
             size='large'>Зарегистрироваться</Button>
             <Modal
                 aria-labelledby="transition-modal-title"

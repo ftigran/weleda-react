@@ -47,5 +47,10 @@ export const instaUser = value =>
 value && !/@[a-zA-Z0-9]{1,}/g.test(value)
     ? 'Введите действительный логин'
     : undefined 
-
- 
+export const isTrue = (error = '') => (value) => {
+  return value === true ? undefined : error || 'Необходимо принять правила';
+};
+export const pass = value =>
+    value && !/[0-9]{6}/m.test(value)
+      ? 'Введите пароль из 6 цифр'
+      : undefined

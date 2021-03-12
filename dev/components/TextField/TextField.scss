@@ -11,6 +11,12 @@
     width: 100%;
     min-height: 99px;
     max-width:554px;
+    .MuiFormHelperText-root.MuiFormHelperText-contained.Mui-error{
+        font-size: 16px;
+        line-height: 150%;
+        margin-left: 1px;
+        margin-top: 16px;
+    }
     .MuiOutlinedInput-notchedOutline{
         border: 1px solid #008F3F;
     border-radius: 8px;

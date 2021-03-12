@@ -2,8 +2,13 @@ import React, { Component } from "react";
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import CB from '../Checkbox/Checkbox'
-
+import {useDispatch} from 'react-redux'
+import {FormGroup, FormControlLabel, Checkbox, FormControl, FormHelperText} from '@material-ui/core'
 const lkInfo = () => {
+    // const dispatch = useDispatch()
+    // const handlerCB=()=>{   
+    //     dispatch()
+    // }
     return (
         <div className="lkInfo">
             <Grid container justify='space-between' className='lkInfoTitle'>
@@ -28,12 +33,31 @@ const lkInfo = () => {
                     <span>@Instagram</span><span>alexandra_konstantinova</span>
                 </Grid>
                 <Grid item xs={6} className='lkInfoString'>
-                    <CB>
-                        Я согласен(а) получать информацию об акции по Email
-                    </CB>
+                <FormControlLabel
+    control={
+        <Checkbox
+        className="checkbox"
+        name="checkedB"
+        color="primary"
+        // onChange={handler}
+        checkedIcon={<img src={checked}/>}
+        icon={<img src={check}/>}
+        />
+    }
+    className
+    ='checkboxContainer'
+    label={
+        'Я согласен(а) получать информацию об акции по Email'
+
+    }
+    />
                 </Grid>
             </Grid>
         </div>
     )
 }
 export default lkInfo
+
+import '../Checkbox/Checkbox.scss'
+import check from '../../img/checkbox.svg'
+import checked from '../../img/checkboxChecked.svg'

@@ -28,8 +28,8 @@ const Reg = () =>{
             <Grid container justify='center'>
                 <Grid container justify='center' className='backgroundContainer'>
                     <Grid container className='pageContainer'>
-                    <h3>Регистрация</h3>
-                        <Button onClick={handler}>qq</Button>
+                    <h3 className='regTitle'>Регистрация</h3>
+                        {/* <Button onClick={handler}>qq</Button> */}
                         <Provider store={store}>
                             <SimpleForm onSubmit={handler} />
                         </Provider>

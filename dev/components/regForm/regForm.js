@@ -1,17 +1,31 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { renderTextField as TextField } from './renderTextField'
-import {required, phoneNumber, promoNumber, email, maxLength, minLength, kirilicName, instaUser} from '../TextField/validation'
+import {required, phoneNumber, promoNumber, email, maxLength, minLength, kirilicName, instaUser, isTrue} from '../TextField/validation'
 import { Grid } from '@material-ui/core';
 import './regForm.scss'
 import { useSelector, useDispatch } from 'react-redux'
 import {setRegEmailApproveModal} from '../../store/actions'
-import { useHistory } from 'react-router';
-import RegEmailApproveModal from '../Modal/RegEmailApproveModal/RegEmailApproveModal'
+import {Provider, connect} from 'react-redux';
+import {store} from '../../store/store';import { useHistory } from 'react-router';
+import {RegEmailApproveModal} from '../Modal/RegEmailApproveModal/RegEmailApproveModal'
+import Checkbox from '../Checkbox/Checkbox'
+import {WherePromocode} from '../Modal/SimpleModal/SimpleModal'
+import './regForm.scss'
+// const firstCheckBox=(props)=>(
+//   <Checkbox {...props}>
+//     
+//   </Checkbox>
+// )
+// const secondCheckBox=(props)=>(
+//   <Checkbox {...props}>
+//     <a href='empty'>Я согласен(а) получать Email- и SMS-рассылки</a>
+//   </Checkbox>
+// )
 const SimpleForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
-  const counter = useSelector(state => state)
-  const history = useHistory;
+  //const counter = useSelector(state => state)
+  //const history = useHistory;
   //console.log(counter)
   const dispatch = useDispatch()
 
@@ -26,7 +40,7 @@ const SimpleForm = props => {
     <form onSubmit={handleSubmit} className='regForm'>
       <Grid container justify='space-between'>
         <Grid item xs={6} className='FormTextFieldContainer'>
-          {/* <Field
+          <Field
               name="firstName"
               component={TextField}
               type="text"
@@ -48,10 +62,10 @@ const SimpleForm = props => {
               type="text"
               label="@instagram"
               validate={[required, instaUser]}
-            /> */}
+            />
         </Grid>
         <Grid item xs={6} className='FormTextFieldContainer'>
-          {/* <Field
+          <Field
               name="phone"
               component={TextField}
               type="tel"
@@ -65,7 +79,7 @@ const SimpleForm = props => {
               type="email"
               label="Email"
               validate={[required, email]}
-            /> */}
+            />
             <Field
               name="promocode"
               component={TextField}
@@ -75,13 +89,27 @@ const SimpleForm = props => {
             />
         </Grid>
       </Grid>
-      <div>
-        <RegEmailApproveModal/>
-        <button type="submit" >Submit</button>
-        <button type="button" disabled={pristine || submitting} onClick={reset}>
-          Clear Values
-        </button>
-      </div>
+      <Grid container direction='column' className="regFormDown">
+      <Grid item className="WherePromocodeWrap">
+        <WherePromocode/>
+      </Grid>
+
+      <Field
+            name="rulesCB"
+            component={Checkbox}
+            type="checkbox"
+            label={<>Я прочитал(а) и согласен(а) с <a href='empty'>Правилами акции</a> и  <a href='empty'>Пользовательским соглашением</a></>}
+            validate={[isTrue()]}
+          />
+      <Field
+        name="emailPromoCB"
+        component={Checkbox}
+        label={<a href='empty'>Я согласен(а) получать Email- и SMS-рассылки</a>
+      }
+        type="checkbox"
+      />
+      <RegEmailApproveModal/>
+      </Grid>
     </form>
   );
 };

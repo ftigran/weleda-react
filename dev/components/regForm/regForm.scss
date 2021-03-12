@@ -2,5 +2,44 @@
     width: 100%;
     .FormTextFieldContainer{
         max-width: 554px;
+        .TextFields{
+            padding-bottom: 34px;
+        }
+    }
+    .regFormDown{
+        position: relative;
+    }
+    .WherePromocodeWrap{
+        position: absolute;
+        top: -67px;
+        align-self: flex-end;
+    }
+    .modalContainer{
+        padding-top: 17px;
+        padding-bottom: 30px;
+    }
+    .MuiFormControl-root.checkboxFormControl {
+        padding-bottom: 15px;
+        .MuiTypography-root{
+            text-decoration: none;
+            font-size: 16px;
+            line-height: 28px;
+            a{
+                color: #000;
+                &:visited{
+                    color: #000;
+
+                }
+            }
+            
+        }
+        .MuiFormHelperText-root{
+            color: #f44336;
+        }
+        .MuiButtonBase-root{
+            margin-left: 0;
+            margin-right: 12px;
+
+        }
     }
 }

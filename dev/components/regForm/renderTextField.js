@@ -1,12 +1,11 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import InputMask from "react-input-mask";
-
+import '../TextField/TextField.scss'
 export const renderTextField = ({
     label,
     input,
     className='',
-    type='text',
     meta: { touched, invalid, error },
     ...custom
   }) => {
@@ -19,6 +18,7 @@ export const renderTextField = ({
               variant="outlined"
               error={touched && invalid}
               helperText={touched && error}
+              className={className}
               {...custom}
             />
             </InputMask>
@@ -31,7 +31,8 @@ export const renderTextField = ({
                     error={touched && invalid}
                     helperText={touched && error}
                     {...custom}
-                  />
+              className={className}
+              />
                   </InputMask>)
           }
             return(
@@ -42,5 +43,6 @@ export const renderTextField = ({
               helperText={touched && error}
               {...input}
               {...custom}
+              className={className}
             />
   )}

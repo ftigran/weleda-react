@@ -15,7 +15,9 @@ import useReactRouter from 'use-react-router'
 import './List.scss'
 // import UserWithStore from './User/User'
 import NavLink from './NavLink/NavLink'
-
+import LoginModal from '../../Modal/LoginModal/LoginModal'
+import {store} from '../../../store/store'
+import { Provider } from "react-redux";
 const List=()=> {
     const {history} = useReactRouter()
 
@@ -81,8 +83,11 @@ const List=()=> {
                             </Link>
                         </li>
                         <li >
-                            <Link component={NavLink} to="/lk" onClick={scrollToTop}>
+                            <Link component={NavLink} to="/cabinet" onClick={scrollToTop}>
                                 Личный кабинет
+                                {/* <Provider store={store}>
+                                    <LoginModal/>
+                                </Provider> */}
                             </Link>
                         </li>
                 {/* {<li>

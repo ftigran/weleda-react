@@ -18,15 +18,15 @@ const Header = () => {
   const trigger = useScrollTrigger({target: window})
   const [scroll, setScroll] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScroll(window.scrollY > 150);
-    });
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => {
+  //     setScroll(window.scrollY > 150);
+  //   });
+  //}, []);
     return(
       <>
-      <Slide appear={false} direction="down" in={!trigger}>
-          <AppBar className={scroll ? "header bg-black" : "header"}>
+      <Slide appear={false} direction="down" in={true}>
+          <AppBar className={"header"}>
               <Grid className={'headerContainer'}
               //height={{md: 50, lg: 70}}
               container

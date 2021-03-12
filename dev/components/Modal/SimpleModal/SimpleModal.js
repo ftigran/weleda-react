@@ -49,7 +49,24 @@ export const TaskSend = ()=>
         </Modal>
     )
 }
-
+import promocodeImg from '../../../img/wherePromocode.png'
+export const WherePromocode = ()=>
+{
+    return (
+        <Modal 
+        className={'ModalInsta SimpleModal'} 
+        title={'Где найти промокод?'} 
+        btnText={'Где найти промокод?'}
+        //mainBtnFull={this.props.mainBtnFull}
+        //btnFull={this.props.btnFull}
+        >
+            <p className={'SimpleModalText'}>
+            Ваш уникальный промокод расположен на листовке, лежащей внутри подарочного набора
+            «100 лет экспертизы Weleda», под QR-кодом.</p>
+            <img src={promocodeImg}/>
+        </Modal>
+    )
+}
 export const Sbros= ()=><SimpleModal
 title={'Восстановление пароля'}
 text={'Пароль к твоему Личному кабинету отправлен на указанный e-mail'}
@@ -62,6 +79,8 @@ title={'Подтверждение данных'}
 text={'На указанный E-mail отправлен пароль. Для завершения регистрации в Акции войди в личный кабинет, указав полученный в письме пароль. Если письмо с паролем так и не приходит, обратись в службу поддержки Акции.'}
 btnText={'Зарегистрироваться'} 
 />
+
+
 export const regCheck= <SimpleModal
 title={'Регистрация чека'}
 text={'Спасибо, чек принят для проверки. Результат проверки станет доступен в твоем Личном кабинете в течение ближайших 3-х рабочих дней.'}

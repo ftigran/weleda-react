@@ -1,27 +1,37 @@
 import React, { Component } from "react";
+import {FormGroup, FormControlLabel, Checkbox, FormControl, FormHelperText} from '@material-ui/core'
 
-import Checkbox from '@material-ui/core/Checkbox';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import './Checkbox.scss'
 import check from '../../img/checkbox.svg'
 import checked from '../../img/checkboxChecked.svg'
 
-export default function (props){
+export default function ({label, input, meta: {touched, invalid, error}, disabled, ...props}){
     return(
-        <FormControlLabel
+        <FormControl className={'checkboxFormControl'}>
+      <FormGroup row>
+      <FormControlLabel
                 control={
                     <Checkbox
                     className="checkbox"
                     name="checkedB"
                     color="primary"
+                disabled={disabled}
+                    onChange={(event) => {
+                        input.onChange(event)
+                      }}
+                      checked={!!input.value}
                     checkedIcon={<img src={checked}/>}
                     icon={<img src={check}/>}
                     />
                 }
                 className
                 ='checkboxContainer'
-                label={props.children}
+                label={label}
                 />
+      </FormGroup>
+      <FormHelperText>{touched && invalid && <>{error}</>}</FormHelperText>
+    </FormControl>
+        
     )
 }
 

@@ -1,7 +1,10 @@
 .backgroundContainer{
     max-width:1414px;
     .pageContainer{
-        max-width:1127px
-
+        max-width:1127px;
+        padding-top: 114px;
+        .regTitle{
+            margin-bottom: 36px;
+        }
     }
 }
