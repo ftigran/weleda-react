@@ -68,13 +68,13 @@ export const WherePromocode = ()=>
     )
 }
 import { Field, reduxForm } from 'redux-form';
-import {setRegEmailApproveModal} from '../../../store/actions'
+import {setResetEmailApproveModal} from '../../../store/actions'
 export const Sbros = ()=>
 {
     const dispatch = useDispatch()
 
     const handler=()=>{
-        dispatch(setRegEmailApproveModal(true));
+        dispatch(setResetEmailApproveModal(true));
     }
 
     return (
@@ -89,18 +89,18 @@ export const Sbros = ()=>
                 Укажи E-mail, с которым ты зарегистрирован в Акции.
                 Пароль к твоему Личqqному кабинету будет отправлен на указанный E-mail.
             </p>
-            
-            {/* <SbrosFormWrapped/> */}
+            <SbrosFormWrapped onSubmit={handler}/>
         </Modal>
     )
 }
 import {required, email} from '../../TextField/validation'
-import TextField from '../../regForm/renderTextField'
+import {renderTextField} from '../../regForm/renderTextField'
 import { useSelector, useDispatch } from 'react-redux'
 import Button from '@material-ui/core/Button';
+import {setResetEmailApproveModal} from '../../../store/actions'
 
+import Backdrop from '@material-ui/core/Backdrop';
 
-  
 const SbrosFrom= (props)=>{
 //   const handleSubmit= (e)=>{
 //     console.log(e)
@@ -111,22 +111,58 @@ const SbrosFrom= (props)=>{
         <form onSubmit={handleSubmit} className='regForm'>
             <Field
             name="email"
-            component={TextField}
+            component={renderTextField}
             type="email"
             label="Email"
             validate={[required, email]}
             />
-            {/* <Button type='submit'>Восстановить</Button> */}
+            <Button type='submit'>Восстановить</Button>
+            <SbrosSendMail/>
         </form>
 )}
 const SbrosFormWrapped = reduxForm({
     form: 'SbrosForm', // a unique identifier for this form
   })(SbrosFrom);
-const SbrosSendMail =()=><SimpleModal
-title={'Восстановление пароля?'}
-text={'На указанный E-mail отправлен пароль. Для завершения регистрации в Акции войди в личный кабинет, указав полученный в письме пароль. Если письмо с паролем так и не приходит, обратись в службу поддержки Акции.'}
-btnText={'Зарегистрироваться'} 
-/>
+const SbrosSendMail =()=>{
+    const open = useSelector(state => state.data.ResetEmailApproveModalOpen)
+    const dispatch = useDispatch()
+
+    const handleClose = () => {
+        dispatch(setResetEmailApproveModal(false));
+    };
+    return(
+        <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        className={'modal'}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+        // disableScrollLock={true}
+      >
+        <Fade in={open}>
+          <div className={'modalWindow LoginModal SimpleModal'}>
+            <h3 id="transition-modal-title">Восстановление пароля?</h3>
+                <IconButton
+                aria-label="Закрыть окно"
+                className={'modalWindowClose'}
+                onClick={handleClose}
+                >
+                    <CloseIcon/>
+                </IconButton>
+                На указанный E-mail отправлен пароль. Для завершения регистрации в Акции войди в личный кабинет, указав полученный в письме пароль. Если письмо с паролем так и не приходит, обратись в службу поддержки Акции.
+<Button>ОК
+    </Button>          
+    </div>
+        </Fade>
+      </Modal>
+    )
+}
+
 export const verify= <SimpleModal
 title={'Подтверждение данных'}
 text={'Пароль к твоему Личному кабинету отправлен на указанный e-mail.'}

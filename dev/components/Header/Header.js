@@ -13,6 +13,8 @@ import logo from '../../img/logo.svg'
 import './Header.scss'
 //import {route} from '../App'
 import NavLink from './List/NavLink/NavLink'
+import { Provider, useDispatch } from "react-redux";
+import {store} from '../../store/store'
 
 const Header = () => {
   const trigger = useScrollTrigger({target: window})
@@ -35,7 +37,10 @@ const Header = () => {
                 <Link component={NavLink} className={'menu_item_in'} to="/">
                   <img src={logo}/>
                 </Link>
+                <Provider store={store}>
                             <List/>
+                            </Provider>
+
                             {/* <SlideList/> */}
             </Grid>
             </AppBar>

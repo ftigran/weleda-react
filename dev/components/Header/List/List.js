@@ -16,8 +16,9 @@ import './List.scss'
 // import UserWithStore from './User/User'
 import NavLink from './NavLink/NavLink'
 import LoginModal from '../../Modal/LoginModal/LoginModal'
-import {store} from '../../../store/store'
-import { Provider } from "react-redux";
+import { Provider, useDispatch } from "react-redux";
+import {setLoginModal} from '../../../store/actions'
+
 const List=()=> {
     const {history} = useReactRouter()
 
@@ -29,7 +30,10 @@ const List=()=> {
     const scrollToTop = () => {
         scroll.scrollToTop()
     }
-
+    const dispatch = useDispatch();
+    const handleOpenLoginModal = () => {
+        dispatch(setLoginModal(true))
+    };
     const scrollLinks = {
         c_main: 'Главная',
         c_rules: 'Правила',
@@ -83,13 +87,15 @@ const List=()=> {
                             </Link>
                         </li>
                         <li >
-                            <Link component={NavLink} to="/cabinet" onClick={scrollToTop} spy>
+                            {/* <Link component={NavLink} to="/cabinet" onClick={handleOpenLoginModal}> */}
+                            <a onClick={handleOpenLoginModal}>
                                 Личный кабинет
-                                <Provider store={store}>
-                                    <LoginModal/>
-                                </Provider>
-                            </Link>
+                            </a>
+                                
+                            {/* </Link> */}
                         </li>
+                        <LoginModal/>
+
                 {/* {<li>
                     <LinkR to='main' spy={true} smooth={true} duration={500}>
                         <Link to={"/pages/Pepsilays/"}>Главная</Link>

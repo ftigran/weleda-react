@@ -3,6 +3,8 @@ export const ACTION_TOGGLE_ERROR='ACTION_TOGGLE_ERROR'
 export const ACTION_SET_POPUP='ACTION_SET_POPUP'
 export const ACTION_REGISTRATION_USER='ACTION_REGISTRATION_USER'
 export const ACTION_SET_EMAIL_APPROVE_MODAL='ACTION_SET_EMAIL_APPROVE_MODAL'
+export const ACTION_LOGIN_MODAL='ACTION_LOGIN_MODAL'
+export const ACTION_RESET_EMAIL_APPROVE_MODAL='ACTION_RESET_EMAIL_APPROVE_MODAL'
 
 export const regUser = (user)=>{
   return {
@@ -31,6 +33,18 @@ export const setPopup = (popupOpen)=>{
 export const setRegEmailApproveModal = (bool)=>{
   return {
       type: ACTION_SET_EMAIL_APPROVE_MODAL,
+      payload: bool
+    }
+}
+export const setLoginModal = (bool)=>{
+  return {
+      type: ACTION_LOGIN_MODAL,
+      payload: bool
+    }
+}
+export const setResetEmailApproveModal = (bool)=>{
+  return {
+      type: ACTION_RESET_EMAIL_APPROVE_MODAL,
       payload: bool
     }
 }

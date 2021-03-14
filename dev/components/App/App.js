@@ -48,17 +48,17 @@ const App = () => {
             <>  
             <Header/>
                     <Switch location={location}>
-                        <Route key='faq' location={location} path={"/faq"}
+                        {/* <Route key='faq' location={location} path={"/faq"}
                         render={() => 
                             <FAQ/>} 
                             exact
-                            />
+                            /> */}
                         <Route path={"/reg"} render={() => <Registration/>}>
                         </Route>
                         <Route path={"/cabinet"} render={() => <Cabinet/>}/>
                         <Route key='index' location={location} path={"/"} render={() => 
                             <Main/>} exact/>
-                        <Route path="*" component={<Cabinet/>} />
+                        <Route path="*" render={() => <Cabinet/>} />
                         
                     </Switch>
                 <Footer/>

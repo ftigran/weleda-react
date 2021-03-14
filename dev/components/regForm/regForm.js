@@ -15,17 +15,7 @@ import './regForm.scss'
 
 const SimpleForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
-  //const counter = useSelector(state => state)
-  //const history = useHistory;
-  //console.log(counter)
 
-//   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-// //dispatch({ type: 'ACTION_SET_EMAIL_APPROVE_MODAL', payload: 55 })
-//   async const handler= (e)=>{
-//     await sleep(500); // simulate server latency
-//     window.alert(`You submitted:`);
-//   }
-//console.log(counter)
   return (
     <form onSubmit={handleSubmit} className='regForm'>
       <Grid container justify='space-between'>
