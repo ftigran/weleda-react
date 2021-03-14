@@ -50,14 +50,20 @@ const LogForm=(props)=>{
                         autoComplete="current-password"
                       />
                   </Grid>
-                  <Sbros/>
-                  <Button type="submit" variant='contained'>Войти</Button>
+                  <div  className='sbrosWrapper'>
+                    <Sbros/>
+                  </div>
+                  
+                  <Grid container justify='space-between'>
+                  <Button type="submit" variant='contained' size='small'>Войти</Button>
                   <Link  to="/reg" onClick={handleClose}>
                     <Button 
-            type="submit"
             variant='contained'
-            size='large' variant='outlined'>Зарегистрироваться</Button>
+            variant='outlined'
+            className='regBtn'>Зарегистрироваться</Button>
                             </Link>
+                  </Grid>
+                  
                   
                 </Grid>
     </form>
@@ -151,7 +157,7 @@ export default function LoginModal(){
       >
         <Fade in={open}>
           <div className={'modalWindow LoginModal SimpleModal'}>
-            <h3 id="transition-modal-title">Авторизация</h3>
+            <h3 id="transition-modal-title" className='regFormTitle'>Авторизация</h3>
                 <IconButton
                 aria-label="Закрыть окно"
                 className={'modalWindowClose'}
