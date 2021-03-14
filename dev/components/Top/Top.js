@@ -26,8 +26,8 @@ const Main =()=> {
                             <Grid container alignItems='center' className='TopContainer4' direction='column'>
                             <img src={logo}/>
                             <h1>
-                                Стань амбассадором бренда <br/>
-                                и выиграй призы от Weleda
+                                Стань<br/> амбассадором бренда <br/>
+                                и выиграй призы<br/> от Weleda
                             </h1>
                             <Button variant='contained'>
                                 Выполнить задание

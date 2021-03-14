@@ -10,7 +10,7 @@ const initialState = {
   // error: false,
   // popupOpen: false,
   RegEmailApproveModalOpen: false,
-  LoginModalOpen: true,
+  LoginModalOpen: false,
   ResetEmailApproveModalOpen: false,
 }
   export const rootRedducer = (state=initialState, action)=>{
