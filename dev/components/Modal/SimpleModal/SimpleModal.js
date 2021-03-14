@@ -97,8 +97,9 @@ import {required, email} from '../../TextField/validation'
 import {renderTextField} from '../../regForm/renderTextField'
 import { useSelector, useDispatch } from 'react-redux'
 import Button from '@material-ui/core/Button';
-import {setResetEmailApproveModal} from '../../../store/actions'
-
+import Fade from '@material-ui/core/Fade';
+import CloseIcon from '@material-ui/icons/Close';
+import IconButton from '@material-ui/core/IconButton';
 import Backdrop from '@material-ui/core/Backdrop';
 
 const SbrosFrom= (props)=>{
@@ -116,22 +117,25 @@ const SbrosFrom= (props)=>{
             label="Email"
             validate={[required, email]}
             />
-            <Button type='submit'>Восстановить</Button>
+            <Button type='submit' variant='contained' size='large'>Восстановить</Button>
             <SbrosSendMail/>
         </form>
 )}
 const SbrosFormWrapped = reduxForm({
     form: 'SbrosForm', // a unique identifier for this form
   })(SbrosFrom);
+
+  import {Modal as MatModal} from '@material-ui/core'
+
 const SbrosSendMail =()=>{
     const open = useSelector(state => state.data.ResetEmailApproveModalOpen)
     const dispatch = useDispatch()
-
+console.log(open)
     const handleClose = () => {
         dispatch(setResetEmailApproveModal(false));
     };
     return(
-        <Modal
+        <MatModal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={'modal'}
@@ -152,14 +156,14 @@ const SbrosSendMail =()=>{
                 className={'modalWindowClose'}
                 onClick={handleClose}
                 >
-                    <CloseIcon/>
+                <CloseIcon/>
                 </IconButton>
                 На указанный E-mail отправлен пароль. Для завершения регистрации в Акции войди в личный кабинет, указав полученный в письме пароль. Если письмо с паролем так и не приходит, обратись в службу поддержки Акции.
-<Button>ОК
+<Button  onClick={handleClose} variant='contained' size='large'>ОК
     </Button>          
     </div>
         </Fade>
-      </Modal>
+      </MatModal>
     )
 }
 

@@ -11,7 +11,7 @@ const initialState = {
   // popupOpen: false,
   RegEmailApproveModalOpen: false,
   LoginModalOpen: true,
-  ResetEmailApproveModalOpen: true,
+  ResetEmailApproveModalOpen: false,
 }
   export const rootRedducer = (state=initialState, action)=>{
       switch (action.type){
