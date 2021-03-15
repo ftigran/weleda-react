@@ -63,7 +63,7 @@ export const WherePromocode = ()=>
             <p className={'SimpleModalText'}>
             Ваш уникальный промокод расположен на листовке, лежащей внутри подарочного набора
             «100 лет экспертизы Weleda», под QR-кодом.</p>
-            <img src={promocodeImg}/>
+            <img src={promocodeImg} width='100%'/>
         </Modal>
     )
 }
@@ -109,7 +109,7 @@ const SbrosFrom= (props)=>{
     const { handleSubmit, pristine, reset, submitting } = props;
     return (
     
-        <form onSubmit={handleSubmit} className='regForm'>
+        <form onSubmit={handleSubmit}>
             <Field
             name="email"
             component={renderTextField}

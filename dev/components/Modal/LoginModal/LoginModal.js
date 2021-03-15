@@ -29,9 +29,9 @@ const LogForm=(props)=>{
         scroll.scrollToTop()
     };
   return(
-<form onSubmit={handleSubmit} className='regForm'>
+<form onSubmit={handleSubmit} >
                 <Grid container justify='space-between'>
-                  <Grid item className='FormTextFieldContainer'>
+                  <Grid xs={12} item className='FormTextFieldContainer'>
                       <Field
                         name="email"
                         component={renderTextField}
@@ -50,11 +50,12 @@ const LogForm=(props)=>{
                         autoComplete="current-password"
                       />
                   </Grid>
+                  
+                  
+                  <Grid container justify='space-between' wrap='nowrap' className='regBtnsWrap'>
                   <div  className='sbrosWrapper'>
                     <Sbros/>
                   </div>
-                  
-                  <Grid container justify='space-between'>
                   <Button type="submit" variant='contained' size='small'>Войти</Button>
                   <Link  to="/reg" onClick={handleClose}>
                     <Button 
@@ -100,7 +101,7 @@ export default function LoginModal(){
     }
     //let email;
     //let pass;
-    const open = useSelector(state => state.data.LoginModalOpen)
+    const open =useSelector(state => state.data.LoginModalOpen)
     const dispatch = useDispatch()
 
     const handleClose = () => {

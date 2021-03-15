@@ -2,13 +2,13 @@
 
 .SimpleModal{
     text-align: center;
-    max-width: 840px;
+    max-width: adaptiv-get(840, 414);
     .MuiButton-sizeLarge{
         margin-top: 25px;
     }
     &Text{
-        margin: 20px 0;
-        max-width: 510px;
+        margin: adaptiv-get(20, 10) 0;
+        max-width: adaptiv-get(510, 382);
         // font-family: 'Gotham Pro';
         // font-style: normal;
         // font-weight: normal;
@@ -25,10 +25,10 @@
             margin: 0;
         }
         p:first-of-type{
-            margin: 20px 0 35px
+            margin: adaptiv-get(20, 11) 0 adaptiv-get(35, 17);
         }
         .MuiButton-sizeLarge{
-            margin-top: 37px;
+            margin-top: adaptiv-get(37, 29);
         }
         .modalWindowClose{
             right: 8px;

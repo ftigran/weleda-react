@@ -95,7 +95,7 @@ body {
 body button.MuiButton-root{
   color: #FFF;
   background: #008F3F;
-  border-radius: 8px;
+  border-radius: adaptiv-get(8, 5);
   min-width: adaptiv-get(266, 183);;
   height: adaptiv-get(70, 30);
   //padding: 20px 10px;

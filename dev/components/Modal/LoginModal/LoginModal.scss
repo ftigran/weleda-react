@@ -10,10 +10,19 @@
     .modalContainer{
         align-self: flex-end;
     }
-
-    .sbrosWrapper{
+    .regBtnsWrap{
         position: relative;
+        margin-top: 29px;
+    }
+.FormTextFieldContainer{
+    margin-bottom: 5px;
+}    a{
+    text-decoration: none;
+    }
+    .sbrosWrapper{
+        position: absolute;
         width: 100%;
+        top: 0px;
         .modalContainer{
             padding: 0;
         }
@@ -21,15 +30,15 @@
             position: absolute;
             top: -55px;
             right: 0;
-            width: 130px;
-            text-align:right;
+            //width: 130px;
+            span{
+                text-align:right;
+
+            }
         }
     }
 .regForm{
-    a{
-    text-decoration: none;
 
-    }
 }
     
     
@@ -51,6 +60,25 @@
         width: 100%;
         button{
             width: 100%;
+        }
+    }
+}
+@media (max-width:730px){
+    .LoginModal{
+        form{
+            max-width:316px;
+        }
+        .TextFields{
+            margin-bottom: 25px;
+        }
+        .MuiButton-sizeSmall{
+            max-width: 100px;
+            width: 100px;
+        }
+        .regBtn{
+            margin-left: 16px;
+            min-width: auto;
+            width: 183px;
         }
     }
 }
