@@ -2,16 +2,18 @@
 
 footer.footer{
     background-color: #fff;
+    padding: 0 50px;
     .footerContainer{
     margin: auto;
     max-width: 1414px;
     height: 130px;
 font-weight: 500;
-font-size: 16px;
+font-size: adaptiv-get(16, 8);
 line-height: 150%;
+        
 a{
     font-weight: 700;
-    font-size: 16px;
+    font-size: adaptiv-get(16, 8);
     line-height: 24px;
 }
     }
@@ -30,31 +32,26 @@ a{
 
 }
     .footerMail a{
-        // text-decoration: none;
-        // text-align: right;
-        // font-weight: bold;
         color: #000;
         float: right
     }
 
 }
 
-// @media(max-width: 870px){
-//     footer.footer{
-//         margin-top: 75px;
+@media(max-width: 730px){
+    footer.footer{
+    padding: 0 16px;
 
-//         .footerMail a, li{
-//             text-align: center;
-//         }
-
-//         .footerContainer{
-//             flex-direction: column;
-//         }
-//         .footerMail{
-//             padding-top: 35px;
-//         }
-//     }
-// }
+        .footerContainer{
+            height: 61px;
+            img{
+                width: 50px;
+                height: 38px;
+            }
+        }
+        
+    }
+}
 // @media(max-width: 540px){
 //     footer.footer{
 
