@@ -104,3 +104,47 @@
     width: 100%;
     height: 100%
 }
+@media (max-width:960px){
+    .MuiTextField-root{
+        min-height: 39px;
+        max-width:250px;
+        .MuiFormHelperText-root.MuiFormHelperText-contained.Mui-error{
+            font-size: 8px;
+            margin-left: 1px;
+            margin-top: 22px;
+            
+        }
+        .MuiOutlinedInput-notchedOutline{
+            border: 1px solid #008F3F;
+            border-radius: 5px;
+            min-height: 34px;
+        }
+        input{
+            padding: 10px 10px;
+        }
+        label, input{
+        font-size: 8px;
+        top: -11px;
+        left: -6px;
+        &.Mui-focused{
+            &.Mui-error{
+                font-size: 8px;
+            }
+            }
+        }
+        .PrivateNotchedOutline-legendLabelled-7{
+            font-size: 8px;
+        }
+        .MuiInputLabel-outlined.MuiInputLabel-shrink {
+            transform: translate(25px, 4px);
+            font-size: 8px;
+        }
+        fieldset{
+        
+            legend.PrivateNotchedOutline-legendNotched-4 {
+                font-size: 8px;
+            }
+    
+        }
+    }
+}

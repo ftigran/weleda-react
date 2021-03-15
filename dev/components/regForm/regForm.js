@@ -19,7 +19,7 @@ const SimpleForm = props => {
   return (
     <form onSubmit={handleSubmit} className='regForm'>
       <Grid container justify='space-between'>
-        <Grid item xs={6} className='FormTextFieldContainer'>
+        <Grid item md={6} className='FormTextFieldContainer'>
           <Field
               name="firstName"
               component={TextField}
@@ -44,7 +44,7 @@ const SimpleForm = props => {
               validate={[required, instaUser]}
             />
         </Grid>
-        <Grid item xs={6} className='FormTextFieldContainer'>
+        <Grid item md={6} className='FormTextFieldContainer'>
           <Field
               name="phone"
               component={TextField}

@@ -2,6 +2,7 @@
 
 .headerList{
     ul{
+        padding:0;
         display: flex;
         list-style: none;
         //flex-direction: row;
@@ -39,4 +40,10 @@
         display: none;
     }
 }
-
+@media (max-width:800px){
+    header.header{
+        ul{
+            font-size: 14px;
+        }
+    }
+}
