@@ -8,6 +8,8 @@ import Grid from '@material-ui/core/Grid';
 
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import List from './List/List';
+import SliderList from './SlideList';
+
 import SlideList from './SlideList';
 import logo from '../../img/logo.svg'
 import './Header.scss'
@@ -35,11 +37,12 @@ const Header = () => {
               justify={'space-between'}
               alignItems={'flex-end'}>
                 <Link component={NavLink} className={'menu_item_in'} to="/">
-                  <img src={logo}/>
+                  <img src={logo} className='headerLogo'/>
                 </Link>
                 <Provider store={store}>
                             <List/>
-                            </Provider>
+                            <SliderList/>
+                </Provider>
 
                             {/* <SlideList/> */}
             </Grid>

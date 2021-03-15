@@ -6,20 +6,21 @@ html body{
         font-family: "Neo Sans Weleda";
         font-style: normal;
         font-weight: normal;
-        font-size: 24px;
+        font-size: adaptiv-get(24, 14);
         line-height: 150%;
         h1{
           font-family: 'NewWeleda Cyr';
           font-style: normal;
           font-weight: normal;
-          font-size: 48px;
+          font-size: adaptiv-get(48, 18);
+          //font-size: 48px;
           line-height: 150%;
           text-align: center;
           text-transform: uppercase;
           color: #58595B;
       }
       h3{
-        font-size: 24px;
+        font-size: adaptiv-get(24, 16);
       }
     }
 
@@ -96,16 +97,16 @@ body button.MuiButton-root{
   color: #FFF;
   background: #008F3F;
   border-radius: 8px;
-  min-width: 266px;
-  height: 70px;
-  padding: 20px 10px;
+  min-width: adaptiv-get(266, 183);;
+  height: adaptiv-get(70, 30);
+  //padding: 20px 10px;
 
   box-shadow: none;
   font-family: 'Neo Sans Weleda';
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: adaptiv-get(24, 12);
+  line-height: adaptiv-get(36, 24);
   text-transform: none;
   &:hover{
     background: #FFFFFF;
@@ -149,7 +150,7 @@ body button.MuiButton-root{
     //line-height: 18px;
     //padding: 4px 10px 2px;
     //border-radius: 3px;
-    min-width: 124px;
+    min-width: adaptiv-get(124, 117);
     // &:hover{
     //     color: #FFF;
     //     background:#10417B;
@@ -168,7 +169,7 @@ body button.MuiButton-root{
       //font-size: 24px;
       //line-height: 23px;
       //padding: 20px;
-      min-width: 410px;
+      min-width: adaptiv-get(410, 183);
   }
   // font-family: 'Gotham Pro';
   // font-style: normal;
@@ -180,7 +181,7 @@ body button.MuiButton-root{
   //border-radius: 8px;
   
   &.MuiButton-text{
-    font-size: 16px;
+    font-size: adaptiv-get(16, 8);
     line-height: 150%;
     /* identical to box height, or 24px */
     text-decoration-line: underline;

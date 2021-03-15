@@ -5,10 +5,13 @@ import Grid from '@material-ui/core/Grid';
 import './Roadmap.scss'
 import plane from '../../img/plane.png';
 import priz from '../../img/prizes.png';
-
+import promo from '../../img/promoTop.png'
 export default class Main extends Component {
     render() {
         return (
+            <Grid className='RoadmapWrap' container justify='center'>
+                <img src={promo} className='RoadmapPromo'/>
+                <Grid item xs={8}> 
             <Grid container direction='column' className={'Roadmap'} id='c_rules'>
                 {/* <Grid item xs={8} className={'RoadmapContainer'}> */}
                     <div className='RoadmapBlock'>
@@ -62,6 +65,8 @@ export default class Main extends Component {
                     </Grid>
                     
                 {/* </Grid> */}
+            </Grid>
+            </Grid>
             </Grid>
         )
     }

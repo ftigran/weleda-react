@@ -58,8 +58,8 @@ const List=()=> {
                                 </ScrollLink>
                             </li>
                         ))}
-                        <li>
-                                {/* <ScrollLink
+                        {/* <li>
+                                <ScrollLink
                                     onClick={() => handleClick('c_main')}
                                     activeClass="active"
                                     to={'c_main'}
@@ -69,8 +69,8 @@ const List=()=> {
                                     //ignoreCancelEvents
                                 >
                                     Главная
-                                </ScrollLink> */}
-                        </li>
+                                </ScrollLink>
+                        </li> */}
                         {/* <li >
                             <Link component={NavLink} to="/rules" onClick={scrollToTop}>
                                 Правила

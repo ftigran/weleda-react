@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 
 import './Top.scss'
 import logo from '../../img/100YearsB.png';
-import top from '../../img/top.png';
+// import top from '../../img/top.png';
 import { Link } from "react-router-dom";
 import useReactRouter from 'use-react-router'
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
@@ -19,12 +19,11 @@ const Main =()=> {
     }
         return (
             <div className='Top' id='c_main'>
-                <img src={top} width='100%' className='TopImg' />
                 <Grid container alignItems='flex-start' justify='center' className='TopContainer1'>
                     <Grid container alignItems='flex-start' justify='flex-end' className='TopContainer2'>
                         <Grid container justify='center' xs={6} className='TopContainer3'>
                             <Grid container alignItems='center' className='TopContainer4' direction='column'>
-                            <img src={logo}/>
+                            <img src={logo} className='TopImgLogo' />
                             <h1>
                                 Стань<br/> амбассадором бренда <br/>
                                 и выиграй призы<br/> от Weleda

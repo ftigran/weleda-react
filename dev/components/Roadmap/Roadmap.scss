@@ -2,7 +2,11 @@
 p, h3{
     margin: 0;
 }
-
+.RoadmapWrap{
+    .RoadmapPromo{
+        display:none;
+    }
+}
 .Roadmap{
     padding-top: 150px;
     padding-left: 5px;
@@ -11,11 +15,12 @@ p, h3{
     font-family: 'Neo Sans Weleda';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: adaptiv-get(24, 12);
+    line-height: adaptiv-get(30, 18);
     h3{
-        font-size: 32px;
-        line-height: 48px;
+        font-size: adaptiv-get(32, 16);
+
+        line-height: adaptiv-get(48, 24);
         margin: 6px 0 10px;
     }
 
@@ -73,8 +78,8 @@ p, h3{
                 align-self: center;
                 padding-bottom: 17px;
                 p:last-child{
-                    font-size: 16px;
-                    line-height: 24px;
+                    font-size: adaptiv-get(16, 8);
+                    line-height: adaptiv-get(24, 10);
                     color: rgba(0, 0, 0, 0.25);
                     max-width: 250px;
                 }
@@ -157,7 +162,7 @@ p, h3{
         font-family: 'Neo Sans Weleda';
         font-style: normal;
         font-weight: bold;
-        font-size: 288px;
+        font-size: adaptiv-get(288, 96);
         line-height: 1em;
         position: absolute;
 
@@ -178,6 +183,66 @@ p, h3{
                 border-radius: 50%;
                 border: 2px solid;
             }
+        }
+    }
+}
+
+@media (max-width:1300px){
+    .RoadmapBlock:nth-child(1) .RoadmapNumb{
+        bottom: 43px;
+        span{
+            bottom: -61px;
+            &::before{
+                top: -99px;
+                height: 13px;
+                width: 13px;
+                left: -1px;
+            }
+            &::after{
+                height: 55px;
+                top: -77px;
+            }
+        }
+    }
+    .RoadmapBlock:nth-child(2) .RoadmapNumb{
+        //bottom: 43px;
+        span{
+            //bottom: -61px;
+            &::before{
+                //top: -99px;
+                 height: 13px;
+                 width: 13px;
+                // left: -1px;
+            }
+            &::after{
+                 width: 55px;
+                // top: -77px;
+            }
+        }
+    } 
+    }
+@media (max-width:850px){
+    .Roadmap{
+        h3, p{
+            max-width: 250px;
+        }
+        .RoadmapBlock{
+            padding-bottom: 20px;
+        }
+    }
+}
+@media (max-width:730px){
+    .Roadmap{
+        padding: 57px 0 0;
+    }
+}
+@media (max-width:530px){
+    .Roadmap{
+        h3, p{
+            max-width: 200px;
+        }
+        .RoadmapBlock{
+            padding-bottom: 20px;
         }
     }
 }

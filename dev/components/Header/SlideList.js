@@ -6,8 +6,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import List from './List/List'
 import CloseIcon from '@material-ui/icons/Close';
 import './SlideList.scss'
-import logo from '../../img/logo.svg'
-
+// import logo from '../../img/logo.svg'
+import menu from '../../img/menu.svg'
 export default function SwipeableTemporaryDrawer() {
   const [state, setState] = React.useState(false);
 
@@ -26,29 +26,28 @@ export default function SwipeableTemporaryDrawer() {
       onKeyDown={toggleDrawer(false)}
       style={{height:'100%'}}
     > 
-      <Grid container justify={'space-between'} className={'sliderListHeader'}>
-        <img src={logo} />
-        <CloseIcon className={'sliderListClose'}/>
-      </Grid>
+      {/* <Grid container justify={'space-between'} className={'sliderListHeader'}>
+        {/* <img src={logo} /> */}
+        {/* <CloseIcon className={'sliderListClose'}/>
+      </Grid> */}
       <List/>
     </div>
   );
 
   return (
-    <div>
-        <React.Fragment>
+        <div className='headerListItems'>
           <Button onClick={toggleDrawer(true)} className={'headerMenu'}>
-            <MenuIcon/>
+            <img src={menu} height={18}/>
           </Button>
           <SwipeableDrawer
-            anchor={'right'}
+            anchor={'top'}
             open={state}
             onClose={toggleDrawer(false)}
             onOpen={toggleDrawer(true)}
+
           >
             {list()}
           </SwipeableDrawer>
-        </React.Fragment>
-    </div>
+        </div>
   );
 }
