@@ -30,7 +30,6 @@ export default class Main extends Component {
                         <span className='RoadmapNumb'>2
                         <span className='RoadmapNumbLine'/>
                         </span>
-
                             <p>
                             Выполняй еженедельные задания,<br/>
                             получай баллы,
