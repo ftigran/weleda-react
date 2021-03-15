@@ -97,10 +97,10 @@ p, h3{
             .RoadmapNumb{
                 color: rgba(240, 90, 41, 0.25);
                 right: 3px;
-                top: -33px;
+                bottom: 63px;
                 span{
                     right: -18px;
-                    bottom: -6px;
+                    bottom: -8px;
                     border-color: #F05A29;
                     background: rgba(240, 90, 41, 0.5);
                     &::after{
@@ -137,6 +137,8 @@ p, h3{
                 top: -100px;
                 left: -24px;
                 z-index: 1;
+                width: 182px;
+                text-align:right;
                 span{
                     left: -16px;
                     top: 84px;
@@ -189,7 +191,7 @@ p, h3{
     }
 }
 
-@media (max-width:1300px){
+@media (max-width:730px){
     .RoadmapBlock:nth-child(1) .RoadmapNumb{
         bottom: 43px;
         span{
@@ -214,10 +216,11 @@ p, h3{
                 //top: -99px;
                  height: 13px;
                  width: 13px;
-                // left: -1px;
+                 right: 100px;
             }
             &::after{
                  width: 55px;
+
                 // top: -77px;
             }
         }
@@ -248,3 +251,43 @@ p, h3{
         }
     }
 }
+@media (max-width:1200px){
+.RoadmapBlock:nth-child(2) {
+    min-height: 230px;
+    .RoadmapNumb{
+padding-right: 20px;
+    }
+}
+.RoadmapBlock:nth-child(3){
+    .RoadmapNumb{
+        padding-top: 30px;
+        padding-left: 34px;
+        text-align: left;
+    }
+}
+}
+@media (max-width:1000px){
+    .RoadmapBlock:nth-child(2) {
+        position: relative;
+        .RoadmapTextContainer{
+            z-index: 1;
+        }
+        .RoadmapImgContainer{
+            position: absolute;
+            width: 500px;
+            height: 210px;
+            left: -150px;
+            top: 0px;
+        }
+    }
+    .RoadmapBlock:nth-child(3){
+        .RoadmapNumb{
+        padding-top: 50px;
+        padding-left: 54px;
+
+        }
+        .RoadmapImgContainer img{
+            width: 350px
+        }
+    } 
+    }
