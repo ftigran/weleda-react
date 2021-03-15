@@ -46,23 +46,29 @@ const App = () => {
   //const {location} = useReactRouter()
         return (
             <>  
-            <Header/>
-                    <Switch location={location}>
-                        {/* <Route key='faq' location={location} path={"/faq"}
-                        render={() => 
-                            <FAQ/>} 
-                            exact
-                            /> */}
-                        <Route path={"/reg"} render={() => <Registration/>}>
-                        </Route>
-                        <Route path={"/cabinet"} render={() => <Cabinet/>}/>
-                        <Route key='index' location={location} path={"/"} render={() => 
-                            <Main/>} exact/>
-                        <Route path="*" render={() => <Cabinet/>} />
-                        
-                    </Switch>
-                <Footer/>
-                <ScrollSection/>
+            <Grid container className='appContainer' direction='column'>
+            <Grid item className='appWrap' direction='column'>
+                <Header/>
+                <Switch location={location}>
+                            {/* <Route key='faq' location={location} path={"/faq"}
+                            render={() => 
+                                <FAQ/>} 
+                                exact
+                                /> */}
+                            <Route path={"/reg"} render={() => <Registration/>}>
+                            </Route>
+                            <Route path={"/cabinet"} render={() => <Cabinet/>}/>
+                            <Route key='index' location={location} path={"/"} render={() => 
+                                <Main/>} exact/>
+                            <Route path="*" render={() => <Cabinet/>} />
+                            
+                        </Switch>
+                    <ScrollSection/>
+            </Grid>
+            <Footer/>
+            
+            </Grid>
+                    
             </>
         );
 }

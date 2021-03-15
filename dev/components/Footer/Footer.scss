@@ -3,7 +3,12 @@
 footer.footer{
     background-color: #fff;
     padding: 0 50px;
+    width: 100%;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+
     .footerContainer{
+        background: #FFFFFF;
     margin: auto;
     max-width: 1414px;
     height: 130px;

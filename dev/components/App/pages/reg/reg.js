@@ -24,9 +24,9 @@ const Reg = () =>{
     }
     return (
         <>
-            <Grid container justify='center'>
+            <Grid container justify='center' className='regPage' alignItems='flex-start0'>
                 <Grid container justify='center' className='backgroundContainer'>
-                    <Grid container className='pageContainer'>
+                    <Grid container className='pageContainer' direction='column' alignItems='center'>
                     <h3 className='regTitle'>Регистрация</h3>
                         {/* <Button onClick={handler}>qq</Button> */}
                         <Provider store={store}>

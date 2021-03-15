@@ -3,9 +3,12 @@
 .regForm {
     width: 100%;
     .FormTextFieldContainer{
-        max-width: 554px;
+        max-width: 570px;
         .TextFields{
             padding-bottom: 34px;
+            // padding-left: 10px;
+            // padding-right: 10px;
+            //box-sizing: border-box;
         }
     }
     .regFormDown{
@@ -44,4 +47,28 @@
 
         }
     }
+}
+@media (max-width: 730px){
+.regForm {
+    max-width: 250px;
+    .FormTextFieldContainer{
+        max-width: none;
+        width: 100%;
+        flex-basis: 100%;
+        &:first-child{
+            .TextFields:last-child {
+            padding-bottom: 18px;
+        }
+    }
+}
+    .regFormContainer{
+justify-content: center;
+
+
+    }
+    .regFormApproveWrap{
+        display: flex;
+        justify-content: center;
+    }
+}
 }

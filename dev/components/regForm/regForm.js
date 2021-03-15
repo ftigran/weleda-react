@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { renderTextField as TextField } from './renderTextField'
 import {required, phoneNumber, promoNumber, email, maxLength, minLength, kirilicName, instaUser, isTrue} from '../TextField/validation'
-import { Grid } from '@material-ui/core';
+import { createMuiTheme, Grid } from '@material-ui/core';
 import './regForm.scss'
 import { useSelector, useDispatch } from 'react-redux'
 import {setRegEmailApproveModal} from '../../store/actions'
@@ -14,12 +14,13 @@ import {WherePromocode} from '../Modal/SimpleModal/SimpleModal'
 import './regForm.scss'
 
 const SimpleForm = props => {
+
   const { handleSubmit, pristine, reset, submitting } = props;
 
   return (
     <form onSubmit={handleSubmit} className='regForm'>
-      <Grid container justify='space-between'>
-        <Grid item md={6} className='FormTextFieldContainer'>
+      <Grid spacing={2} container justify='center' className='regFormContainer'>
+        <Grid sm={6} item className='FormTextFieldContainer'>
           <Field
               name="firstName"
               component={TextField}
@@ -44,7 +45,7 @@ const SimpleForm = props => {
               validate={[required, instaUser]}
             />
         </Grid>
-        <Grid item md={6} className='FormTextFieldContainer'>
+        <Grid sm={6} item className='FormTextFieldContainer'>
           <Field
               name="phone"
               component={TextField}
@@ -87,7 +88,9 @@ const SimpleForm = props => {
       }
         type="checkbox"
       />
+      <div className='regFormApproveWrap'>
       <RegEmailApproveModal/>
+      </div>
       </Grid>
     </form>
   );

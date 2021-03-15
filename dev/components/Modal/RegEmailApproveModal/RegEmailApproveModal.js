@@ -20,7 +20,8 @@ export const RegEmailApproveModal = () => {
             <Button 
             type="submit"
             variant='contained'
-            size='large'>Зарегистрироваться</Button>
+            size='large
+            '>Зарегистрироваться</Button>
             <Modal
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
