@@ -62,10 +62,11 @@ const PSM = () => {
     return(
         <Modal 
             btnText='Выбрать приз'
-            isOpen={false}
+            isOpen={true}
             title='Витрина призов'
             mainBtnVariant='contained'
             mainBtnSize='large'
+            className='priziModal'
             >
                 <Grid container justify='space-between' className='priziContainer'>
                     {itemsArr.map((item, id)=>{
@@ -85,7 +86,7 @@ const ball=12;
 const Item = ({img, title, subtitle, cost}) => {
 
     return (
-        <Grid item xs={4} className='priziItemGrid'>
+        <Grid item xs={6} lg={4} className='priziItemGrid'>
             <Grid container direction='column' alignItems='center' justify='space-between' className='priziItemContainer'>
                 <Grid item className='priziItemWrap'>
                     <img src={img}/>
@@ -94,7 +95,7 @@ const Item = ({img, title, subtitle, cost}) => {
                 </Grid>
                 <Grid item className='priziItemWrap'>
                     <p className='priziItemCost'>{cost} баллов</p>
-                    <Button variant='contained' disabled={cost>ball}>Получить</Button>
+                    <Button variant='contained' disabled={cost>ball} fullWidth>Получить</Button>
                 </Grid>
             </Grid>
         </Grid>
