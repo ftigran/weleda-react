@@ -19,20 +19,20 @@ const lkInfo = () => {
             <Grid container className='lkInfoContainer' spacing={2}>
                 
                 <Grid item md={6} xs={12} className='lkInfoString'>
-                    <span>Имя</span><span>Александра</span>
+                    <p>Имя</p><p>Александра</p>
                 </Grid>
                 <Grid item md={6} xs={12} className='lkInfoString'>
-                    <span>Фамилия</span><span>Константинова</span>
+                    <p>Фамилия</p><p>Константинова</p>
                 </Grid>
                 <Grid item md={6} xs={12} className='lkInfoString'>
-                    <span>Телефон</span><span>+7 (909) 981-32-54</span>
+                    <p>Телефон</p><p>+7 (909) 981-32-54</p>
                 </Grid>
                 
                 <Grid item md={6} xs={12} className='lkInfoString'>
-                    <span>Email</span><span>alexandra.konstantinova@mymail.com</span>
+                    <p>Email</p><p>alexandra.konstantinova@mymail.com</p>
                 </Grid>
                 <Grid item md={6} xs={12} className='lkInfoString'>
-                    <span>@Instagram</span><span>alexandra_konstantinova</span>
+                    <p>@Instagram</p><p>alexandra_konstantinova</p>
                 </Grid>
                 <Grid item md={6} xs={12} className='lkInfoString'>
                 <FormControlLabel

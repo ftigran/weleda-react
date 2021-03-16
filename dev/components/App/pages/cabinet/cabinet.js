@@ -13,8 +13,10 @@ const main = () => {
         <>  
             <Grid className='pageBG' container justify='center' id='cabinet'>
                 <Grid container  justify='center' className='pageWrapper'>
-                        <Grid xs={10}item className='pageContainer'>
+                    <Grid xs={11}item className='pageContainer' alignSelf='flex-end'>
                         <Lkinfo/>
+                    </Grid>
+                    <Grid xs={10}item className='pageContainer'>
                         {/* <Tasks/> */}
                         {/* <Grid container justify='space-between' alignItems='center' className='cabinetSelectPrizContainer'>
                             <p className='cabinetSelectPriz'>Общее количество баллов: <span>12</span></p>

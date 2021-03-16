@@ -12,9 +12,11 @@
         font-size: 16px !important; 
     }
     .lkInfoString {
-        height: adaptiv-get(70, 41);
+        min-height: adaptiv-get(70, 41);
+        span:first-child {
+            margin-bottom: 0;
     }
-}
+}}
 
 @media (max-width:960px){
 .lkInfo {
@@ -31,12 +33,17 @@
         h3{
         }
     }
-    .lkInfoString span:first-child {
+    div.lkInfoString{
+        padding-bottom:0;
+        padding-top:0;
+
+    }
+    .lkInfoString p:first-child {
         width: 80px;
     }
-    .lkInfoString span:last-child {
-        position: absolute;
-        max-width:
+    .lkInfoString p:last-child {
+        //position: absolute;
+        
         word-break: break-all;
     }
     .MuiGrid-root.lkInfoString.MuiGrid-item.MuiGrid-grid-xs-12:last-child{
