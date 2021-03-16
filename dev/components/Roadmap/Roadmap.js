@@ -10,11 +10,12 @@ export default class Main extends Component {
     render() {
         return (
             <Grid className='RoadmapWrap' container justify='center'>
-                <img src={promo} className='RoadmapPromo'/>
-                <Grid item xs={8}> 
+                <Grid item sm={8} xs={9}> 
             <Grid container direction='column' className={'Roadmap'} id='c_rules'>
                 {/* <Grid item xs={8} className={'RoadmapContainer'}> */}
                     <div className='RoadmapBlock'>
+                        <img src={promo} className='RoadmapPromo'/>
+
                         <span className='RoadmapNumb'>1
                         <span className='RoadmapNumbLine'/>
                         </span>
@@ -47,7 +48,7 @@ export default class Main extends Component {
                         </Grid>
                     </Grid>
                     <Grid container  className='RoadmapBlock'>
-                        <Grid item xs={6}>
+                        <Grid item sm={6} xs={8} className='RoadmapTextContainer'>
                             <span className='RoadmapNumb'>3
                             <span className='RoadmapNumbLine'/>                            </span>
                             <h3>
@@ -58,7 +59,7 @@ export default class Main extends Component {
                             или годовой запас косметики Weleda
                             </p>
                         </Grid>
-                        <Grid item xs={6} className={'RoadmapImgContainer'}>
+                        <Grid item sm={6} className={'RoadmapImgContainer'}>
                             <img src={plane}/>
                         </Grid>
                     </Grid>

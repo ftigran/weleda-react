@@ -190,42 +190,46 @@ p, h3{
         }
     }
 }
-
-@media (max-width:730px){
-    .RoadmapBlock:nth-child(1) .RoadmapNumb{
-        bottom: 43px;
-        span{
-            bottom: -61px;
-            &::before{
-                top: -99px;
-                height: 13px;
-                width: 13px;
-                left: -1px;
-            }
-            &::after{
-                height: 55px;
-                top: -77px;
-            }
+@media (max-width:1200px){
+    .RoadmapBlock:nth-child(2) {
+        min-height: 230px;
+        .RoadmapNumb{
+    padding-right: 20px;
         }
     }
-    .RoadmapBlock:nth-child(2) .RoadmapNumb{
-        //bottom: 43px;
-        span{
-            //bottom: -61px;
-            &::before{
-                //top: -99px;
-                 height: 13px;
-                 width: 13px;
-                 right: 100px;
+    .RoadmapBlock:nth-child(3){
+        .RoadmapNumb{
+            padding-top: 30px;
+            padding-left: 34px;
+            text-align: left;
+        }
+    }
+    }
+    @media (max-width:1000px){
+        .RoadmapBlock:nth-child(2) {
+            position: relative;
+            .RoadmapTextContainer{
+                z-index: 1;
             }
-            &::after{
-                 width: 55px;
-
-                // top: -77px;
+            .RoadmapImgContainer{
+                position: absolute;
+                width: 500px;
+                height: 210px;
+                left: -150px;
+                top: 0px;
             }
         }
-    } 
-    }
+        .RoadmapBlock:nth-child(3){
+            .RoadmapNumb{
+            padding-top: 50px;
+            padding-left: 54px;
+    
+            }
+            .RoadmapImgContainer img{
+                width: 350px
+            }
+        } 
+        }
 @media (max-width:850px){
     .Roadmap{
         h3, p{
@@ -237,57 +241,201 @@ p, h3{
     }
 }
 @media (max-width:730px){
+    .RoadmapWrap{
+        padding-bottom: 45px;
+        overflow: hidden;
+        .RoadmapPromo{
+            position: absolute;
+            display: block;
+            width: 176px;
+            height: 176px;
+            right: -51px;
+            bottom: -9px;
+        }
+    } 
     .Roadmap{
-        padding: 57px 0 0;
+        margin: 57px 0 0;
+        padding: 0;
+        .RoadmapBlock{
+            border-width: 1px;
+        }
+        .RoadmapBlock:nth-child(1) {
+            padding-left: 30px;
+            padding-bottom: 24px;
+            &::before {
+                content: '';
+                position: absolute;
+                background-color: #fff;
+                width: 30px;
+                height: 3px;
+                bottom: -2px;
+                left: 0px;
+                z-index: 0;
+            }
+            .RoadmapNumb{
+                bottom: 45px;
+                left: 4px;
+                span{
+                    bottom: -61px;
+                    &::before{
+                        top: -99px;
+                        height: 13px;
+                        width: 13px;
+                        left: -1px;
+                    }
+                    &::after{
+                        height: 55px;
+                        top: -77px;
+                    }
+                }
+            }
+            }
+        }
+        .RoadmapBlock:nth-child(2) {
+            .RoadmapImgContainer{
+                background-image: url('../../img/prizesMobile.png');
+                width: 326px;
+                height: 135px;
+                bottom: -72px;
+                left: -47px;
+                top: auto;
+                z-index: 1;
+            }
+            display: flex;
+            padding: 0;
+            min-height: 166px;
+            justify-content: flex-end ;
+            &::before{
+                background-color: #fff;
+                width: 50px;
+                height: 3px;
+                bottom: auto;
+                top: -25px;
+                right: 13px;
+            }
+            .RoadmapTextContainer{
+                padding-bottom: 39px;
+                padding-left: 47px;
+                h3{
+                    margin-top: 2px;
+                }
+                p:last-child{
+                    max-width: 174px;
+                }
+            }
+            .RoadmapNumb{
+                //bottom: 43px;
+                padding-right: 53px;
+                bottom: auto;
+                top: -2px;
+                span{
+                    right: 19px;
+                    bottom: auto;
+                    top: -37px;
+                    &::before{
+                        //top: -99px;
+                         height: 13px;
+                         width: 13px;
+                         right: -1px;
+                         left: auto;
+                         top: 96px;
+                    }
+                    &::after{
+                         width: 1px;
+                         height: 55px;
+                         border-left: 2px dashed #F05A29;
+                         left: 7px;
+                         top: 33px;
+                         border-bottom: none;
+                    }
+                }
+            } 
+            }
+            .RoadmapBlock:nth-child(3){
+                border-width: 1px;
+                min-height: 200px;
+                //margin-right: 3px;
+                padding-top: 44px;
+                padding-left:0;
+                position: relative;
+                padding-bottom: 0;
+                .RoadmapTextContainer{
+                    border-left: 1px solid #000000;
+                    padding-left: 45px;
+                    padding-top: 50px;
+                    z-index: 1;
+
+                    h3{
+                        max-width: 139px;
+                }
+                }
+                &::before{
+                     width: 3px;
+                    height: 35px;
+                    top: auto;
+                    bottom: 0px;
+                    left: -1px;
+                    // z-index: 0;
+                }
+                .RoadmapNumb{
+                    // color: rgba(0, 171, 136, 0.25);
+                    // top: -100px;
+                    // left: -24px;
+                    // z-index: 1;
+                    // width: 182px;
+                    // text-align:right;
+                    top: auto;
+                    bottom: 23px;
+                    left: -33px;
+                    span{
+                        left: 15px;
+    top: auto;
+    bottom: -27px;
+    z-index: 0;
+                        // left: -16px;
+                        // top: 84px;
+                        // border-color: #00AB88;
+                        // background: rgba(0, 171, 136, 0.5);
+                        &::after{
+                            left: 40px;
+                            top: 6px;
+                            height: 0;
+                            width: 50px;
+                            border-bottom: 2px dashed #00AB88;
+                            border-left: none;
+                            z-index: 0;
+
+
+                        }
+                        &::before{
+                            left: 96px;
+                            top: -1px;
+                            height: 13px;
+                            width: 13px;
+                            z-index: 0;
+                        }
+                    }
+                }
+                .RoadmapImgContainer img{
+                    width: 192.07px;
+                    height: auto;
+                    position: absolute;
+                    top: 79px;
+                    right: -57px;
+                }
+            }
     }
-}
 @media (max-width:530px){
     .Roadmap{
         h3, p{
             max-width: 200px;
         }
         .RoadmapBlock{
-            padding-bottom: 20px;
+            //padding-bottom: 20px;
+            h3{
+                margin-bottom: 5px;
+            }
         }
     }
 }
-@media (max-width:1200px){
-.RoadmapBlock:nth-child(2) {
-    min-height: 230px;
-    .RoadmapNumb{
-padding-right: 20px;
-    }
-}
-.RoadmapBlock:nth-child(3){
-    .RoadmapNumb{
-        padding-top: 30px;
-        padding-left: 34px;
-        text-align: left;
-    }
-}
-}
-@media (max-width:1000px){
-    .RoadmapBlock:nth-child(2) {
-        position: relative;
-        .RoadmapTextContainer{
-            z-index: 1;
-        }
-        .RoadmapImgContainer{
-            position: absolute;
-            width: 500px;
-            height: 210px;
-            left: -150px;
-            top: 0px;
-        }
-    }
-    .RoadmapBlock:nth-child(3){
-        .RoadmapNumb{
-        padding-top: 50px;
-        padding-left: 54px;
 
-        }
-        .RoadmapImgContainer img{
-            width: 350px
-        }
-    } 
-    }
