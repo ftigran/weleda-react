@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import CB from '../Checkbox/Checkbox'
 import {useDispatch} from 'react-redux'
 import {FormGroup, FormControlLabel, Checkbox, FormControl, FormHelperText} from '@material-ui/core'
+import './lkInfo.scss'
 const lkInfo = () => {
     // const dispatch = useDispatch()
     // const handlerCB=()=>{   
@@ -17,22 +18,23 @@ const lkInfo = () => {
             </Grid>
             <Grid container className='lkInfoContainer' spacing={2}>
                 
-                <Grid item xs={6} className='lkInfoString'>
+                <Grid item md={6} xs={12} className='lkInfoString'>
                     <span>Имя</span><span>Александра</span>
                 </Grid>
-                <Grid item xs={6} className='lkInfoString'>
-                    <span>Телефон</span><span>+7 (909) 981-32-54</span>
-                </Grid>
-                <Grid item xs={6} className='lkInfoString'>
+                <Grid item md={6} xs={12} className='lkInfoString'>
                     <span>Фамилия</span><span>Константинова</span>
                 </Grid>
-                <Grid item xs={6} className='lkInfoString'>
+                <Grid item md={6} xs={12} className='lkInfoString'>
+                    <span>Телефон</span><span>+7 (909) 981-32-54</span>
+                </Grid>
+                
+                <Grid item md={6} xs={12} className='lkInfoString'>
                     <span>Email</span><span>alexandra.konstantinova@mymail.com</span>
                 </Grid>
-                <Grid item xs={6} className='lkInfoString'>
+                <Grid item md={6} xs={12} className='lkInfoString'>
                     <span>@Instagram</span><span>alexandra_konstantinova</span>
                 </Grid>
-                <Grid item xs={6} className='lkInfoString'>
+                <Grid item md={6} xs={12} className='lkInfoString'>
                 <FormControlLabel
     control={
         <Checkbox

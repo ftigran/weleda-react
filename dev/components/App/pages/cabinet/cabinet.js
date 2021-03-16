@@ -13,13 +13,13 @@ const main = () => {
         <>  
             <Grid className='pageBG' container justify='center' id='cabinet'>
                 <Grid container  justify='center' className='pageWrapper'>
-                        <Grid item className='pageContainer'>
+                        <Grid xs={10}item className='pageContainer'>
                         <Lkinfo/>
-                        <Tasks/>
-                        <Grid container justify='space-between' alignItems='center' className='cabinetSelectPrizContainer'>
+                        {/* <Tasks/> */}
+                        {/* <Grid container justify='space-between' alignItems='center' className='cabinetSelectPrizContainer'>
                             <p className='cabinetSelectPriz'>Общее количество баллов: <span>12</span></p>
                             <PrizSelectModal/>
-                        </Grid>
+                        </Grid> */}
                     </Grid>
                 </Grid>
             </Grid>

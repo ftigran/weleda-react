@@ -1,0 +1,54 @@
+@import '../../mixins.scss';
+
+.lkInfo {
+    .MuiFormControlLabel-root.checkboxContainer{
+        align-items: flex-start;
+        .MuiTypography-root{
+            font-size: adaptiv-get(24, 14);
+            line-height: adaptiv-get(28, 8);
+        }
+    }
+    .lkInfoTitle button{
+        font-size: 16px !important; 
+    }
+    .lkInfoString {
+        height: adaptiv-get(70, 41);
+    }
+}
+
+@media (max-width:960px){
+.lkInfo {
+    margin-top: 67px;
+    .lkInfoTitle{
+        justify-content: center;
+        position: relative;
+        margin-bottom: 30px;;
+        button{
+            position: absolute;
+            right: 0px;
+            top: -5px;
+        }
+        h3{
+        }
+    }
+    .lkInfoString span:first-child {
+        width: 80px;
+    }
+    .lkInfoString span:last-child {
+        position: absolute;
+        max-width:
+        word-break: break-all;
+    }
+    .MuiGrid-root.lkInfoString.MuiGrid-item.MuiGrid-grid-xs-12:last-child{
+        display: none
+    }
+// .lkInfoString span:first-child {
+//     width: 80px;
+//     margin-right: 20px;
+//     margin-bottom: 37px;
+// }
+// label.checkboxContainer .MuiButtonBase-root {
+//     margin-left: 0px;
+// }
+}
+}
