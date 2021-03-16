@@ -35,7 +35,7 @@ const task = () => {
             <div className='tasksContainer'>
                     <h3>Задания</h3>
                     <Slider/>
-                    <Grid container wrap='nowrap' justify='space-between'>
+                    <Grid container wrap='nowrap' justify='space-between' className='instaContainer'>
                         <Grid item className='taskInput'>
                             <TextField placeholder='Ссылка на пост в Instagram' type='instalink'/>
                             <p className='taskInputLegend'>Загрузите ссылку на пост в Instagram для проверки выполнения задания</p>
