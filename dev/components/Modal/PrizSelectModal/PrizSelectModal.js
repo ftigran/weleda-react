@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Modal from '../Modal'
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import { AutoRotatingCarousel, Slide } from "material-auto-rotating-carousel";
 
 import './PrizSelectModal.scss'
 
@@ -58,7 +59,41 @@ const itemsArr=[
     },
 
 ]
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import json2mq from 'json2mq';
+import Slider from "react-slick";
+import '../../slider/slider.scss'
 const PSM = () => {
+    const matches = useMediaQuery(
+        json2mq({
+          minWidth: 730,
+        }),)
+        const getElems=()=>{
+return (
+    itemsArr.map((item, id)=>{
+        return <Item
+        {...item}
+        key={id}
+        />
+    })
+)
+        }
+        const GetWpar = ({isDesktop})=>{
+            if(isDesktop){
+                return(
+                <Grid container justify='space-between' className='priziContainer'>
+                    {getElems()}
+                </Grid>
+                    
+                )
+            }else{
+                return(
+                    <Slider dots={false}>
+                    {getElems()}
+                    </Slider>
+                )
+            }
+        }
     return(
         <Modal 
             btnText='Выбрать приз'
@@ -67,16 +102,9 @@ const PSM = () => {
             mainBtnVariant='contained'
             mainBtnSize='large'
             className='priziModal'
+            classNameWrap=' priziModalWrap'
             >
-                <Grid container justify='space-between' className='priziContainer'>
-                    {itemsArr.map((item, id)=>{
-                        return <Item
-                        {...item}
-                        key={id}
-                        />
-                    })}
-                </Grid>
-                
+                <GetWpar isDesktop={matches}/>
             </Modal>
     )
 }
@@ -89,7 +117,9 @@ const Item = ({img, title, subtitle, cost}) => {
         <Grid item xs={6} lg={4} className='priziItemGrid'>
             <Grid container direction='column' alignItems='center' justify='space-between' className='priziItemContainer'>
                 <Grid item className='priziItemWrap'>
-                    <img src={img}/>
+                    <div className='prizItemImg'>
+                        <img src={img}/>
+                    </div>
                     <p className='priziItemTitle'>{title}</p>
                     <p className='priziItemSubtitle'>{subtitle}</p>
                 </Grid>

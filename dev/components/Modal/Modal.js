@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 
 import './Modal.scss'
 
-export default function TransitionsModal({ mainBtnProps,btnSize='medium' ,mainBtnSize ='medium', disableScrollLock=false,  btnFull=false,mainBtnFull=false, mainBtnVariant='text', mainBtnColor='default', className='', isOpen=false, btnText='', title, btnClass='',childBtnText, children, mainBtnClass=''}) {
+export default function TransitionsModal({classNameWrap, mainBtnProps,btnSize='medium' ,mainBtnSize ='medium', disableScrollLock=false,  btnFull=false,mainBtnFull=false, mainBtnVariant='text', mainBtnColor='default', className='', isOpen=false, btnText='', title, btnClass='',childBtnText, children, mainBtnClass=''}) {
   const [open, setOpen] = React.useState(isOpen);
   const handleOpen = (event) => {
     event.preventDefault()
@@ -24,7 +24,7 @@ export default function TransitionsModal({ mainBtnProps,btnSize='medium' ,mainBt
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        className={'modal'}
+        className={'modal ' +classNameWrap}
         open={open}
         onClose={handleClose}
         closeAfterTransition
