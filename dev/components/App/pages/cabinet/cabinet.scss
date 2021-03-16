@@ -14,12 +14,13 @@
 }
 .pageBG{
     background-image: url('../../../../img/pattern.svg');
+    padding: 0 16px;
+    
     .pageWrapper{
         max-width: 1414px;
-        background-color: #fff;
-        margin: 0 16px;
+        background: #fff;
         .pageContainer{
-            max-width: 1126px;
+            //max-width: 1126px;
         }
     }
 }
