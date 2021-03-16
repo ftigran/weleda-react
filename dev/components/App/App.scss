@@ -16,14 +16,13 @@ body{
     //background-color: #ccc;
     .aas{
         height: 10000px;
-        background: url('../../img/pattern.svg')
+        //background: url('../../img/pattern.svg')
     }
     .appContainer{
         height: 100%;
         flex-wrap: nowrap;
         .appWrap{
             flex: 1 0 auto;
-            background: url('../../img/pattern.svg');
             background-color: #fff;
         }
     }

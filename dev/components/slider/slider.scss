@@ -18,13 +18,11 @@
     }
     h3{
         font-size: adaptiv-get(24,10);
-        max-width:160px;
         margin:auto;
 
     }
     p{
         font-size: adaptiv-get(24,10);
-        max-width:180px;
         margin:auto
     }
     li{
@@ -139,7 +137,12 @@
         .sliderContainerItem:first-child {
             margin-bottom: 12px;
         }
-        
+        h3{
+            max-width:160px;
+        }
+        p{
+            max-width:180px;
+        }
     }.slick-slider {
         min-height: 200px;
         border-width: 2px;
