@@ -18,10 +18,10 @@ const main = () => {
                     </Grid>
                     <Grid xs={10}item className='pageContainer'>
                         <Tasks/>
-                        {/* <Grid container justify='space-between' alignItems='center' className='cabinetSelectPrizContainer'>
+                        <Grid container justify='space-between' alignItems='center' className='cabinetSelectPrizContainer'>
                             <p className='cabinetSelectPriz'>Общее количество баллов: <span>12</span></p>
                             <PrizSelectModal/>
-                        </Grid> */}
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>

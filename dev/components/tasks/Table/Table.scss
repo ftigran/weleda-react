@@ -13,7 +13,7 @@ div .table{
         font-family: Neo Sans Weleda;
         font-style: normal;
         font-weight: 500;
-        font-size: 24px;
+        font-size: adaptiv-get(24, 10);
         line-height: 150%;
         border: none;
         background: #008F3F;
@@ -21,53 +21,18 @@ div .table{
         text-align: center;
         
         color: #FFFFFF;
-        // // font-family: 'Montserrat';
-        // // font-style: normal;
-        // // font-weight: 800;
-        // //font-size: 24px;
-        // //@include adaptiv-font(24, 29);
-        // //line-height: 29px;
-        // text-align: center;
-        // text-transform: uppercase;
-
-        // color: #004088;
-
-        // &:nth-child(1){
-        //     width: 25%;
-        // }
-        // &:nth-child(2){
-        //     width: 31%;
-        // }
-        // &:nth-child(3){
-        //     width: 20%;
-        // }
-        // &:nth-child(4){
-        //     width: 24%;
-        // }
     }
     .tableCell{
-        // font-family: 'Gotham Pro';
-        // font-style: normal;
-        // font-weight: normal;
-        // //font-size: 18px;
-        // //@include adaptiv-font(18, 17);
-        // //line-height: 17px;
-        // text-align: center;
-        // text-transform: uppercase;
 
-        // color: #004088;
     }
     tr, .tablePagination, .tableHeader th{
-        // background-color: #FFDD00;
     }
     tr, .tableHeader th{
-        // height: 53px;
     }
     tbody{
         background: rgba(0, 143, 63, 0.25);
         tr{
             height: 70px;
-            //border:none
             border-bottom: 30px solid #fff;
             &:last-child{
                 border: none
@@ -76,7 +41,7 @@ div .table{
                 font-family: "Neo Sans Weleda";
                 font-style: normal;
                 font-weight: normal;
-                font-size: 24px;
+                font-size: adaptiv-get(24, 10);
                 line-height: 150%;
                 border: none;
                 text-align: center;
@@ -100,5 +65,59 @@ div .table{
     }
 }
 
+@media (max-width:960px){
+    .table .MuiTableCell-root{
+        padding: 12px;
+    }
+}
+@media (max-width:730px){
+    .table .MuiTableCell-root{
+        padding: 8px;
+    }
+    .tabpage{
+        header{
+            padding:0;
+            .MuiTabs-root{
+                min-height:40px;
 
-//@media
+                .MuiTab-root{
+                min-height:40px;
+                }
+                width: 100%;
+                button{
+                    background: #008F3F;
+                    border-radius: 5px 5px 0px 0px;
+                    margin:0 !important;
+                    &.Mui-selected{
+        
+                    }
+                    span{
+                        align-items: center !important;
+                        color: #FFFFFF;
+        
+                    }
+                    &:first-child{
+                        width: 65%;
+        
+                    }
+                    &:last-child{
+                        width: 35%;
+                        
+                    }
+                }
+            }
+            
+        }
+        .table{
+            border-radius: 0px 0px 5px 5px;
+             tr{
+                height: 30px;
+            }
+        }
+        .MuiBox-root.MuiBox-root-13{
+            padding-top: 0;
+
+        }
+        
+    }
+}
