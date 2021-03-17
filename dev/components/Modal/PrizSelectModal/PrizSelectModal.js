@@ -88,7 +88,7 @@ return (
                 )
             }else{
                 return(
-                    <Slider dots={false}>
+                    <Slider dots={true}>
                     {getElems()}
                     </Slider>
                 )

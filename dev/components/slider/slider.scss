@@ -67,7 +67,45 @@
         transform: rotate(180deg);
         background-position: calc(50% - 10px);
     }
+     &-dots{
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 3px;
+        //right: 15px;
+        width: 100%;
+        padding:0;
+        margin: 0;
+        left:0;
+        & button{        cursor: pointer;
+border: none;
+            background: #008F3F;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            opacity: 0.25;
+            box-sizing: border-box;
+            font-size: 0;
+
+line-height: 0;
+padding: 0;
+outline:none;
+    }
+    & li{
+        font-size: 0;
+        line-height: 0;
+padding: 6px;
+        list-style: none;
+    }
+    & .slick-active button{
+        opacity: 1;
+    }
 }
+}
+// }.modalWindow.priziModal{
+//     background: grey !important;
+// }
 .slider{
     position: relative;
     &Title{
