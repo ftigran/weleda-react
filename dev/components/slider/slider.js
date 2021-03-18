@@ -35,6 +35,46 @@ const App = () => {
                         </li>
                     </Grid>
                 </Grid>
+                <Grid container justify='space-between' direction='column' className='sliderContainer'>
+                    <Grid item className='sliderContainerItem'>
+                        <h3>Сделай фото с набором «100 лет экспертизы Weleda»</h3>
+                        <p>Подробности о задании и сроки приема работ смотри <a href='empty'>здесь</a></p>
+                    </Grid>
+                    <Grid item component='ul' className='sliderContainerItem'>
+                        <li>
+                            - Сделай красивое фото набора.
+                        </li>
+                        <li>
+                            - Опубликуй фото или видео в Stories или в ленте Instagram.
+                        </li>
+                        <li>
+                            - Не забудь про хештег <b>#WELEDA100YEARS</b> и отметь <b>@weledarussia.</b>
+                        </li>
+                        <li>
+                            - Убедись, что на время конкурса твой аккаунт остается открытым.                     
+                        </li>
+                    </Grid>
+                </Grid>
+                <Grid container justify='space-between' direction='column' className='sliderContainer'>
+                    <Grid item className='sliderContainerItem'>
+                        <h3>Сделай фото с набором «100 лет экспертизы Weleda»</h3>
+                        <p>Подробности о задании и сроки приема работ смотри <a href='empty'>здесь</a></p>
+                    </Grid>
+                    <Grid item component='ul' className='sliderContainerItem'>
+                        <li>
+                            - Сделай красивое фото набора.
+                        </li>
+                        <li>
+                            - Опубликуй фото или видео в Stories или в ленте Instagram.
+                        </li>
+                        <li>
+                            - Не забудь про хештег <b>#WELEDA100YEARS</b> и отметь <b>@weledarussia.</b>
+                        </li>
+                        <li>
+                            - Убедись, что на время конкурса твой аккаунт остается открытым.                     
+                        </li>
+                    </Grid>
+                </Grid>
                 <Locked/>
 
             </Slider>
@@ -52,7 +92,6 @@ const Locked = (date)=>{
             <p>Доступ к данному заданию откроется
             <br/><b>01.06.2021</b>
             </p>
-
         </Grid>
     )
 }

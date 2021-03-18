@@ -54,9 +54,9 @@ export function createDataPrizi(date, name, points){
         stat='на модерации I'
       }
 
-      return {date,task, stat, points}
+      return {date,task:'Задание №'+task.toString(), id:task, stat, points}
   }
   export const rowsTasks = [
-    createData('15.04.2021', 'Задание №1', true, 3),
-    createData('25.04.2021', 'Задание №2',),
+    createData('15.04.2021', '1', true, 3),
+    createData('25.04.2021', '2',),
   ]

@@ -65,16 +65,35 @@ const taskFrom= (props)=>{
 const task = () => {
     const dispatch = useDispatch()
     const task = useSelector(state => state.data.task)
+    const rowsTasks = useSelector(state => state.data.rowsTasks)
     const handler = ()=>{
         dispatch(setInstaPostModal(true));
         dispatch(setTaskRow(task))
     }
+    const TaskSendVAriant = ()=>{
+        let alreadySent=false;
+        rowsTasks.map((taskRow)=>{
+            if(taskRow.id==task){
+                alreadySent=true;
+            }
+        })
+        if(alreadySent){
+            return<p>
+                Вы уже загрузили ссылку на проверку.<br/>
+                Результат проверки станет доступен в твоем Личном кабинете в течение ближайших 3-х дней. 
+            </p>
+        }else{
+            return <TaskFrom onSubmit={handler}/>
+        }
+    }
+    console.log('task')
+
+    TaskSendVAriant()
         return (
             <div className='tasksContainer'>
                     <h3>Задания</h3>
                     <Slider/>
-                    <TaskFrom onSubmit={handler}/>
-                    
+                    <TaskSendVAriant/>
                         <Tabs/>
             </div>
         )
