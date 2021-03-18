@@ -28,7 +28,8 @@ import PrizSelectModal from '../Modal/PrizSelectModal/PrizSelectModal'
 import TextField from '../TextField/TextField'
 import Tabs from './Tabs/Tabs'
 import {TaskSend, Sbros} from '../Modal/SimpleModal/SimpleModal'
-
+import { Provider } from "react-redux";
+import {store} from '../../store/store'
 
 const task = () => {
         return (
@@ -43,7 +44,9 @@ const task = () => {
                         <TaskSend/>
                         {/* <Sbros/> */}
                     </Grid>
-                    <Tabs/>
+                    <Provider store={store}>
+                        <Tabs/>
+                    </Provider>
             </div>
         )
 }

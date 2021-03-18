@@ -1,9 +1,9 @@
-import {ACTION_CHANGE_USER,ACTION_RESET_EMAIL_APPROVE_MODAL, ACTION_LOGIN_MODAL, ACTION_SET_EMAIL_APPROVE_MODAL, ACTION_TOGGLE_ERROR, ACTION_SET_POPUP, ACTION_REGISTRATION_USER} from './actions'
+import {ACTION_PRIZ_SUCCESS_MODAL,ACTION_ADRESS_MODAL,ACTION_SELECT_PRIZ_MODAL,ACTION_RESET_EMAIL_APPROVE_MODAL, ACTION_LOGIN_MODAL, ACTION_SET_EMAIL_APPROVE_MODAL, ACTION_TOGGLE_ERROR, ACTION_SET_POPUP, ACTION_REGISTRATION_USER} from './actions'
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 // Or with Immutablejs:
 // import { reducer as formReducer } from 'redux-form/immutable';
-
+import {rowsPrizi, rowsTasks, ColumnsPrizi, ColumnsTasks} from './defStore'
 
 
 const initialState = {
@@ -12,6 +12,15 @@ const initialState = {
   RegEmailApproveModalOpen: false,
   LoginModalOpen: false,
   ResetEmailApproveModalOpen: false,
+  selectPrizModalOpen: true,
+  prizSuccessModalOpen: true,
+  adressModalOpen: true,
+
+  rowsPrizi,
+  rowsTasks,
+  ColumnsPrizi,
+  ColumnsTasks,
+  score: 12
 }
   export const rootRedducer = (state=initialState, action)=>{
       switch (action.type){
@@ -35,8 +44,19 @@ const initialState = {
             case ACTION_RESET_EMAIL_APPROVE_MODAL:
               console.log('action')
               console.log(action)
-              
               return {...state, ResetEmailApproveModalOpen: action.payload}
+            case ACTION_SELECT_PRIZ_MODAL:
+              console.log('action')
+              console.log(action)
+              return {...state, selectPrizModalOpen: action.payload}
+            case ACTION_PRIZ_SUCCESS_MODAL:
+              console.log('action')
+              console.log(action)
+              return {...state, prizSuccessModalOpen: action.payload}
+            case ACTION_ADRESS_MODAL:
+              console.log('action')
+              console.log(action)
+              return {...state, adressModalOpen: action.payload}
       }
       
     return state

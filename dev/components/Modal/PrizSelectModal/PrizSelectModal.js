@@ -26,6 +26,7 @@ const itemsArr=[
         title:'Промокод на бесплатную доставку',
         img: i2,
         cost: 10,
+        isDigital:true,
     },{
         title:'Косметичка из органического хлопка',
         img: i3,
@@ -35,6 +36,7 @@ const itemsArr=[
         subtitle:'*скидка 30%',
         img: i4,
         cost: 15,
+        isDigital:true,
     },{
         title:'Сумка из органического хлопка',
         img: i5,
@@ -63,6 +65,8 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import json2mq from 'json2mq';
 import Slider from "react-slick";
 import '../../slider/slider.scss'
+import { AlertTitle } from "@material-ui/lab";
+import {SelectPriz, PrizSuccess, AdressModal} from '../SimpleModal/SimpleModal'
 const PSM = () => {
     const matches = useMediaQuery(
         json2mq({
@@ -94,7 +98,10 @@ return (
                 )
             }
         }
+    const score = useSelector(state => state.data.score)
     return(
+        <>
+        <p className='cabinetSelectPriz'>Общее количество баллов: <span>{score}</span></p>
         <Modal 
             btnText='Выбрать приз'
             isOpen={true}
@@ -105,14 +112,27 @@ return (
             classNameWrap=' priziModalWrap'
             >
                 <GetWpar isDesktop={matches}/>
+                <SelectPriz/>
+                <PrizSuccess/>          
+                <AdressModal/>
             </Modal>
+        </>
     )
 }
 export default PSM;
+import { useSelector, useDispatch } from 'react-redux'
 
-const ball=12;
-const Item = ({img, title, subtitle, cost}) => {
+const Item = ({img, title, subtitle, cost, isDigital=false}) => {
+    const hangleClick=()=>{
+        if (isDigital){
 
+            alert(isDigital)
+        }
+        console.log(isDigital);
+        console.log('isDigital')
+
+    }
+    const score = useSelector(state => state.data.score)
     return (
         <Grid item xs={6} lg={4} className='priziItemGrid'>
             <Grid container direction='column' alignItems='center' justify='space-between' className='priziItemContainer'>
@@ -125,7 +145,7 @@ const Item = ({img, title, subtitle, cost}) => {
                 </Grid>
                 <Grid item className='priziItemWrap'>
                     <p className='priziItemCost'>{cost} баллов</p>
-                    <Button variant='contained' disabled={cost>ball} fullWidth>Получить</Button>
+                    <Button variant='contained' disabled={cost>score} fullWidth onClick={hangleClick}>Получить</Button>
                 </Grid>
             </Grid>
         </Grid>

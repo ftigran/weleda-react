@@ -5,6 +5,9 @@ export const ACTION_REGISTRATION_USER='ACTION_REGISTRATION_USER'
 export const ACTION_SET_EMAIL_APPROVE_MODAL='ACTION_SET_EMAIL_APPROVE_MODAL'
 export const ACTION_LOGIN_MODAL='ACTION_LOGIN_MODAL'
 export const ACTION_RESET_EMAIL_APPROVE_MODAL='ACTION_RESET_EMAIL_APPROVE_MODAL'
+export const ACTION_SELECT_PRIZ_MODAL='ACTION_SELECT_PRIZ_MODAL'
+export const ACTION_PRIZ_SUCCESS_MODAL='ACTION_PRIZ_SUCCESS_MODAL'
+export const ACTION_ADRESS_MODAL='ACTION_ADRESS_MODAL'
 
 export const regUser = (user)=>{
   return {
@@ -47,4 +50,22 @@ export const setResetEmailApproveModal = (bool)=>{
       type: ACTION_RESET_EMAIL_APPROVE_MODAL,
       payload: bool
     }
+}
+export const setSelectPrizModal = (bool)=>{
+  return {
+      type: ACTION_SELECT_PRIZ_MODAL,
+      payload: bool
+    }
+}
+export const setPrizSuccessModal = (bool)=>{
+  return {
+      type: ACTION_PRIZ_SUCCESS_MODAL,
+      payload: bool
+}
+}
+export const setAdressModal = (bool)=>{
+  return {
+      type: ACTION_ADRESS_MODAL,
+      payload: bool
+}
 }

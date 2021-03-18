@@ -7,7 +7,8 @@ import Grid from '@material-ui/core/Grid';
 import PrizSelectModal from '../../../Modal/PrizSelectModal/PrizSelectModal'
 
 import './cabinet.scss'
-
+import { Provider } from "react-redux";
+import {store} from '../../../../store/store'
 const main = () => {
     return (
         <>  
@@ -19,8 +20,9 @@ const main = () => {
                     <Grid xs={10}item className='pageContainer'>
                         <Tasks/>
                         <Grid container justify='space-between' alignItems='center' className='cabinetSelectPrizContainer'>
-                            <p className='cabinetSelectPriz'>Общее количество баллов: <span>12</span></p>
-                            <PrizSelectModal/>
+                            <Provider store={store}>
+                                <PrizSelectModal/>
+                            </Provider>
                         </Grid>
                     </Grid>
                 </Grid>

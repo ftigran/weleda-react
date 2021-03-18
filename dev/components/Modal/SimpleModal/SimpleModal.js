@@ -166,6 +166,183 @@ console.log(open)
       </MatModal>
     )
 }
+import {setSelectPrizModal, setPrizSuccessModal, setAdressModal} from '../../../store/actions'
+
+export const SelectPriz =()=>{
+    const open = useSelector(state => state.data.selectPrizModalOpen)
+    const isDigital=true;
+    const name='Промокод на доставку'
+    const text=()=>{
+        if(isDigital){
+            return <>Спасибо!<br/>
+            Вы выбрали приз {name}.<br/>
+            Приз появится в вашем личном кабинете в таблице «Призы».</>
+        }else{
+            return <>Спасибо!<br/>
+            Вы выбрали приз Косметичка.<br/>
+            Для подтверждения приза заполните<br/>
+            Адресную форму.</>
+        }
+
+    }
+    const dispatch = useDispatch()
+console.log(open)
+    const handleClose = () => {
+        dispatch(setSelectPrizModal(false));
+    };
+    const submitHandler=()=>{
+        handleClose()
+        if(isDigital){
+            dispatch(setPrizSuccessModal(true));
+        }else{
+
+        }
+    }
+    return(
+        <MatModal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        className={'modal'}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+        // disableScrollLock={true}
+      >
+        <Fade in={open}>
+          <div className={'modalWindow LoginModal SimpleModal'}>
+            <h3 id="transition-modal-title">Выбор приза</h3>
+                <IconButton
+                aria-label="Закрыть окно"
+                className={'modalWindowClose'}
+                onClick={handleClose}
+                >
+                <CloseIcon/>
+                </IconButton>
+                {text()}
+            <Button  onClick={submitHandler} variant='contained' size='large'>
+                Подтвердить
+            </Button>
+    </div>
+        </Fade>
+      </MatModal>
+    )
+}
+const adressFrom= (props)=>{
+    //   const handleSubmit= (e)=>{
+    //     console.log(e)
+    //     }
+        const { handleSubmit, pristine, reset, submitting } = props;
+        return (
+        
+            <form onSubmit={handleSubmit}>
+                <Field
+                name="email"
+                component={renderTextField}
+                type="email"
+                label="Email"
+                //validate={[required, email]}
+                validate={[email]}
+                
+                />
+                <Button type='submit' variant='contained' size='large'>Восстановить</Button>
+            </form>
+    )}
+    const AdressFrom = reduxForm({
+        form: 'AdressFrom', // a unique identifier for this form
+      })(adressFrom);
+export const AdressModal= ()=>{
+    const open = useSelector(state => state.data.adressModalOpen)
+    
+    const dispatch = useDispatch()
+console.log(open)
+    const handleClose = () => {
+        dispatch(setAdressModal(false));
+    };
+    const submitHandler=()=>{
+        if(true){
+        }
+    }
+    return(
+        <MatModal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        className={'modal'}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+        // disableScrollLock={true}
+      >
+        <Fade in={open}>
+          <div className={'modalWindow LoginModal SimpleModal'}>
+            <h3 id="transition-modal-title">Выбор приза</h3>
+                <IconButton
+                aria-label="Закрыть окно"
+                className={'modalWindowClose'}
+                onClick={handleClose}
+                >
+                <CloseIcon/>
+                </IconButton>
+                Пожалуйста, введите информацию для доставки приза ниже:
+                <AdressFrom onSubmit={handleClose}/>
+    </div>
+        </Fade>
+      </MatModal>
+    )
+}
+export const PrizSuccess= ()=>{
+    const open = useSelector(state => state.data.prizSuccessModalOpen)
+    
+    const dispatch = useDispatch()
+console.log(open)
+    const handleClose = () => {
+        dispatch(setPrizSuccessModal(false));
+    };
+    const submitHandler=()=>{
+        if(true){
+        }
+    }
+    return(
+        <MatModal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        className={'modal'}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+        // disableScrollLock={true}
+      >
+        <Fade in={open}>
+          <div className={'modalWindow LoginModal SimpleModal'}>
+            <h3 id="transition-modal-title">Выбор приза</h3>
+                <IconButton
+                aria-label="Закрыть окно"
+                className={'modalWindowClose'}
+                onClick={handleClose}
+                >
+                <CloseIcon/>
+                </IconButton>
+                Спасибо!
+                <br/>Информация о заказе была отправлена на ваш email.
+            <Button  onClick={handleClose} variant='contained' size='large'>
+                ОК
+            </Button>          
+    </div>
+        </Fade>
+      </MatModal>
+    )
+}
 
 export const verify= <SimpleModal
 title={'Подтверждение данных'}
