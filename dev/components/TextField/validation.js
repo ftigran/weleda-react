@@ -41,7 +41,7 @@ value && !/[а-яА-ЯЁё-і]/g.test(value)
   : undefined
 export const instaPost = value =>
 value && !/instagram.com\/p\/[a-zA-z0-9]{1,}/g.test(value)
-    ? 'В этом поле доступна только кириллица'
+    ? 'Введите действительную ссылку на пост'
     : undefined 
 export const instaUser = value =>
 value && !/@[a-zA-Z0-9]{1,}/g.test(value)

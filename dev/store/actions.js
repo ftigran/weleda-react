@@ -8,9 +8,12 @@ export const ACTION_RESET_EMAIL_APPROVE_MODAL='ACTION_RESET_EMAIL_APPROVE_MODAL'
 export const ACTION_SELECT_PRIZ_MODAL='ACTION_SELECT_PRIZ_MODAL'
 export const ACTION_PRIZ_SUCCESS_MODAL='ACTION_PRIZ_SUCCESS_MODAL'
 export const ACTION_ADRESS_MODAL='ACTION_ADRESS_MODAL'
+export const ACTION_INSTAPOST_SEND='ACTION_INSTAPOST_SEND'
 export const ACTION_SELECT_PRIZ='ACTION_SELECT_PRIZ'
 export const ACTION_ADD_PRIZ_ROW='ACTION_ADD_PRIZ_ROW'
+export const ACTION_ADD_TASK_ROW='ACTION_ADD_TASK_ROW'
 export const ACTION_DECREMENT_SCORE='ACTION_DECREMENT_SCORE'
+export const ACTION_CHANGE_TASK='ACTION_CHANGE_TASK'
 
 export const regUser = (user)=>{
   return {
@@ -66,6 +69,13 @@ export const setPrizSuccessModal = (bool)=>{
       payload: bool
 }
 }
+export const setTask = (bool)=>{
+  return {
+      type: ACTION_CHANGE_TASK,
+      payload: bool
+}
+}
+
 export const setAdressModal = (bool)=>{
   return {
       type: ACTION_ADRESS_MODAL,
@@ -95,9 +105,32 @@ export const setPrizRow = (name, points)=>{
 }
 }
 
+export const setTaskRow = (index)=>{
+  const date = new Date();
+
+  const options = {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+  };
+
+  return {
+      type: ACTION_ADD_TASK_ROW,
+      payload: [
+        date.toLocaleString("ru", options), 'Задание №'+index
+      ]
+}
+}
+
 export const setDecrementScore = (val)=>{
   return {
       type: ACTION_DECREMENT_SCORE,
       payload: val
+}
+}
+export const setInstaPostModal = (bool)=>{
+  return {
+      type: ACTION_INSTAPOST_SEND,
+      payload: bool
 }
 }

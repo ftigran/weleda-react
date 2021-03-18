@@ -29,24 +29,53 @@ import TextField from '../TextField/TextField'
 import Tabs from './Tabs/Tabs'
 import {TaskSend, Sbros} from '../Modal/SimpleModal/SimpleModal'
 import { Provider } from "react-redux";
+import { Field, reduxForm } from 'redux-form';
 import {store} from '../../store/store'
+import {required, instaPost} from '../TextField/validation'
+import {renderTextField} from '../regForm/renderTextField'
+import { useSelector, useDispatch } from 'react-redux'
+import {setInstaPostModal, setTaskRow} from '../../store/actions'
+const taskFrom= (props)=>{
+        const { handleSubmit, pristine, reset, submitting } = props;
+        return (
+        
+            <form onSubmit={handleSubmit}>
+                <Grid container wrap='nowrap' justify='space-between' className='instaContainer'>
+                        <Grid item className='taskInput'>
+                            <Field
+                                name="instalink"
+                                component={renderTextField}
+                                type="text"
+                                label="Ссылка на пост в Instagram"
+                                validate={[required, instaPost]}
+                                />
+                            <p className='taskInputLegend'>Загрузите ссылку на пост в Instagram для проверки выполнения задания</p>
+                        </Grid>
+                        <Button type='submit' variant='contained' size='large'>Отправить задание</Button>
+                        <TaskSend/>
+                    </Grid>
+                
+            </form>
+    )}
+    const TaskFrom = reduxForm({
+        form: 'TaskFrom', // a unique identifier for this form
+      })(taskFrom);
+
 
 const task = () => {
+    const dispatch = useDispatch()
+    const task = useSelector(state => state.data.task)
+    const handler = ()=>{
+        dispatch(setInstaPostModal(true));
+        dispatch(setTaskRow(task))
+    }
         return (
             <div className='tasksContainer'>
                     <h3>Задания</h3>
                     <Slider/>
-                    <Grid container wrap='nowrap' justify='space-between' className='instaContainer'>
-                        <Grid item className='taskInput'>
-                            <TextField placeholder='Ссылка на пост в Instagram' type='instalink'/>
-                            <p className='taskInputLegend'>Загрузите ссылку на пост в Instagram для проверки выполнения задания</p>
-                        </Grid>
-                        <TaskSend/>
-                        {/* <Sbros/> */}
-                    </Grid>
-                    <Provider store={store}>
+                    <TaskFrom onSubmit={handler}/>
+                    
                         <Tabs/>
-                    </Provider>
             </div>
         )
 }

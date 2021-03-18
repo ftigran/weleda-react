@@ -28,25 +28,47 @@ export class SimpleModal extends React.Component{
 
 export const TaskSend = ()=>
 {
-    return (
-        <Modal 
-        className={'ModalInsta SimpleModal'} 
-        title={'Загрузка работы'} 
-        btnText={'Отправить задание'}
-        childBtnText={'OK'}
-        mainBtnVariant='contained'
-        mainBtnSize='large'
-        btnSize='large'
-        //mainBtnFull={this.props.mainBtnFull}
-        //btnFull={this.props.btnFull}
-        >
-            <p className={'SimpleModalText'}>
+    const open = useSelector(state => state.data.instaPostModalOpen)
+    const dispatch = useDispatch()
+console.log(open)
+    const handleClose = () => {
+        dispatch(setInstaPostModal(false));
+    };
+    return(
+        <MatModal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        className={'modal'}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+        // disableScrollLock={true}
+      >
+        <Fade in={open}>
+          <div className={'modalWindow LoginModal SimpleModal'}>
+            <h3 id="transition-modal-title">Загрузка работы</h3>
+                <IconButton
+                aria-label="Закрыть окно"
+                className={'modalWindowClose'}
+                onClick={handleClose}
+                >
+                <CloseIcon/>
+                </IconButton>
+                <p className={'SimpleModalText'}>
                 Спасибо, ссылка принята для проверки.
             </p>
             <p className={'SimpleModalText'}>
                 Результат проверки станет доступен в твоем Личном кабинете в течение ближайших 3-х рабочих дней.
             </p>
-        </Modal>
+    <Button  onClick={handleClose} variant='contained' size='large'>ОК
+    </Button>          
+    </div>
+        </Fade>
+      </MatModal>
     )
 }
 import promocodeImg from '../../../img/wherePromocode.png'
@@ -166,7 +188,7 @@ console.log(open)
       </MatModal>
     )
 }
-import {setSelectPrizModal, setDecrementScore,setPrizSuccessModal, setAdressModal, setPrizRow} from '../../../store/actions'
+import {setSelectPrizModal, setInstaPostModal,setDecrementScore,setPrizSuccessModal, setAdressModal, setPrizRow} from '../../../store/actions'
 
 export const SelectPriz =()=>{
     const open = useSelector(state => state.data.selectPrizModalOpen)

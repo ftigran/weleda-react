@@ -13,19 +13,20 @@ const main = () => {
     return (
         <>  
             <Grid className='pageBG' container justify='center' id='cabinet'>
-                <Grid container  justify='center' className='pageWrapper'>
-                    <Grid xs={11}item className='pageContainer' alignSelf='flex-end'>
-                        <Lkinfo/>
-                    </Grid>
-                    <Grid xs={10}item className='pageContainer'>
-                        <Tasks/>
-                        <Grid container justify='space-between' alignItems='center' className='cabinetSelectPrizContainer'>
-                            <Provider store={store}>
-                                <PrizSelectModal/>
-                            </Provider>
+                <Provider store={store}>
+                    <Grid container  justify='center' className='pageWrapper'>
+                        <Grid xs={11}item className='pageContainer' alignSelf='flex-end'>
+                            <Lkinfo/>
+                        </Grid>
+                        <Grid xs={10}item className='pageContainer'>
+                            <Tasks/>
+                            <Grid container justify='space-between' alignItems='center' className='cabinetSelectPrizContainer'>
+                                    <PrizSelectModal/>
+                            </Grid>
                         </Grid>
                     </Grid>
-                </Grid>
+                </Provider>
+
             </Grid>
             
 

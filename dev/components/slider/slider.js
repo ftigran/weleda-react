@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import Grid from '@material-ui/core/Grid';
-
+import {setTask} from '../../store/actions'
 import Slider from "react-slick";
+import {useSelector, useDispatch} from 'react-redux'
 import './slider.scss'
-let taskNumb = 1;
 const App = () => {
+    const taskNumb = useSelector(state => state.data.task)
+    const dispatch = useDispatch();
+    const slideChange = (index)=>{
+        dispatch(setTask(index+1))
+    }
     return (
         <div className='slider'>
             <h3 className='sliderTitle'>Задание №{taskNumb}</h3>
-            <Slider>
+            <Slider afterChange={slideChange}>
 
                 <Grid container justify='space-between' direction='column' className='sliderContainer'>
                     <Grid item className='sliderContainerItem'>

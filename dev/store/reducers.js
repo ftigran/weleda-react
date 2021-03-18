@@ -1,9 +1,9 @@
-import {ACTION_PRIZ_SUCCESS_MODAL,ACTION_DECREMENT_SCORE,ACTION_ADD_PRIZ_ROW,ACTION_SELECT_PRIZ,ACTION_ADRESS_MODAL,ACTION_SELECT_PRIZ_MODAL,ACTION_RESET_EMAIL_APPROVE_MODAL, ACTION_LOGIN_MODAL, ACTION_SET_EMAIL_APPROVE_MODAL, ACTION_TOGGLE_ERROR, ACTION_SET_POPUP, ACTION_REGISTRATION_USER} from './actions'
+import {ACTION_PRIZ_SUCCESS_MODAL,ACTION_CHANGE_TASK,ACTION_ADD_TASK_ROW,ACTION_INSTAPOST_SEND,ACTION_DECREMENT_SCORE,ACTION_ADD_PRIZ_ROW,ACTION_SELECT_PRIZ,ACTION_ADRESS_MODAL,ACTION_SELECT_PRIZ_MODAL,ACTION_RESET_EMAIL_APPROVE_MODAL, ACTION_LOGIN_MODAL, ACTION_SET_EMAIL_APPROVE_MODAL, ACTION_TOGGLE_ERROR, ACTION_SET_POPUP, ACTION_REGISTRATION_USER} from './actions'
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 // Or with Immutablejs:
 // import { reducer as formReducer } from 'redux-form/immutable';
-import {rowsPrizi, rowsTasks, ColumnsPrizi, ColumnsTasks, createDataPrizi} from './defStore'
+import {rowsPrizi, rowsTasks, createData,ColumnsPrizi, ColumnsTasks, createDataPrizi} from './defStore'
 
 
 const initialState = {
@@ -15,7 +15,9 @@ const initialState = {
   selectPrizModalOpen: false,
   prizSuccessModalOpen: false,
   adressModalOpen: false,
+  instaPostModalOpen: false,
   priz:{},
+  task:1,
   rowsPrizi,
   rowsTasks,
   ColumnsPrizi,
@@ -61,14 +63,28 @@ const initialState = {
               console.log('action')
               console.log(action)
               return {...state, priz: action.payload}
+              case ACTION_CHANGE_TASK:
+              console.log('action')
+              console.log(action)
+              return {...state, task: action.payload}
             case ACTION_ADD_PRIZ_ROW:
               console.log('action')
               console.log(action)
               return {...state, rowsPrizi: state.rowsPrizi.concat(createDataPrizi(...action.payload))}
-            case ACTION_DECREMENT_SCORE:
+              case ACTION_ADD_TASK_ROW:
+                console.log('action')
+                console.log(action)
+                return {...state, rowsTasks: state.rowsTasks.concat(createData(...action.payload))}
+              
+              
+              case ACTION_DECREMENT_SCORE:
               console.log('action')
               console.log(action)
               return {...state, score: state.score - action.payload}
+            case ACTION_INSTAPOST_SEND:
+              console.log('action')
+              console.log(action)
+              return {...state, instaPostModalOpen: action.payload}
       }
       
     return state

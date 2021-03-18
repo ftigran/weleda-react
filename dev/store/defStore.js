@@ -45,7 +45,7 @@ export const ColumnsTasks = [
 export function createDataPrizi(date, name, points){
   return {date,name, points}
 }
-  function createData(date, task, stat, points){
+ export function createData(date, task, stat, points){
       if (stat===true){
         stat='Принят'
       } else if (stat===false){
