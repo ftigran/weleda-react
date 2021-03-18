@@ -8,6 +8,9 @@ export const ACTION_RESET_EMAIL_APPROVE_MODAL='ACTION_RESET_EMAIL_APPROVE_MODAL'
 export const ACTION_SELECT_PRIZ_MODAL='ACTION_SELECT_PRIZ_MODAL'
 export const ACTION_PRIZ_SUCCESS_MODAL='ACTION_PRIZ_SUCCESS_MODAL'
 export const ACTION_ADRESS_MODAL='ACTION_ADRESS_MODAL'
+export const ACTION_SELECT_PRIZ='ACTION_SELECT_PRIZ'
+export const ACTION_ADD_PRIZ_ROW='ACTION_ADD_PRIZ_ROW'
+export const ACTION_DECREMENT_SCORE='ACTION_DECREMENT_SCORE'
 
 export const regUser = (user)=>{
   return {
@@ -67,5 +70,34 @@ export const setAdressModal = (bool)=>{
   return {
       type: ACTION_ADRESS_MODAL,
       payload: bool
+}
+}
+export const setPriz = (bool)=>{
+  return {
+      type: ACTION_SELECT_PRIZ,
+      payload: bool
+}
+}
+export const setPrizRow = (name, points)=>{
+  const date = new Date();
+
+  const options = {
+    year: 'numeric',
+    month: 'numeric',
+    day: 'numeric',
+  };
+
+  return {
+      type: ACTION_ADD_PRIZ_ROW,
+      payload: [
+        date.toLocaleString("ru", options), name, points
+      ]
+}
+}
+
+export const setDecrementScore = (val)=>{
+  return {
+      type: ACTION_DECREMENT_SCORE,
+      payload: val
 }
 }

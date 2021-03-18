@@ -166,14 +166,15 @@ console.log(open)
       </MatModal>
     )
 }
-import {setSelectPrizModal, setPrizSuccessModal, setAdressModal} from '../../../store/actions'
+import {setSelectPrizModal, setDecrementScore,setPrizSuccessModal, setAdressModal, setPrizRow} from '../../../store/actions'
 
 export const SelectPriz =()=>{
     const open = useSelector(state => state.data.selectPrizModalOpen)
-    const isDigital=true;
-    const name='Промокод на доставку'
+    const priz = useSelector(state => state.data.priz)
+    const score = useSelector(state => state.data.score)
+    const name=priz.title
     const text=()=>{
-        if(isDigital){
+        if(priz.isDigital){
             return <>Спасибо!<br/>
             Вы выбрали приз {name}.<br/>
             Приз появится в вашем личном кабинете в таблице «Призы».</>
@@ -192,11 +193,16 @@ console.log(open)
     };
     const submitHandler=()=>{
         handleClose()
-        if(isDigital){
-            dispatch(setPrizSuccessModal(true));
-        }else{
-
+        if(priz.cost<=score){
+            if(priz.isDigital){
+                dispatch(setPrizSuccessModal(true));
+                dispatch(setPrizRow(priz.title, priz.cost))
+                dispatch(setDecrementScore(priz.cost));
+            }else{
+                dispatch(setAdressModal(true));
+            }
         }
+        
     }
     return(
         <MatModal
@@ -248,7 +254,7 @@ const adressFrom= (props)=>{
                 validate={[email]}
                 
                 />
-                <Button type='submit' variant='contained' size='large'>Восстановить</Button>
+                <Button type='submit' variant='contained' size='large'>Подтвердить</Button>
             </form>
     )}
     const AdressFrom = reduxForm({
@@ -256,15 +262,17 @@ const adressFrom= (props)=>{
       })(adressFrom);
 export const AdressModal= ()=>{
     const open = useSelector(state => state.data.adressModalOpen)
-    
+    const priz = useSelector(state => state.data.priz)
+    const score = useSelector(state => state.data.score)
     const dispatch = useDispatch()
 console.log(open)
     const handleClose = () => {
         dispatch(setAdressModal(false));
     };
     const submitHandler=()=>{
-        if(true){
-        }
+        dispatch(setPrizSuccessModal(true));
+        dispatch(setPrizRow(priz.title, priz.cost))
+        dispatch(setDecrementScore(priz.cost));
     }
     return(
         <MatModal
@@ -291,7 +299,7 @@ console.log(open)
                 <CloseIcon/>
                 </IconButton>
                 Пожалуйста, введите информацию для доставки приза ниже:
-                <AdressFrom onSubmit={handleClose}/>
+                <AdressFrom onSubmit={submitHandler}/>
     </div>
         </Fade>
       </MatModal>

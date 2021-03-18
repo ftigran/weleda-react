@@ -42,8 +42,8 @@ export const ColumnsTasks = [
     createDataPrizi('17.04.2021', 'промокод на скидку 10%', 3),
     createDataPrizi('26.04.2021', 'многоразовая бутылка для воды', 9),
   ]
-  function createDataPrizi(date, name, points){    
-    return {date,name, points}
+export function createDataPrizi(date, name, points){
+  return {date,name, points}
 }
   function createData(date, task, stat, points){
       if (stat===true){

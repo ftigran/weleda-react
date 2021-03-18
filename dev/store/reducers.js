@@ -1,9 +1,9 @@
-import {ACTION_PRIZ_SUCCESS_MODAL,ACTION_ADRESS_MODAL,ACTION_SELECT_PRIZ_MODAL,ACTION_RESET_EMAIL_APPROVE_MODAL, ACTION_LOGIN_MODAL, ACTION_SET_EMAIL_APPROVE_MODAL, ACTION_TOGGLE_ERROR, ACTION_SET_POPUP, ACTION_REGISTRATION_USER} from './actions'
+import {ACTION_PRIZ_SUCCESS_MODAL,ACTION_DECREMENT_SCORE,ACTION_ADD_PRIZ_ROW,ACTION_SELECT_PRIZ,ACTION_ADRESS_MODAL,ACTION_SELECT_PRIZ_MODAL,ACTION_RESET_EMAIL_APPROVE_MODAL, ACTION_LOGIN_MODAL, ACTION_SET_EMAIL_APPROVE_MODAL, ACTION_TOGGLE_ERROR, ACTION_SET_POPUP, ACTION_REGISTRATION_USER} from './actions'
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 // Or with Immutablejs:
 // import { reducer as formReducer } from 'redux-form/immutable';
-import {rowsPrizi, rowsTasks, ColumnsPrizi, ColumnsTasks} from './defStore'
+import {rowsPrizi, rowsTasks, ColumnsPrizi, ColumnsTasks, createDataPrizi} from './defStore'
 
 
 const initialState = {
@@ -12,10 +12,10 @@ const initialState = {
   RegEmailApproveModalOpen: false,
   LoginModalOpen: false,
   ResetEmailApproveModalOpen: false,
-  selectPrizModalOpen: true,
-  prizSuccessModalOpen: true,
-  adressModalOpen: true,
-
+  selectPrizModalOpen: false,
+  prizSuccessModalOpen: false,
+  adressModalOpen: false,
+  priz:{},
   rowsPrizi,
   rowsTasks,
   ColumnsPrizi,
@@ -57,6 +57,18 @@ const initialState = {
               console.log('action')
               console.log(action)
               return {...state, adressModalOpen: action.payload}
+            case ACTION_SELECT_PRIZ:
+              console.log('action')
+              console.log(action)
+              return {...state, priz: action.payload}
+            case ACTION_ADD_PRIZ_ROW:
+              console.log('action')
+              console.log(action)
+              return {...state, rowsPrizi: state.rowsPrizi.concat(createDataPrizi(...action.payload))}
+            case ACTION_DECREMENT_SCORE:
+              console.log('action')
+              console.log(action)
+              return {...state, score: state.score - action.payload}
       }
       
     return state

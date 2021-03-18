@@ -121,16 +121,17 @@ return (
 }
 export default PSM;
 import { useSelector, useDispatch } from 'react-redux'
+import {setPriz, setSelectPrizModal} from '../../../store/actions'
 
 const Item = ({img, title, subtitle, cost, isDigital=false}) => {
+    const dispatch = useDispatch();
     const hangleClick=()=>{
-        if (isDigital){
-
-            alert(isDigital)
-        }
-        console.log(isDigital);
-        console.log('isDigital')
-
+        dispatch(setPriz({
+            title,
+            cost,
+            isDigital
+        }))
+        dispatch(setSelectPrizModal(true))
     }
     const score = useSelector(state => state.data.score)
     return (
