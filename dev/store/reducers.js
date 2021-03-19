@@ -14,7 +14,7 @@ const initialState = {
   ResetEmailApproveModalOpen: false,
   selectPrizModalOpen: false,
   prizSuccessModalOpen: false,
-  adressModalOpen: false,
+  adressModalOpen: true,
   instaPostModalOpen: false,
   priz:{},
   task:1,

@@ -202,7 +202,7 @@ export const SelectPriz =()=>{
             Приз появится в вашем личном кабинете в таблице «Призы».</>
         }else{
             return <>Спасибо!<br/>
-            Вы выбрали приз Косметичка.<br/>
+            Вы выбрали приз {name}.<br/>
             Для подтверждения приза заполните<br/>
             Адресную форму.</>
         }
@@ -259,11 +259,77 @@ console.log(open)
       </MatModal>
     )
 }
+import { AddressSuggestions } from 'react-dadata';
+import 'react-dadata/dist/react-dadata.css';
 const adressFrom= (props)=>{
     //   const handleSubmit= (e)=>{
     //     console.log(e)
     //     }
-        const { handleSubmit, pristine, reset, submitting } = props;
+    const [region, setRegion] = React.useState();
+    const [city, setCity] = React.useState();
+    const [street, setStreet] = React.useState();
+    const [house, setHouse] = React.useState();
+    console.log(region)
+    const { handleSubmit, pristine, reset, submitting } = props;
+    const token = "50af94962e7d986c060a7e79e512b90550b87c77"
+    const setReg=(val)=>{
+        setRegion(val.data.kladr_id)
+}
+function join(arr /*, separator */) {
+  var separator = arguments.length > 1 ? arguments[1] : ", ";
+  return arr.filter(function(n){return n}).join(separator);
+}
+
+function formatCity(suggestion) {
+  var address = suggestion.data;
+  if (address.city_with_type === address.region_with_type) {
+      return address.settlement_with_type || "";
+    } else {
+      return join([
+        address.city_with_type,
+        address.settlement_with_type]);
+    }
+}
+
+var type  = "ADDRESS";
+
+// // регион и район
+// $region.suggestions({
+//   token: token,
+//   type: type,
+//   hint: false,
+//   bounds: "region-area"
+// });
+
+// // город и населенный пункт
+// $city.suggestions({
+//   token: token,
+//   type: type,
+//   hint: false,
+//   bounds: "city-settlement",
+//   constraints: $region,
+//   formatSelected: formatCity
+// });
+
+// // улица
+// $street.suggestions({
+//   token: token,
+//   type: type,
+//   hint: false,
+//   bounds: "street",
+//   constraints: $city,
+//   count: 15
+// });
+
+// // дом
+// $house.suggestions({
+//   token: token,
+//   type: type,
+//   hint: false,
+//   noSuggestionsHint: false,
+//   bounds: "house",
+//   constraints: $street
+// });
         return (
         
             <form onSubmit={handleSubmit}>
@@ -276,6 +342,23 @@ const adressFrom= (props)=>{
                 validate={[email]}
                 
                 />
+                <AddressSuggestions 
+                    token={token}
+                    value={region}
+                    onChange={setReg} 
+                    hint={false}
+                    bounds="region-area"
+                    />
+                <AddressSuggestions 
+                    token={token}
+                    value={city}
+                    onChange={setCity} 
+                    hint={false}
+                    bounds="city-settlement"
+                    filterLocations={[
+                        {kladr_id:region}]}
+                    formatSelected={formatCity}
+                    />
                 <Button type='submit' variant='contained' size='large'>Подтвердить</Button>
             </form>
     )}

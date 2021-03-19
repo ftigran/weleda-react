@@ -104,7 +104,7 @@ return (
         <p className='cabinetSelectPriz'>Общее количество баллов: <span>{score}</span></p>
         <Modal 
             btnText='Выбрать приз'
-            isOpen={false}
+            isOpen={true}
             title='Витрина призов'
             mainBtnVariant='contained'
             mainBtnSize='large'
@@ -145,7 +145,7 @@ const Item = ({img, title, subtitle, cost, isDigital=false}) => {
                     <p className='priziItemSubtitle'>{subtitle}</p>
                 </Grid>
                 <Grid item className='priziItemWrap'>
-                    <p className='priziItemCost'>{cost} баллов</p>
+                    <p className={cost>score?'priziItemCost priziItemCostDisabled':'priziItemCost'}>{cost} баллов</p>
                     <Button variant='contained' disabled={cost>score} fullWidth onClick={hangleClick}>Получить</Button>
                 </Grid>
             </Grid>

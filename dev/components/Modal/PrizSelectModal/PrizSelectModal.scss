@@ -27,6 +27,9 @@
             text-transform: uppercase;
             color: #008F3F;
             margin-bottom: 41px;
+            &Disabled{
+                color: #F05A29;
+            }
         }
         &Title{
             line-height: 30px;
