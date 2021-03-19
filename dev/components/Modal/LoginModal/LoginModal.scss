@@ -65,6 +65,9 @@
 }
 @media (max-width:730px){
     .LoginModal{
+        .sbrosWrapper .modalBtn{
+            top: -35px;
+        }
         form{
             max-width:316px;
         }

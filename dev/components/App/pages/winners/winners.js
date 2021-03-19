@@ -19,13 +19,11 @@ const main = () => {
             <Top btnText="Узнать победителей" toLink="/winners" toID="winners"/>
             <Grid container justify="center">
                 <Grid item xs={12} className="winnersContainer">
-                    <Grid container justify="center">
-                        <Grid item xs={6} id="winners">
-                            <Grid container>
+                            <Grid container direction="column" alignItems='center'>
                                 <Grid container className="winnersCard">
-                                    <Grid item xs={4} className="imgWrap">
+                                    <Grid item xs={6} md={4} className="imgWrap">
                                     </Grid>
-                                    <Grid item xs={8}>
+                                    <Grid item xs={6} md={8}>
                                         <Grid container justify='flex-start' className="textWrap" alignItems="flex-start">
                                             <Grid item component="p">
                                                 <b>
@@ -53,8 +51,6 @@ const main = () => {
                                 </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
-                </Grid>
             </Grid>
         </>
     )

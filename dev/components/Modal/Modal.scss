@@ -87,6 +87,9 @@
 //     }
 // }
 @media (max-width:730px){
+    .modal{
+        padding: 0;
+    }
     .modalWindow {
         border-radius: 0;
         .MuiTextField-root{
@@ -96,4 +99,4 @@
             display: none;
                 }
     }
-}
+}    

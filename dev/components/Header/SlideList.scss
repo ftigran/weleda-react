@@ -13,12 +13,16 @@ header.header button.headerMenu{
     position: absolute;
     left: 16px;
     top: 11px;
+    z-index: 1000;
     &:hover{
         background: transparent;
     }
+    
 
 }
-
+.headerListItems .PrivateSwipeArea-root-1{
+    left: 40px;
+}
 .sliderList{
     // background-color: #10417B;
     // height: 100%;
