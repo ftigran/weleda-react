@@ -5,7 +5,7 @@
 //    width: 100%;
     margin: 0 auto -18.65%;
     max-width:1920px;
-    z-index: 1;
+    //z-index: 1;
     &Img{
 
     }
@@ -19,7 +19,7 @@
         //height: 100%;
         width: 100%;
         min-height: 313px;
-
+        background-position: -27px -17px;
         background-image: url('../../img/top.png');
         background-repeat: no-repeat;
         background-size: cover;
@@ -180,7 +180,7 @@
             background-size: 100%;
 
             background-repeat: no-repeat;
-            height: adaptiv-get(1376, 313);
+            height: adaptiv-get(1376, 353);
             padding: 0 16px;
         }
         #cta{

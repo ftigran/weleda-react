@@ -6,13 +6,20 @@ import './Roadmap.scss'
 import plane from '../../img/plane.png';
 import priz from '../../img/prizes.png';
 import promo from '../../img/promoTop.png'
-export default class Main extends Component {
-    render() {
+import birka from '../../img/birka.png'
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import json2mq from 'json2mq';
+const Roadmap = () =>{
+        const matches = useMediaQuery(
+            json2mq({
+              minWidth: 730,
+            }),)
         return (
             <Grid className='RoadmapWrap' container justify='center'>
                 <Grid item sm={8} xs={9}> 
             <Grid container direction='column' className={'Roadmap'} id='c_rules'>
                 {/* <Grid item xs={8} className={'RoadmapContainer'}> */}
+                
                     <div className='RoadmapBlock'>
                         <img src={promo} className='RoadmapPromo'/>
 
@@ -25,6 +32,9 @@ export default class Main extends Component {
                             <p>
                             и присоединяйся к программе подготовки амбассадоров
                             </p>
+                            <Grid item className="imgWrap">
+                                <img src={birka}/>
+                            </Grid>
                     </div>
                     <Grid container direction='row-reverse' alignItems='center' justify='space-between' className='RoadmapBlock'>
                         <Grid item className='RoadmapTextContainer'>
@@ -52,8 +62,10 @@ export default class Main extends Component {
                             <span className='RoadmapNumb'>3
                             <span className='RoadmapNumbLine'/>                            </span>
                             <h3>
-                            Выиграй поездку в Германию
-                            в сады Weleda
+                                {matches?`Выиграй поездку в Германию
+                            в сады Weleda`:"Выиграй поездку в Германию"
+                            }
+                            
                             </h3>
                             <p>
                             или годовой запас косметики Weleda
@@ -70,4 +82,5 @@ export default class Main extends Component {
             </Grid>
         )
     }
-}
+
+export default Roadmap;

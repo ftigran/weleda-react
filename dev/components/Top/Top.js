@@ -10,11 +10,13 @@ import { Link } from "react-router-dom";
 import useReactRouter from 'use-react-router'
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 
-const Main =()=> {
+const Main =({toLink=`/#c_rules`,toID=`c_rules`, btnText="Выполнить задание"})=> {
     const {history} = useReactRouter()
     const handleClick = () => {
         if (window.location.pathname !== '') {
-            history.push(`/#c_rules`)
+            history.push(toLink)
+    console.log(toLink)
+
         }
     }
         return (
@@ -28,13 +30,22 @@ const Main =()=> {
                                 Стань<br/> амбассадором бренда <br/>
                                 и выиграй призы<br/> от Weleda
                             </h1>
-                            <Button variant='contained'>
-                                Выполнить задание
-                            </Button>
                             <ScrollLink
                                     onClick={handleClick}
                                     activeClass="active"
-                                    to={'c_rules'}
+                                    to={toID}
+                                    smooth
+                                    duration={700}
+                                    //ignoreCancelEvents
+                                >
+                                   <Button variant='contained'>
+                                {btnText}
+                            </Button>
+                                </ScrollLink>
+                            <ScrollLink
+                                    onClick={handleClick}
+                                    activeClass="active"
+                                    to={toID}
                                     smooth
                                     duration={700}
                                     //ignoreCancelEvents

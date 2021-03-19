@@ -16,11 +16,11 @@ import winnerNabor from '../../../../img/winnerNabor.png'
 const main = () => {
     return (
         <>  
-            <Top/>
+            <Top btnText="Узнать победителей" toLink="/winners" toID="winners"/>
             <Grid container justify="center">
                 <Grid item xs={12} className="winnersContainer">
                     <Grid container justify="center">
-                        <Grid item xs={6}>
+                        <Grid item xs={6} id="winners">
                             <Grid container>
                                 <Grid container className="winnersCard">
                                     <Grid item xs={4} className="imgWrap">

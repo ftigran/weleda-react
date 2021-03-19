@@ -56,7 +56,7 @@ const App = () => {
                                 exact
                                 /> */}
                             <Route path={"/reg"} render={() => <Registration/>}/>
-                            <Route path={"/winners"} exact render={() => <Winners/>}/>
+                            <Route path={"/winners"} render={() => <Winners/>}/>
                             <Route path={"/cabinet"} render={() => <Cabinet/>}/>
                             <Route key='index' location={location} path={"/"} render={() => 
                                 <Main/>} exact/>
