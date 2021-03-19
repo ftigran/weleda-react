@@ -14,7 +14,6 @@ const App = () => {
         <div className='slider'>
             <h3 className='sliderTitle'>Задание №{taskNumb}</h3>
             <Slider afterChange={slideChange}>
-
                 <Grid container justify='space-between' direction='column' className='sliderContainer'>
                     <Grid item className='sliderContainerItem'>
                         <h3>Сделай фото с набором «100 лет экспертизы Weleda»</h3>

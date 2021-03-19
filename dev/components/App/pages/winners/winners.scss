@@ -1,0 +1,48 @@
+div.winnersContainer{
+    padding-top: 300px;
+    max-width: 1700px;
+    background-image: url("../../../../img/winnersBG.svg");
+    background-size: 1163px 911px;
+    background-repeat: no-repeat;
+    background-position: 46% 258px;
+    padding-bottom: 6.5%;
+    .winnersCard{
+        height: 266px;
+        border-radius: 8px;
+        background: #008F3F;
+        margin-bottom: 44px;
+        &_bordered{
+            border: 4px solid #008F3F;
+            box-sizing: border-box;
+            background-color: #fff;
+            font-weight: bold;
+            color: #008F3F;
+        }
+        &:nth-child(1){
+            font-style: normal;
+            font-size: 24px;
+            line-height: 150%;
+            color: #FFFFFF;
+            .imgWrap{
+                background-image: url("../../../../img/winner.png");
+                max-width:270px
+            }
+            .textWrap{
+                padding-top: 25px;
+                padding-left: 20px;
+            }
+        }
+        .imgWrap{
+            background-image: url("../../../../img/winnerNabor.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+    .textWrap{
+        height: 100%;
+        p{
+            max-width:350px
+        }
+        
+    }
+}

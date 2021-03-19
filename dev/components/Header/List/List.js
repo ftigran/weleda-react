@@ -38,7 +38,7 @@ const List=()=> {
         c_main: 'Главная',
         c_rules: 'Правила',
     //     c_prizes: 'Призы',
-        c_winners: 'Победители',
+        //c_winners: 'Победители',
      }
     return(
         <nav className={'headerList'}>
@@ -81,6 +81,11 @@ const List=()=> {
                                 Победители
                             </Link>
                         </li> */}
+                        <li >
+                            <Link component={NavLink} to="/winners" onClick={scrollToTop}>
+                            Победители
+                            </Link>
+                        </li>
                         <li >
                             <Link component={NavLink} to="/reg" onClick={scrollToTop}>
                                 Регистрация

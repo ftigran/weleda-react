@@ -33,7 +33,7 @@ const DataContext = createContext()
 import {store} from '../../store/store';
 import {Provider, connect} from 'react-redux';
 import ScrollSection from '../scroll-section/scroll-section'
-
+import Winners from './pages/winners/winners'
 import Reg from './pages/reg/reg'
 
 const Registration = ()=>(<Provider store={store}>
@@ -55,8 +55,8 @@ const App = () => {
                                 <FAQ/>} 
                                 exact
                                 /> */}
-                            <Route path={"/reg"} render={() => <Registration/>}>
-                            </Route>
+                            <Route path={"/reg"} render={() => <Registration/>}/>
+                            <Route path={"/winners"} exact render={() => <Winners/>}/>
                             <Route path={"/cabinet"} render={() => <Cabinet/>}/>
                             <Route key='index' location={location} path={"/"} render={() => 
                                 <Main/>} exact/>
