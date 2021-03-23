@@ -8,7 +8,7 @@ $maxWidth: 1920;
     //  $mobSize: $pcSize*0.7;
      $addSize: $pcSize - $mobSize;
      $maxWidth: $maxWidth - 414;
-     $responsive: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 414px) / (#{$maxWidth} - 414)));
+     $responsive: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 414px) / #{$maxWidth}));
      @return $responsive;
     }
 
