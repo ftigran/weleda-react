@@ -9,7 +9,7 @@ import {rowsPrizi, rowsTasks, createData,ColumnsPrizi, ColumnsTasks, createDataP
 const initialState = {
   // error: false,
   // popupOpen: false,
-  isLogged:false,
+  isLogged:true,
   RegEmailApproveModalOpen: false,
   LoginModalOpen: false,
   ResetEmailApproveModalOpen: false,

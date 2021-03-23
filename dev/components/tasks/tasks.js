@@ -74,7 +74,7 @@ const task = () => {
         let alreadySent=false;
         let alreadyApproved=false;
         rowsTasks.map((taskRow)=>{
-            if(taskRow.id==task||taskRow.stat=='на модерации I'){
+            if(taskRow.stat=='на модерации I'){
                 alreadySent=true;
             }
             if(taskRow.id==task&&taskRow.stat=='Принят'){

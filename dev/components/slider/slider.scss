@@ -201,3 +201,15 @@ padding: 6px;
         background-position: 17px;
     }
 }
+@media (max-width:390px){
+    .slider{
+    }
+    .slick-next, .slick-prev{
+        background-size: 17px;
+    }
+    .slick-prev{
+        background-position: 8px;
+    }.slick-next{
+        background-position: 8px;
+    }
+}

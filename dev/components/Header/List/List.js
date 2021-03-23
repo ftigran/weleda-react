@@ -45,15 +45,28 @@ const List=()=> {
          console.log(isLogged)
          if(isLogged){
             return(
-                <Link component={NavLink} to="/cabinet" onClick={scrollToTop}>
-                    Регистрация
-                </Link>
+                <li>
+                    <Link component={NavLink} to="/cabinet" onClick={scrollToTop}>
+                        Личный кабинет
+                    </Link>
+                </li>
             )
          }else{
             return(
+                <>
+                <li >
+                <Link component={NavLink} to="/reg" onClick={scrollToTop}>
+                    Регистрация
+                </Link>
+            </li>
+            <li>
+
                 <a onClick={handleOpenLoginModal}>
                     Личный кабинет
                 </a>
+                </li>
+                </>
+
             )
          }
      }
@@ -103,16 +116,8 @@ const List=()=> {
                             Победители
                             </Link>
                         </li>
-                        <li >
-                            <Link component={NavLink} to="/reg" onClick={scrollToTop}>
-                                Регистрация
-                            </Link>
-                        </li>
-                        <li >
-                            {/* <Link component={NavLink} to="/cabinet" onClick={handleOpenLoginModal}> */}
-                            <GetLK/>
-                            {/* </Link> */}
-                        </li>
+                       
+                        <GetLK/>
                         <LoginModal/>
 
                 {/* {<li>

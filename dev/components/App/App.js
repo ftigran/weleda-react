@@ -31,14 +31,12 @@ import { useHistory } from "react-router-dom";
 import '@brainhubeu/react-carousel/lib/style.css';
 const DataContext = createContext()
 import {store} from '../../store/store';
-import {Provider, connect} from 'react-redux';
+import {Provider, useSelector} from 'react-redux';
 import ScrollSection from '../scroll-section/scroll-section'
 import Winners from './pages/winners/winners'
 import Reg from './pages/reg/reg'
 
-const Registration = ()=>(<Provider store={store}>
-  <Reg/>
-  </Provider>)
+
 
 const App = () => {
     //const { setValues, data } = useData();
@@ -49,20 +47,10 @@ const App = () => {
             <Grid container className='appContainer' direction='column'>
             <Grid item className='appWrap'>
                 <Header/>
-                <Switch location={location}>
-                            {/* <Route key='faq' location={location} path={"/faq"}
-                            render={() => 
-                                <FAQ/>} 
-                                exact
-                                /> */}
-                            <Route path={"/reg"} render={() => <Registration/>}/>
-                            <Route path={"/winners"} render={() => <Winners/>}/>
-                            <Route path={"/cabinet"} render={() => <Cabinet/>}/>
-                            <Route key='index' location={location} path={"/"} render={() => 
-                                <Main/>} exact/>
-                            <Route path="*" render={() => <Main/>} />
-                            
-                        </Switch>
+                <Provider store={store}>
+                <Routes/>
+                </Provider>
+                
                     <ScrollSection/>
             </Grid>
             <Footer/>
@@ -72,6 +60,23 @@ const App = () => {
             </>
         );
 }
+const Routes= ()=>{
+  const isLogged = useSelector(state => state.data.isLogged)
 
+    return(
+<Switch location={location}>
+                            {/* <Route key='faq' location={location} path={"/faq"}
+                            render={() => 
+                                <FAQ/>} 
+                                exact
+                                /> */}
+                            {isLogged?<Route path={"/cabinet"} render={() => <Cabinet/>}/>:<Route path={"/reg"} render={() => <Reg/>}/>}
+                            <Route path={"/winners"} render={() => <Winners/>}/>
+                            <Route key='index' location={location} path={"/"} render={() => 
+                                <Main/>} exact/>
+                            <Route path="*" render={() => <Main/>} />
+                        </Switch>
+    )
+}
 export default App;
 
