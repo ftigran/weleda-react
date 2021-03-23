@@ -60,7 +60,7 @@ const App = () => {
                             <Route path={"/cabinet"} render={() => <Cabinet/>}/>
                             <Route key='index' location={location} path={"/"} render={() => 
                                 <Main/>} exact/>
-                            <Route path="*" render={() => <Cabinet/>} />
+                            <Route path="*" render={() => <Main/>} />
                             
                         </Switch>
                     <ScrollSection/>

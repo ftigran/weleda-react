@@ -59,10 +59,12 @@ const LogForm=(props)=>{
                   <Button type="submit" variant='contained' size='small'>Войти</Button>
                   <Link  to="/reg" onClick={handleClose}>
                     <Button 
-            variant='contained'
-            variant='outlined'
-            className='regBtn'>Зарегистрироваться</Button>
-                            </Link>
+                    variant='contained'
+                    variant='outlined'
+                    className='regBtn'>
+                    Зарегистрироваться
+                  </Button>
+                  </Link>
                   </Grid>
                   
                   
