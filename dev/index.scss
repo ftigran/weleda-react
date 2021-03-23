@@ -1,5 +1,6 @@
 @import './fonts/all.scss';
 @import './mixins.scss';
+@import './preloader.scss';
 
 html body{
         //background-color: #FFDD00;
@@ -103,6 +104,15 @@ body {
   body::-webkit-scrollbar-thumb {
     background-color: #008F3F;
     border-radius: 5px;
+  }
+  .anim_fade_out {
+    -webkit-animation: fade_in 0.4s reverse ease-out both 0.5s;
+    animation: fade_in 0.4s reverse ease-out both 0.5s;
+  }
+  
+  .anim_fade_in {
+    -webkit-animation: fade_in 0.2s ease-in both;
+    animation: fade_in 0.2s ease-in both;
   }
   //Buttons
 body button.MuiButton-root{
