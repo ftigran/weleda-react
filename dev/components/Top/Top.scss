@@ -42,6 +42,7 @@
             
             #cta{
                 //width:100%; 
+                z-index: 1;
                 cursor: pointer; 
                 position: relative;
                 width: adaptiv-get(71, 17);
