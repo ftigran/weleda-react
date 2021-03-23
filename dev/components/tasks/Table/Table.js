@@ -21,7 +21,7 @@ export default function StickyHeadTable(props) {
   };
 
   return (
-    <Paper className={'table'}>
+    <div className={'table'}>
       <TableContainer>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
@@ -62,6 +62,6 @@ export default function StickyHeadTable(props) {
       handler={handleChangePage}
       />
       
-    </Paper>
+    </div>
   );
 }

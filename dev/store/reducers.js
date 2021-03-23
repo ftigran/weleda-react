@@ -23,7 +23,7 @@ const initialState = {
   rowsTasks,
   ColumnsPrizi,
   ColumnsTasks,
-  score: 12
+  score: 22
 }
   export const rootRedducer = (state=initialState, action)=>{
       switch (action.type){

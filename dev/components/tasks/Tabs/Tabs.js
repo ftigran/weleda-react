@@ -34,7 +34,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box p={3}>
-          <Typography>{children}</Typography>
+          {children}
         </Box>
       )}
     </div>
@@ -59,7 +59,6 @@ export default function SimpleTabs() {
   const rowsTasks=useSelector(state => state.data.rowsTasks)
   const ColumnsPrizi=useSelector(state => state.data.ColumnsPrizi)
   const ColumnsTasks=useSelector(state => state.data.ColumnsTasks)
-  console.log(rowsPrizi)
   
   return (
     <div className='tabpage'>

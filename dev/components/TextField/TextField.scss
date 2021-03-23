@@ -40,7 +40,7 @@
 /* identical to box height, or 36px */
     top: -3px;
     left: 6px;
-
+    background-color: #fff;
     color: rgba(0, 0, 0, 0.25);
 
     //font-size: 18px;
@@ -65,10 +65,12 @@
         margin-left: 5px;
     }
     .MuiInputLabel-outlined.MuiInputLabel-shrink {
-        transform: translate(14px, -10px);
+        transform: translate(3px, -10px);
         font-size: 16px;
         line-height: 150%;
-        //background-color: #fff;
+        padding-right: 10px;
+        background: #fff;
+        padding-left: 10px;
     }
     .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
         border: 1px solid #F05A29;

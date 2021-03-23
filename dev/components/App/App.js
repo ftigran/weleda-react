@@ -47,7 +47,7 @@ const App = () => {
         return (
             <>  
             <Grid container className='appContainer' direction='column'>
-            <Grid item className='appWrap' direction='column'>
+            <Grid item className='appWrap'>
                 <Header/>
                 <Switch location={location}>
                             {/* <Route key='faq' location={location} path={"/faq"}
