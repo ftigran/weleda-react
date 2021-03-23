@@ -34,6 +34,24 @@
     align-items: center;
     width: 100%;
     box-sizing: border-box;
+    overflow: overlay;
+    max-height: 100%;
+    &{
+        &::-webkit-scrollbar {
+            width: 0.3em;
+          }
+           
+        &::-webkit-scrollbar-track {
+            //box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-left: 1px solid #ccc;
+          }
+           
+        &::-webkit-scrollbar-thumb {
+            background-color: #008F3F;
+            border-radius: 5px;
+          }
+    }
+    
     .modalWindowClose{
         color:#000;
         position: absolute;

@@ -91,6 +91,19 @@ body {
     flex-shrink: 0;
   }
 
+  body::-webkit-scrollbar {
+    width: 0.5em;
+  }
+   
+  body::-webkit-scrollbar-track {
+    //box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-left: 1px solid #ccc;
+  }
+   
+  body::-webkit-scrollbar-thumb {
+    background-color: #008F3F;
+    border-radius: 5px;
+  }
   //Buttons
 body button.MuiButton-root{
   color: #FFF;
