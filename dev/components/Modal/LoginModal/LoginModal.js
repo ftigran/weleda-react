@@ -77,7 +77,7 @@ const LogForm=(props)=>{
 const LoginForm = reduxForm({
   form: 'loginForm', // a unique identifier for this form
 })(LogForm);
-import {setLoginModal} from '../../../store/actions'
+import {setLoginModal, userLog} from '../../../store/actions'
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import CloseIcon from '@material-ui/icons/Close';
@@ -108,7 +108,7 @@ export default function LoginModal(){
         dispatch(setLoginModal(false));
     };
     const handleEnter=()=>{
-      
+      dispatch(userLog(true));
       dispatch(setLoginModal(false));
       history.push('/cabinet')
       console.log('enter')

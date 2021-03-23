@@ -5,16 +5,23 @@ import CB from '../Checkbox/Checkbox'
 import {useDispatch} from 'react-redux'
 import {FormGroup, FormControlLabel, Checkbox, FormControl, FormHelperText} from '@material-ui/core'
 import './lkInfo.scss'
+import {Link} from '@material-ui/core'
+import {userLog} from '../../store/actions'
+import NavLink from '../Header/List/NavLink/NavLink'
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+
 const lkInfo = () => {
-    // const dispatch = useDispatch()
-    // const handlerCB=()=>{   
-    //     dispatch()
-    // }
+    const dispatch = useDispatch()
+    const handlerExit=()=>{   
+        dispatch(userLog(false))
+    }
     return (
         <div className="lkInfo">
             <Grid container justify='space-between' className='lkInfoTitle'>
                 <h3>Личный кабинет</h3>
-                <Button color='primary'>Выйти</Button>
+                <Link component={NavLink} to="/" onClick={()=>{scroll.scrollToTop()}}>
+                    <Button color='primary' onClick={handlerExit}>Выйти</Button>
+                </Link>
             </Grid>
             <Grid container className='lkInfoContainer' spacing={2}>
                 
