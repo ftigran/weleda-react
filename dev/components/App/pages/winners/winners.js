@@ -17,7 +17,7 @@ const main = () => {
     return (
         <>  
             <Top btnText="Узнать победителей" toLink="/winners" toID="winners"/>
-            <Grid container justify="center">
+            <Grid container justify="center" id="winners">
                 <Grid item xs={12} className="winnersContainer">
                             <Grid container direction="column" alignItems='center'>
                                 <Grid container className="winnersCard">

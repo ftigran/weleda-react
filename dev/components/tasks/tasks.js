@@ -72,13 +72,21 @@ const task = () => {
     }
     const TaskSendVAriant = ()=>{
         let alreadySent=false;
+        let alreadyApproved=false;
         rowsTasks.map((taskRow)=>{
-            if(taskRow.id==task){
+            if(taskRow.id==task||taskRow.stat=='на модерации I'){
                 alreadySent=true;
             }
+            if(taskRow.id==task&&taskRow.stat=='Принят'){
+                alreadyApproved=true;
+            }
         })
-        if(alreadySent){
-            return<p>
+        if (alreadyApproved){
+            return<p className="tasksSendedText">
+                Вы уже выполнили это задание.
+            </p>
+        }else if(alreadySent){
+            return<p className="tasksSendedText">
                 Вы уже загрузили ссылку на проверку.<br/>
                 Результат проверки станет доступен в твоем Личном кабинете в течение ближайших 3-х дней. 
             </p>

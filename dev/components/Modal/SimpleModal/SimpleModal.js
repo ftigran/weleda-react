@@ -261,104 +261,63 @@ console.log(open)
 }
 import { AddressSuggestions } from 'react-dadata';
 import 'react-dadata/dist/react-dadata.css';
+import ReactDadataBox, { PartyResponseType } from "react-dadata-box";
+import $ from "jquery"
+import  suggestions from "suggestions-jquery"
+import TextField from '@material-ui/core/TextField';
+
 const adressFrom= (props)=>{
     //   const handleSubmit= (e)=>{
     //     console.log(e)
     //     }
-    const [region, setRegion] = React.useState();
-    const [city, setCity] = React.useState();
-    const [street, setStreet] = React.useState();
-    const [house, setHouse] = React.useState();
-    console.log(region)
+    const [address, setAddress] = React.useState();
+    const [error, setError] = React.useState();
+    const [str, setStr] = React.useState();
+
     const { handleSubmit, pristine, reset, submitting } = props;
     const token = "50af94962e7d986c060a7e79e512b90550b87c77"
-    const setReg=(val)=>{
-        setRegion(val.data.kladr_id)
-}
-function join(arr /*, separator */) {
-  var separator = arguments.length > 1 ? arguments[1] : ", ";
-  return arr.filter(function(n){return n}).join(separator);
-}
-
-function formatCity(suggestion) {
-  var address = suggestion.data;
-  if (address.city_with_type === address.region_with_type) {
-      return address.settlement_with_type || "";
-    } else {
-      return join([
-        address.city_with_type,
-        address.settlement_with_type]);
+    
+    const sub = (e)=>{
+        e.preventDefault();
+        if(address){
+            if (!address.data.city && !address.data.settlement) {
+                setError("Укажите населённый пункт");
+              } else if (!address.data.settlement && !address.data.street) {
+                setError("Укажите улицу");
+              } else if (!address.data.house) {
+                setError("Укажите дом");
+              }else{
+                handleSubmit(e)
+              }
+        } else{
+            setError('Введите адрес')
+        }
     }
-}
-
-var type  = "ADDRESS";
-
-// // регион и район
-// $region.suggestions({
-//   token: token,
-//   type: type,
-//   hint: false,
-//   bounds: "region-area"
-// });
-
-// // город и населенный пункт
-// $city.suggestions({
-//   token: token,
-//   type: type,
-//   hint: false,
-//   bounds: "city-settlement",
-//   constraints: $region,
-//   formatSelected: formatCity
-// });
-
-// // улица
-// $street.suggestions({
-//   token: token,
-//   type: type,
-//   hint: false,
-//   bounds: "street",
-//   constraints: $city,
-//   count: 15
-// });
-
-// // дом
-// $house.suggestions({
-//   token: token,
-//   type: type,
-//   hint: false,
-//   noSuggestionsHint: false,
-//   bounds: "house",
-//   constraints: $street
-// });
-        return (
+    return (
         
-            <form onSubmit={handleSubmit}>
-                <Field
-                name="email"
-                component={renderTextField}
-                type="email"
-                label="Email"
-                //validate={[required, email]}
-                validate={[email]}
-                
+            <form onSubmit={sub} className="adressForm" style={{width:"100%", margin:"10px auto 20px"}}>
+                <p style={{marginBottom:"60px"}}>
+                    Пожалуйста, введите информацию для доставки приза ниже:
+                </p>
+
+                <AddressSuggestions
+                    token={token}
+                    value={address}
+                    onChange={(e)=>{
+                        setError();
+                        setAddress(e)}}
+                    customInput={(props)=>(
+                        <TextField
+                        onChange={setStr}
+              label="Адрес"
+              variant="outlined"
+              error={error}
+              helperText={error}
+              fullWidth
+              {...props}
+            />
+                    )}
                 />
-                <AddressSuggestions 
-                    token={token}
-                    value={region}
-                    onChange={setReg} 
-                    hint={false}
-                    bounds="region-area"
-                    />
-                <AddressSuggestions 
-                    token={token}
-                    value={city}
-                    onChange={setCity} 
-                    hint={false}
-                    bounds="city-settlement"
-                    filterLocations={[
-                        {kladr_id:region}]}
-                    formatSelected={formatCity}
-                    />
                 <Button type='submit' variant='contained' size='large'>Подтвердить</Button>
             </form>
     )}
@@ -378,6 +337,7 @@ console.log(open)
         dispatch(setPrizSuccessModal(true));
         dispatch(setPrizRow(priz.title, priz.cost))
         dispatch(setDecrementScore(priz.cost));
+        dispatch(setAdressModal(false));
     }
     return(
         <MatModal
@@ -403,7 +363,6 @@ console.log(open)
                 >
                 <CloseIcon/>
                 </IconButton>
-                Пожалуйста, введите информацию для доставки приза ниже:
                 <AdressFrom onSubmit={submitHandler}/>
     </div>
         </Fade>

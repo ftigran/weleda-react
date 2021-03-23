@@ -58,5 +58,6 @@ export function createDataPrizi(date, name, points){
   }
   export const rowsTasks = [
     createData('15.04.2021', '1', true, 3),
-    createData('25.04.2021', '2',),
+    createData('25.04.2021', '2',false),
+
   ]

@@ -14,8 +14,8 @@ const main = () => {
         <>  
             <Grid className='pageBG' container justify='center' id='cabinet'>
                 <Provider store={store}>
-                    <Grid container  justify='center' className='pageWrapper'>
-                        <Grid xs={11}item className='pageContainer' alignSelf='flex-end'>
+                    <Grid container  justify='center' className='pageWrapper' alignContent="flex-start">
+                        <Grid xs={11} item className='pageContainer'>
                             <Lkinfo/>
                         </Grid>
                         <Grid xs={10}item className='pageContainer'>

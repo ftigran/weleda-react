@@ -22,8 +22,12 @@
     }
     li{
         margin-left: 37px;
-        & a:hover, button:hover{
+        a:hover{
             opacity: 0.6;
+            text-decoration: none;
+        }
+        a.active {
+            font-weight: 500;
         }
     }
     a{

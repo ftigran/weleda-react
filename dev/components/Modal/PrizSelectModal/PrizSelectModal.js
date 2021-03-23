@@ -104,7 +104,7 @@ return (
         <p className='cabinetSelectPriz'>Общее количество баллов: <span>{score}</span></p>
         <Modal 
             btnText='Выбрать приз'
-            isOpen={true}
+            isOpen={false}
             title='Витрина призов'
             mainBtnVariant='contained'
             mainBtnSize='large'

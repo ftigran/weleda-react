@@ -2,7 +2,9 @@
 
 .tasksContainer{
     margin-top: 33px;
-
+    .tasksSendedText{
+        font-size: adaptiv-get(24, 10);
+    }
     .instaContainer{
         button.MuiButton-root{
             height: 70px;

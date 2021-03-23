@@ -85,7 +85,7 @@ export default App;
 import locked from '../../img/locked.svg'
 const Locked = (date)=>{
     return(
-        <Grid container justify='space-between' alignItems='center'  direction='column' className='sliderContainerLocked sliderContainer' >
+        <Grid container justify='space-between' alignItems='center'  direction='column' className='sliderContainerLocked sliderContainer' data-locked={true}>
             <h3>Расскажи о своем знакомстве с продуктом Weleda</h3>
             <img src={locked}/> 
             <p>Доступ к данному заданию откроется

@@ -16,7 +16,7 @@ import './List.scss'
 // import UserWithStore from './User/User'
 import NavLink from './NavLink/NavLink'
 import LoginModal from '../../Modal/LoginModal/LoginModal'
-import { Provider, useDispatch } from "react-redux";
+import { Provider, useDispatch, useSelector } from "react-redux";
 import {setLoginModal} from '../../../store/actions'
 
 const List=()=> {
@@ -39,6 +39,23 @@ const List=()=> {
         c_rules: 'Правила',
     //     c_prizes: 'Призы',
         //c_winners: 'Победители',
+     }
+     const isLogged = useSelector(state => state.data.isLogged)
+     const GetLK=()=>{
+         console.log(isLogged)
+         if(isLogged){
+            return(
+                <Link component={NavLink} to="/cabinet" onClick={scrollToTop}>
+                    Регистрация
+                </Link>
+            )
+         }else{
+            return(
+                <a onClick={handleOpenLoginModal}>
+                    Личный кабинет
+                </a>
+            )
+         }
      }
     return(
         <nav className={'headerList'}>
@@ -93,10 +110,7 @@ const List=()=> {
                         </li>
                         <li >
                             {/* <Link component={NavLink} to="/cabinet" onClick={handleOpenLoginModal}> */}
-                            <a onClick={handleOpenLoginModal}>
-                                Личный кабинет
-                            </a>
-                                
+                            <GetLK/>
                             {/* </Link> */}
                         </li>
                         <LoginModal/>
