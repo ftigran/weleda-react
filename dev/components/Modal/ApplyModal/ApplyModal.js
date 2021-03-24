@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import {FormControl, InputLabel, List, ListItem, ListItemIcon,InsertDriveFile,ListItemText, Select, MenuItem, TextField as MatTextField} from '@material-ui/core';
+import {FormControl, FormControlLabel,Radio,RadioGroup, InputLabel, List, ListItem, ListItemIcon,InsertDriveFile,ListItemText, Select, MenuItem, TextField as MatTextField} from '@material-ui/core';
 import Modal from '@material-ui/core/Modal'
 import { changeUser, toggleError} from "../../../store/actions";
 import './ApplyModal.scss'
@@ -146,8 +146,45 @@ const GetForm=()=>{
     return null;
   }
 }
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
-import DropZone from "react-dropzone";
+const GetWay=()=>{
+  const city = useSelector(state => state.data.selectCity)
+  const cityPitomniki=[
+    [
+      'Питомник на пушкина','Питомник на Ленина','Питомник на Маркса'
+    ],
+    [
+      'Питомник на у дома','Питомник на питерский','Питомник на Одинцова','Питомник на Колотушкина'
+    ],
+    [
+      'Питомник на у 1','Питомник на 2'
+    ],
+    [
+      'Питомник на у 3','Питомник на 4'
+    ],
+    [
+      'Питомник на уникальный'
+    ],
+  ]
+  // const Perebor=()=>{
+  //   for(let i in cityPitomniki[city-1]){
+  //     return (
+  //     )
+  // }}
+  let i =0;
+return(
+  <>
+  <Field name="wayToGet" defaultValue="pickup" component={radioButton}>
+          <Radio value="pickup" label="Самовывоз"/>
+          <Radio value="delivery" label="Доставка" />
+        </Field>
+        <Field name="pickupIndex" component={radioButton}>
+        {cityPitomniki[city-1].map((label)=>(
+          <Radio value={i++} label={label}/>
+        ))}
+        </Field>
+        </>
+)
+}
 // const DropZoneField = ({
 //   handleOnDrop,
 //   input,
@@ -183,6 +220,20 @@ import DropZone from "react-dropzone";
 //     {touched && error && <ShowError error={error} />}
 //   </div>
 // );
+//import DropZoneField from "./components/dropzoneField";
+const radioButton = ({ input, children,...rest }) => {
+  console.log(children)
+  return(
+  <FormControl>
+    <RadioGroup input {...rest}>
+    {
+      children.map(({props})=>(
+        <FormControlLabel control={<Radio />} {...props} key={props.value}/>
+      ))
+    }
+    </RadioGroup>
+  </FormControl>
+)}
 const LogForm=(props)=>{
   const { handleSubmit, pristine, reset, submitting } = props;
   const dispatch = useDispatch()
@@ -190,31 +241,32 @@ const LogForm=(props)=>{
     dispatch(selectCity(event.target.options.selectedIndex));
   };
   const state = { imageFile: [] };
-  const handleOnDrop = newImageFile => this.setState({ imageFile: newImageFile });
-  const imageIsRequired = value => (!value ? "Required" : undefined);
-  const DropZoneFields = ({
-    handleOnDrop,
-    input,
-    imagefile,
-    label,
-    meta: { error, touched }
-  }) => (
-    <div className="preview-container">
-      <DropZone
-        // accept="image/jpeg, image/png, image/gif, image/bmp"
-        // className="upload-container"
-        // onDrop={handleOnDrop}
-        // onChange={file => input.onChange(file)}
-      >
-        {/* {imagefile && imagefile.length > 0 ? (
-          <ImagePreview imagefile={imagefile} />
-        ) : (
-          <Placeholder error={error} touched={touched} />
-        )} */}
-      </DropZone>
-      {touched && error && <ShowError error={error} />}
-    </div>
-  );
+  const handleOnDrop = (newImageFile) => {
+    console.log('dropped');
+    console.log(newImageFile);
+
+  }
+  //const imageIsRequired = value => (!value ? "Required" : undefined);
+  // const DropZoneFields = ({
+  //   handleOnDrop,
+  //   input,
+  //   imagefile,
+  //   label,
+  //   meta: { error, touched }
+  // }) => {
+  //   return(
+  //   <div className="preview-container">
+  //     <DropZone
+  //       // accept="image/jpeg, image/png, image/gif, image/bmp"
+  //       // className="upload-container"
+  //       // onDrop={handleOnDrop}
+  //       // onChange={file => input.onChange(file)}
+  //     >
+  //       {imagefile && imagefile.length > 0 ? console.log(true) : console.log(false)}
+  //     </DropZone>
+  //     {touched && error && <ShowError error={error} />}
+  //   </div>
+  // )};
   return(
 <form onSubmit={handleSubmit} className='regForm'>
       <Grid spacing={2} container justify='center' className='regFormContainer'>
@@ -284,15 +336,16 @@ const LogForm=(props)=>{
               label="Расскажите о себе"
               validate={[required, maxLength(600, 'Сообщение должно'), minLength(2, 'Сообщение должно'), kirilicName]}
             />
-            <GetForm/>
-            <Field
+            {/* <GetForm/> */}
+            {/* <Field
           name="imageToUpload"
-          component={DropZoneFields}
+          component={DropZoneField}
           type="file"
           imagefile={state.imageFile}
           handleOnDrop={handleOnDrop}
           validate={[imageIsRequired]}
-        />
+        /> */}
+        <GetWay/>
 
     </form>
 )
