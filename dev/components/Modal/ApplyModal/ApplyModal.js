@@ -170,16 +170,15 @@ const GetWay=()=>{
   //     return (
   //     )
   // }}
-  let i =0;
 return(
   <>
   <Field name="wayToGet" defaultValue="pickup" component={radioButton}>
           <Radio value="pickup" label="Самовывоз"/>
           <Radio value="delivery" label="Доставка" />
         </Field>
-        <Field name="pickupIndex" component={radioButton}>
-        {cityPitomniki[city-1].map((label)=>(
-          <Radio value={i++} label={label}/>
+        <Field name="pickupIndex" defaultValue="0" component={radioButton}>
+        {cityPitomniki[city-1].map((label, index)=>(
+          <Radio value={index.toString()} key={index} label={label}/>
         ))}
         </Field>
         </>
