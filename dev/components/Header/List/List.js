@@ -116,7 +116,12 @@ const List=()=> {
                             Победители
                             </Link>
                         </li>
-                       
+                        <li>
+
+                            <a onClick={handleOpenLoginModal}>
+                                Подать заявку
+                            </a>
+                        </li>
                         <GetLK/>
                         <LoginModal/>
 

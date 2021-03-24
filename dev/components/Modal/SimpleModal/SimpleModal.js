@@ -261,9 +261,6 @@ console.log(open)
 }
 import { AddressSuggestions } from 'react-dadata';
 import 'react-dadata/dist/react-dadata.css';
-import ReactDadataBox, { PartyResponseType } from "react-dadata-box";
-import $ from "jquery"
-import  suggestions from "suggestions-jquery"
 import TextField from '@material-ui/core/TextField';
 
 const adressFrom= (props)=>{

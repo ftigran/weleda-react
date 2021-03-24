@@ -14,7 +14,14 @@ export const ACTION_ADD_PRIZ_ROW='ACTION_ADD_PRIZ_ROW'
 export const ACTION_ADD_TASK_ROW='ACTION_ADD_TASK_ROW'
 export const ACTION_DECREMENT_SCORE='ACTION_DECREMENT_SCORE'
 export const ACTION_CHANGE_TASK='ACTION_CHANGE_TASK'
+export const ACTION_SELECT_CITY='ACTION_SELECT_CITY'
 
+export const selectCity = (user)=>{
+  return {
+      type: ACTION_SELECT_CITY,
+      payload: user
+    }
+}
 export const regUser = (user)=>{
   return {
       type: ACTION_REGISTRATION_USER,

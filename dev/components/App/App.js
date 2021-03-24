@@ -28,14 +28,13 @@ import Cabinet from './pages/cabinet/cabinet'
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 
-import '@brainhubeu/react-carousel/lib/style.css';
 const DataContext = createContext()
 import {store} from '../../store/store';
 import {Provider, useSelector} from 'react-redux';
 import ScrollSection from '../scroll-section/scroll-section'
 import Winners from './pages/winners/winners'
 import Reg from './pages/reg/reg'
-
+import ApplyModal from '../Modal/ApplyModal/ApplyModal'
 
 
 const App = () => {
@@ -48,6 +47,7 @@ const App = () => {
             <Grid item className='appWrap'>
                 <Header/>
                 <Provider store={store}>
+                <ApplyModal onSubmit={()=>{console.log("YEEP")}}/>
                 <Routes/>
                 </Provider>
                 

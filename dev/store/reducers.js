@@ -1,4 +1,4 @@
-import {ACTION_PRIZ_SUCCESS_MODAL,ACTION_LOGGIN_USER,ACTION_CHANGE_TASK,ACTION_ADD_TASK_ROW,ACTION_INSTAPOST_SEND,ACTION_DECREMENT_SCORE,ACTION_ADD_PRIZ_ROW,ACTION_SELECT_PRIZ,ACTION_ADRESS_MODAL,ACTION_SELECT_PRIZ_MODAL,ACTION_RESET_EMAIL_APPROVE_MODAL, ACTION_LOGIN_MODAL, ACTION_SET_EMAIL_APPROVE_MODAL, ACTION_TOGGLE_ERROR, ACTION_SET_POPUP, ACTION_REGISTRATION_USER} from './actions'
+import {ACTION_PRIZ_SUCCESS_MODAL,ACTION_SELECT_CITY,ACTION_LOGGIN_USER,ACTION_CHANGE_TASK,ACTION_ADD_TASK_ROW,ACTION_INSTAPOST_SEND,ACTION_DECREMENT_SCORE,ACTION_ADD_PRIZ_ROW,ACTION_SELECT_PRIZ,ACTION_ADRESS_MODAL,ACTION_SELECT_PRIZ_MODAL,ACTION_RESET_EMAIL_APPROVE_MODAL, ACTION_LOGIN_MODAL, ACTION_SET_EMAIL_APPROVE_MODAL, ACTION_TOGGLE_ERROR, ACTION_SET_POPUP, ACTION_REGISTRATION_USER} from './actions'
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 // Or with Immutablejs:
@@ -23,7 +23,10 @@ const initialState = {
   rowsTasks,
   ColumnsPrizi,
   ColumnsTasks,
-  score: 22
+  score: 22,
+  selectCity:0,
+  adress:false,
+
 }
   export const rootRedducer = (state=initialState, action)=>{
       switch (action.type){
@@ -73,9 +76,11 @@ const initialState = {
               console.log(action)
               return {...state, score: state.score - action.payload}
             case ACTION_INSTAPOST_SEND:
+              return {...state, instaPostModalOpen: action.payload}
+            case ACTION_SELECT_CITY:
               console.log('action')
               console.log(action)
-              return {...state, instaPostModalOpen: action.payload}
+              return {...state, selectCity: action.payload}
       }
       
     return state
