@@ -55,6 +55,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
     "json2mq": "^0.2.0",
+    "material-ui-dropzone": "^3.5.0",
     "react": "^17.0.1",
     "react-dadata": "^2.9.3",
     "react-dom": "^17.0.1",

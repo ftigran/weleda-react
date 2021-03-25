@@ -116,7 +116,7 @@ const GetForm=()=>{
                     onChange={(e)=>{
                         setError();
                         setAddress(e)}}
-                        filterLocations={city?[{kladr_id: kladrs[city]}]:null}
+                        filterLocations={typeof city === 'number'?[{kladr_id: kladrs[city]}]:null}
                     customInput={(props)=>(
                         <MatTextField
                         onChange={setStr}
