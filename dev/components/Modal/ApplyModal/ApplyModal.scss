@@ -92,3 +92,293 @@
     }
 }
 //-select
+span{
+    &.MuiRadio-root{
+        color: rgba(0, 0, 0, 0.25);
+    }
+    &.MuiRadio-colorSecondary.Mui-checked{
+        color: #008F3F;
+    }
+}
+.applyModal{
+    max-width:none;
+    .regFormContainer{
+        max-width:1156px
+    }
+    .areaContainer{
+        box-sizing: border-box;
+    }
+    .MuiFormControl-root{
+        max-width:100%!important;
+        box-sizing: border-box;
+    }   
+    textarea{
+        min-height: 200px;
+        font-family: 'Neo Sans Weleda';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 150%;
+        color: rgba(0, 0, 0, 0.25);
+    }
+    .preview-container{
+        margin-top: 50px;
+        background-color: rgba(6, 80, 4, 0.281);
+        padding-bottom: 40px;
+        max-width: 100%;
+        color: rgba(0, 0, 0, 0.25);
+        border: 2px dashed #008F3F;
+        img{
+            max-width:80%;
+            margin: 30px;
+            box-shadow: 5px 5px 49px -30px fuchsia;
+        }
+    }
+    .checkboxFormControl{
+        margin-top: 30px;
+    }
+    .applyModalSelect.MuiFormControl-root{
+        padding-bottom: 34px;
+        width: 100%;
+        min-height: 99px;
+        .MuiFormHelperText-root.Mui-error{
+            font-size: 16px;
+    line-height: 150%;
+    margin-left: 1px;
+    color: #f44336;
+    margin-top: 23px;
+
+        }
+        .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+            border-color: #f44336;
+        }
+        .MuiOutlinedInput-root{
+        height: 100%;
+            &Mui-error{
+                fieldset{
+                    border: 1px solid #008F3F;
+                }
+            }
+        }
+        fieldset{
+            border: 1px solid #008F3F;
+            border-radius: 8px;
+            height: 73px;
+        }
+        svg{
+            top: 21px;
+        }
+        select{
+            padding-left: 18px;
+            font-family: 'Neo Sans Weleda';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 150%;
+        color: rgba(0, 0, 0, 0.25);
+        padding-bottom: 0px;
+        padding-top: 17px;
+        height: 100%;
+        &:focus{
+            background: initial;
+        }
+        option:first-child{
+            display: none;
+        }
+        option:hover{
+            background-color: red;
+            color:red !important
+        }
+        option: {
+            background-color: red;
+            color:red !important
+        }
+        }
+        .MuiFormLabel-root{
+        font-family: 'Neo Sans Weleda';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 150%;
+        z-index: 1;
+    /* identical to box height, or 36px */
+        //top: -3px;
+        //left: 6px;
+        //background-color: #fff;
+        color: rgba(0, 0, 0, 0.25);
+        background: #fff;
+        padding-left: 10px;
+        padding-right: 10px;
+        left:8px;
+        top: -7px;
+        &.MuiInputLabel-shrink {
+            transform: translate(3px, -10px);
+            font-size: 16px;
+            line-height: 150%;
+            padding-right: 10px;
+            background: #fff;
+            padding-left: 10px;
+        }
+
+        }
+    }
+
+//     .MuiSelect-root{
+//         font-family: 'Neo Sans Weleda';
+//         font-style: normal;
+//         font-weight: normal;
+//         font-size: 24px;
+//         line-height: 150%;
+//     /* identical to box height, or 36px */
+//         top: -3px;
+//         left: 6px;
+//         //background-color: #fff;
+//         color: rgba(0, 0, 0, 0.25);
+//     }
+//     .MuiSelect-outlined{
+//         border: 1px solid #008F3F;
+//         border-radius: 8px;
+//         min-height: 70px;
+//     }
+
+// .MuiSelect-root{
+//     width: 100%;
+//     max-width:554px;
+   
+//     .MuiOutlinedInput-notchedOutline{
+        
+
+//     }
+//     margin-bottom:30px;
+//     .MuiInputBase-root{
+//         border: none;
+//     }
+//     .MuiFormHelperText-root.MuiFormHelperText-contained.Mui-error{
+//         font-size: 16px;
+//         line-height: 150%;
+//         margin-left: 1px;
+//         margin-top: 16px;
+//     }
+//     .MuiOutlinedInput-notchedOutline{
+//         border: 1px solid #008F3F;//!
+//     }
+//     input{
+//         padding: 16px 20px;
+//     }
+//     label, input{
+//     //color: #fff;
+//     //font-family: 'Gotham Pro';
+//     //font-style: normal;
+//     //font-weight: normal;
+//     //@include adaptiv-font(18, 17);
+
+
+
+//     //font-size: 18px;
+//     //line-height: 17px;
+//     &.Mui-focused{
+//         color: rgba(0, 0, 0, 0.25);
+//         &.Mui-error{
+//             font-family: Neo Sans Weleda;
+//             font-style: normal;
+//             font-weight: normal;
+//             font-size: 16px;
+//             line-height: 150%;
+//             color: #F05A29;
+//         }
+//         }
+//         &.Mui-error{
+//             color: rgba(0, 0, 0, 0.25);
+//         }
+//     }
+//     .PrivateNotchedOutline-legendLabelled-7{
+//         font-size: 16px;
+//         margin-left: 5px;
+//     }
+//     .MuiInputLabel-outlined.MuiInputLabel-shrink {
+//         transform: translate(3px, -10px);
+//         font-size: 16px;
+//         line-height: 150%;
+//         padding-right: 10px;
+//         background: #fff;
+//         padding-left: 10px;
+//     }
+//     .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+//         border: 1px solid #F05A29;
+//         //top: 0px;
+//         //height: 100%;
+//         // legend{
+//         //     display: none;
+            
+//         // }
+//         &.Mui-error{
+//         }
+//     }
+//     .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+//         border: 1px solid #008F3F;
+//     }
+//     fieldset{
+        
+//         border: none;
+//         legend.PrivateNotchedOutline-legendNotched-4 {
+//             margin-top: -20px;
+//             font-family: Neo Sans Weleda;
+//             font-style: normal;
+//             font-weight: normal;
+//             padding: 0 8px;
+//             font-size: 1em;
+//             line-height: 150%;
+//         }
+
+//     }
+// }
+// .TextFieldPhone{
+//     background-color: transparent;
+//     width: 100%;
+//     height: 100%
+// }
+// @media (max-width:730px){
+//     .MuiTextField-root{
+//         min-height: 39px;
+//         max-width:250px;
+//         .MuiFormHelperText-root.MuiFormHelperText-contained.Mui-error{
+//             font-size: 8px;
+//             margin-left: 1px;
+//             margin-top: 7px;
+            
+//         }
+//         .MuiOutlinedInput-notchedOutline{
+//             border: 1px solid #008F3F;
+//             border-radius: 5px;
+//             min-height: 34px;
+//         }
+//         input{
+//             padding: 10px 10px;
+//         }
+//         label, input{
+//         font-size: 8px;
+//         top: -11px;
+//         left: -6px;
+//         &.Mui-focused{
+//             &.Mui-error{
+//                 font-size: 8px;
+//             }
+//             }
+//         }
+//         .PrivateNotchedOutline-legendLabelled-7{
+//             font-size: 8px;
+//         }
+//         .MuiInputLabel-outlined.MuiInputLabel-shrink {
+//             transform: translate(25px, 4px);
+//             font-size: 8px;
+//         }
+//         fieldset{
+        
+//             legend.PrivateNotchedOutline-legendNotched-4 {
+//                 font-size: 8px;
+//             }
+    
+//         }
+//     }
+// }
+}

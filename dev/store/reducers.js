@@ -24,7 +24,7 @@ const initialState = {
   ColumnsPrizi,
   ColumnsTasks,
   score: 22,
-  selectCity:1,
+  selectCity:0,
   adress:false,
 
 }

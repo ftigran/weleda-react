@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
-import {FormControl, FormControlLabel,Radio,RadioGroup, InputLabel, List, ListItem, ListItemIcon,InsertDriveFile,ListItemText, Select, MenuItem, TextField as MatTextField} from '@material-ui/core';
+import Checkbox from '../../Checkbox/Checkbox'
+import {FormControl,Button, FormControlLabel,Radio,RadioGroup, InputLabel, List, ListItem, ListItemIcon,InsertDriveFile,ListItemText, Select, MenuItem, TextField as MatTextField} from '@material-ui/core';
 import Modal from '@material-ui/core/Modal'
+import { withStyles } from '@material-ui/core/styles';
 import { changeUser, toggleError} from "../../../store/actions";
 import './ApplyModal.scss'
 import { renderTextField as TextField } from '../../regForm/renderTextField'
@@ -20,6 +22,8 @@ import {selectCity} from '../../../store/actions';
 
 import { useHistory } from 'react-router';
 // import {RegEmailApproveModal} from '../Modal/RegEmailApproveModal/RegEmailApproveModal'
+import { makeStyles } from "@material-ui/core/styles";
+import FormHelperText from '@material-ui/core/FormHelperText'
 
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 const renderSelectField = ({
@@ -29,10 +33,9 @@ const renderSelectField = ({
   children,
   ...custom
 }) => {
-
   return(
-  <FormControl error={touched && error}>
-    <InputLabel htmlFor="city-native-simple">Age</InputLabel>
+  <FormControl error={touched && error} className="applyModalSelect">
+    <InputLabel htmlFor="city-native-simple">Город</InputLabel>
     <Select
       native
       {...input}
@@ -70,7 +73,7 @@ const renderSelect=({
     <FormControl variant="outlined" fullWidth {...input}
     {...custom}>
     <InputLabel id="demo-simple-select-label">{label}</InputLabel>
-    <Select
+    <Select 
       labelId="demo-simple-select-label"
       id="demo-simple-select"
       value={city}
@@ -138,51 +141,75 @@ const GetForm=()=>{
                 />
   )}
   if (city==6){
-    return null
-  }else if (city>-2){
-    console.log('aaaq')
-    return(<AdressField city={1}/>);
+    return(<AdressField/>);
+  }else if (city>0){
+    return(<AdressField city={city-1}/>);
   }else{
     return null;
   }
 }
 const GetWay=()=>{
   const city = useSelector(state => state.data.selectCity)
-  const cityPitomniki=[
-    [
-      'Питомник на пушкина','Питомник на Ленина','Питомник на Маркса'
-    ],
-    [
-      'Питомник на у дома','Питомник на питерский','Питомник на Одинцова','Питомник на Колотушкина'
-    ],
-    [
-      'Питомник на у 1','Питомник на 2'
-    ],
-    [
-      'Питомник на у 3','Питомник на 4'
-    ],
-    [
-      'Питомник на уникальный'
-    ],
-  ]
-  // const Perebor=()=>{
-  //   for(let i in cityPitomniki[city-1]){
-  //     return (
-  //     )
-  // }}
+
+  const GetFields=({city})=>{
+    const cityPitomniki=[
+      [
+        'Питомник на пушкина','Питомник на Ленина','Питомник на Маркса'
+      ],
+      [
+        'Питомник на у дома','Питомник на питерский','Питомник на Одинцова','Питомник на Колотушкина'
+      ],
+      [
+        'Питомник на у 1','Питомник на 2'
+      ],
+      [
+        'Питомник на у 3','Питомник на 4'
+      ],
+      [
+        'Питомник на уникальный'
+      ],
+    ]
 return(
-  <>
-  <Field name="wayToGet" defaultValue="pickup" component={radioButton}>
-          <Radio value="pickup" label="Самовывоз"/>
-          <Radio value="delivery" label="Доставка" />
-        </Field>
-        <Field name="pickupIndex" defaultValue="0" component={radioButton}>
-        {cityPitomniki[city-1].map((label, index)=>(
+  <Field name="pickupIndex" defaultValue="0" component={radioButton}>
+        {cityPitomniki[city].map((label, index)=>(
           <Radio value={index.toString()} key={index} label={label}/>
         ))}
         </Field>
-        </>
 )
+  }
+  const [wayToGet, setWayToGet]=React.useState("pickup")
+  const handler = (event, value) => {    
+    console.log("arg")
+    console.log(event)
+    console.log(value)
+    setWayToGet(value)
+    console.log("wayIS")
+
+    console.log(wayToGet)
+
+    return(null)
+  }
+  const GetGettingFields=()=>{
+    switch(wayToGet){
+      case "pickup":
+        return <GetFields city={city-1}/>
+      case "delivery":
+        return <GetForm/>
+    }
+  }
+  if (city>0){
+    return(
+      <>
+      <Field name="wayToGet" defaultValue="pickup" onChangeHandler={handler} component={radioButton}>
+              <Radio value="pickup" label="Самовывоз"/>
+              <Radio value="delivery" label="Доставка" />
+            </Field>
+            <GetGettingFields/>
+            </>
+            )
+  }else{
+    return null
+  }
 }
 // const DropZoneField = ({
 //   handleOnDrop,
@@ -220,15 +247,21 @@ return(
 //   </div>
 // );
 //import DropZoneField from "./components/dropzoneField";
-const radioButton = ({ input, children,...rest }) => {
-  console.log(children)
+const radioButton = ({ isControl=false,input, onChangeHandler,children,...rest }) => {
+  console.log("input")
+  console.log(input)
+  console.log(rest)
+
   return(
   <FormControl>
-    <RadioGroup input {...rest}>
+    <RadioGroup input {...rest} onChange={onChangeHandler?onChangeHandler:null}>
     {
-      children.map(({props})=>(
+      children.map(({props})=>{
+        console.log("props")
+        console.log(props)
+        return(
         <FormControlLabel control={<Radio />} {...props} key={props.value}/>
-      ))
+      )})
     }
     </RadioGroup>
   </FormControl>
@@ -243,7 +276,7 @@ const LogForm=(props)=>{
   const handleOnDrop = (newImageFile) => {
     console.log('dropped');
     console.log(newImageFile);
-
+    setImageFile(newImageFile)
   }
   //const imageIsRequired = value => (!value ? "Required" : undefined);
   // const DropZoneFields = ({
@@ -266,9 +299,12 @@ const LogForm=(props)=>{
   //     {touched && error && <ShowError error={error} />}
   //   </div>
   // )};
+  const [imageFile, setImageFile]=React.useState([]);
+
   return(
 <form onSubmit={handleSubmit} className='regForm'>
-      <Grid spacing={2} container justify='center' className='regFormContainer'>
+
+      <Grid spacing={2} container justify='center' className='regFormContainer' style={{margin: 'auto'}}>
         <Grid sm={6} item className='FormTextFieldContainer'>
           <Field
               name="firstName"
@@ -311,7 +347,7 @@ const LogForm=(props)=>{
               fullWidth
               onChange={handleCitySelect}
             >
-            <option value={0}></option>
+            <option value=""/>
             <option value={1}>Санкт-Петербург</option>
             <option value={2}>Краснодар</option>
             <option value={3}>Новосибирск</option>
@@ -327,28 +363,40 @@ const LogForm=(props)=>{
               validate={[required, phoneNumber]}
             />
         </Grid>
-      </Grid>
-      <Field
+        <Grid sm={12} item className='areaContainer'>
+          <Field
               name="about"
               component={TextField}
               type="text"
               label="Расскажите о себе"
-              validate={[required, maxLength(600, 'Сообщение должно'), minLength(2, 'Сообщение должно'), kirilicName]}
+              multiline={true}
+              validate={[required, maxLength(600, 'Сообщение должно'), minLength(30, 'Сообщение должно')]}
             />
-            {/* <GetForm/> */}
-            {/* <Field
+            <GetWay/>
+        <Field
           name="imageToUpload"
           component={DropZoneField}
           type="file"
-          imagefile={state.imageFile}
+          imagefile={imageFile}
           handleOnDrop={handleOnDrop}
           validate={[imageIsRequired]}
-        /> */}
-        <GetWay/>
-
+        />
+         <Field
+            name="rulesCB"
+            component={Checkbox}
+            type="checkbox"
+            label={<>Я прочитал(а) и согласен(а) с <a href='empty'>Правилами акции</a> и  <a href='empty'>Пользовательским соглашением</a></>}
+            validate={[isTrue()]}
+          />
+        </Grid>
+        <Button type='submit' variant='contained' size='large'>Подать заявку</Button>
+      </Grid>
     </form>
 )
 }
+const imageIsRequired = value => (!value ? "Required" : undefined);
+import DropZoneField from "./components/dropzoneField";
+
 // export default connect(
 //     null,
 //     {changeUser, toggleError}
@@ -418,7 +466,7 @@ export default function LoginModal(){
         // disableScrollLock={true}
       >
         <Fade in={open}>
-          <div className={'modalWindow LoginModal SimpleModal'}>
+          <div className={'modalWindow LoginModal SimpleModal applyModal'}>
             <h3 id="transition-modal-title" className='regFormTitle'>Авторизация</h3>
                 <IconButton
                 aria-label="Закрыть окно"
