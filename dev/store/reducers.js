@@ -1,4 +1,4 @@
-import {ACTION_PRIZ_SUCCESS_MODAL,ACTION_SELECT_CITY,ACTION_LOGGIN_USER,ACTION_CHANGE_TASK,ACTION_ADD_TASK_ROW,ACTION_INSTAPOST_SEND,ACTION_DECREMENT_SCORE,ACTION_ADD_PRIZ_ROW,ACTION_SELECT_PRIZ,ACTION_ADRESS_MODAL,ACTION_SELECT_PRIZ_MODAL,ACTION_RESET_EMAIL_APPROVE_MODAL, ACTION_LOGIN_MODAL, ACTION_SET_EMAIL_APPROVE_MODAL, ACTION_TOGGLE_ERROR, ACTION_SET_POPUP, ACTION_REGISTRATION_USER} from './actions'
+import {ACTION_PRIZ_SUCCESS_MODAL,ACTION_APPLY_MODAL,ACTION_SELECT_ADDRESS_DELIVERY,ACTION_SELECT_ADDRESS_ERROR,ACTION_SELECT_ADDRESS,ACTION_SELECT_CITY,ACTION_LOGGIN_USER,ACTION_CHANGE_TASK,ACTION_ADD_TASK_ROW,ACTION_INSTAPOST_SEND,ACTION_DECREMENT_SCORE,ACTION_ADD_PRIZ_ROW,ACTION_SELECT_PRIZ,ACTION_ADRESS_MODAL,ACTION_SELECT_PRIZ_MODAL,ACTION_RESET_EMAIL_APPROVE_MODAL, ACTION_LOGIN_MODAL, ACTION_SET_EMAIL_APPROVE_MODAL, ACTION_TOGGLE_ERROR, ACTION_SET_POPUP, ACTION_REGISTRATION_USER} from './actions'
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 // Or with Immutablejs:
@@ -17,6 +17,7 @@ const initialState = {
   prizSuccessModalOpen: false,
   adressModalOpen: false,
   instaPostModalOpen: false,
+  ApplyModalOpen:true,
   priz:{},
   task:1,
   rowsPrizi,
@@ -25,8 +26,9 @@ const initialState = {
   ColumnsTasks,
   score: 22,
   selectCity:0,
-  adress:false,
-
+  address:"",
+  addressError:false,
+  addressDelivery: false,
 }
   export const rootRedducer = (state=initialState, action)=>{
       switch (action.type){
@@ -81,6 +83,23 @@ const initialState = {
               console.log('action')
               console.log(action)
               return {...state, selectCity: action.payload}
+              case ACTION_SELECT_ADDRESS:
+                console.log('action')
+                console.log(action)
+                return {...state, address: action.payload}
+
+                case ACTION_SELECT_ADDRESS_ERROR:
+                  console.log('action')
+                  console.log(action)
+                  return {...state, addressError: action.payload}
+                  case ACTION_SELECT_ADDRESS_DELIVERY:
+                    console.log('action')
+                    console.log(action)
+                    return {...state, addressDelivery: action.payload}
+                    case ACTION_APPLY_MODAL:
+                      console.log('action')
+                      console.log(action)
+                      return {...state, ApplyModalOpen: action.payload}
       }
       
     return state

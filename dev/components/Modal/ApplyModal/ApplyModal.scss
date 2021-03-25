@@ -107,6 +107,9 @@ span{
     }
     .areaContainer{
         box-sizing: border-box;
+        .area{
+            margin-bottom: 30px;
+        }
     }
     .MuiFormControl-root{
         max-width:100%!important;
@@ -121,6 +124,9 @@ span{
         line-height: 150%;
         color: rgba(0, 0, 0, 0.25);
     }
+    .react-dadata__container{
+        margin-top: 30px;
+    }
     .preview-container{
         margin-top: 50px;
         background-color: rgba(6, 80, 4, 0.281);
@@ -128,10 +134,18 @@ span{
         max-width: 100%;
         color: rgba(0, 0, 0, 0.25);
         border: 2px dashed #008F3F;
+        border-radius: 8px;
         img{
             max-width:80%;
             margin: 30px;
             box-shadow: 5px 5px 49px -30px fuchsia;
+        }
+        .error{
+            color: #f44336;
+            margin-top: 10px;
+            svg{
+                top: 4px !important;
+            }
         }
     }
     .checkboxFormControl{

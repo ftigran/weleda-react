@@ -90,34 +90,24 @@ const renderSelect=({
   )
 }
 import { AddressSuggestions } from 'react-dadata';
-
+import {selectAddress, selectAddressError,selectAddressDelivery} from '../../../store/actions'
 const GetForm=()=>{
   const city = useSelector(state => state.data.selectCity)
+  const address = useSelector(state => state.data.address)
+  const error = useSelector(state => state.data.addressError)
+  const [str, setStr] = React.useState();
+  const dispatch = useDispatch();
+  const setAddress=(e)=>{
+    dispatch(selectAddress(e))
+    console.log(e)
+  }
+  const setError=()=>{
+    dispatch(selectAddressError())
+  }
   console.log('city')
   console.log(city)
   const AdressField=({city})=>{
-    const [address, setAddress] = React.useState();
-    const [error, setError] = React.useState();
-    const [str, setStr] = React.useState();
-    const hand = (e)=>{
-      console.log(e)
-    }
-    const sub = (e)=>{
-      e.preventDefault();
-      if(address){
-          if (!address.data.city && !address.data.settlement) {
-              setError("Укажите населённый пункт");
-            } else if (!address.data.settlement && !address.data.street) {
-              setError("Укажите улицу");
-            } else if (!address.data.house) {
-              setError("Укажите дом");
-            }else{
-              handleSubmit(e)
-            }
-      } else{
-          setError('Введите адрес')
-      }
-  }
+
     const kladrs=['7800000000000', '2300000100000', '5400000100000', '6600000100000', '2400000100000'];
     return(
     <AddressSuggestions
@@ -129,7 +119,7 @@ const GetForm=()=>{
                         filterLocations={city?[{kladr_id: kladrs[city]}]:null}
                     customInput={(props)=>(
                         <MatTextField
-                        onChange={hand}
+                        onChange={setStr}
               label="Адрес"
               variant="outlined"
               error={error}
@@ -137,9 +127,8 @@ const GetForm=()=>{
               fullWidth
               {...props}
             />
-            )}
-                />
   )}
+  />)}
   if (city==6){
     return(<AdressField/>);
   }else if (city>0){
@@ -189,15 +178,25 @@ return(
 
     return(null)
   }
+  const dispatch = useDispatch()
   const GetGettingFields=()=>{
     switch(wayToGet){
       case "pickup":
+        dispatch(selectAddressDelivery(false))
         return <GetFields city={city-1}/>
       case "delivery":
+        dispatch(selectAddressDelivery(true))
         return <GetForm/>
     }
   }
   if (city>0){
+    console.log("city")
+    console.log(city)
+    console.log(city==6)
+    if(city==6){
+      dispatch(selectAddressDelivery(true))
+      return <GetForm/>
+    }
     return(
       <>
       <Field name="wayToGet" defaultValue="pickup" onChangeHandler={handler} component={radioButton}>
@@ -211,42 +210,7 @@ return(
     return null
   }
 }
-// const DropZoneField = ({
-//   handleOnDrop,
-//   input,
-//   imagefile,
-//   label,
-//   meta: { error, touched }
-// }) => (
-//   <div className="preview-container">
-//     <DropZone
-//       accept="image/jpeg, image/png, image/gif, image/bmp"
-//       className="upload-container"
-//       onDrop={handleOnDrop}
-//       onChange={file => input.onChange(file)}
-//     >
-//       {imagefile && imagefile.length > 0 ?
-//         imagefile.map(({ name, preview, size }) => (
-//     <div key={name} className="render-preview">
-//       <div className="image-container">
-//         <img src={preview} alt={name} />
-//       </div>
-//       <div className="details">
-//         {name} - {(size / 1024000).toFixed(2)}MB
-//       </div>
-//     </div>
-//   ))
-//       : (
-//         <div className={`placeholder-preview ${error && touched ? "has-error" : ""}`}>
-//     <CloudUploadIcon style={{ fontSize: 100, paddingTop: 70 }} />
-//     <p>Click or drag image file to this area to upload.</p>
-//   </div>
-//       )}
-//     </DropZone>
-//     {touched && error && <ShowError error={error} />}
-//   </div>
-// );
-//import DropZoneField from "./components/dropzoneField";
+
 const radioButton = ({ isControl=false,input, onChangeHandler,children,...rest }) => {
   console.log("input")
   console.log(input)
@@ -266,6 +230,7 @@ const radioButton = ({ isControl=false,input, onChangeHandler,children,...rest }
     </RadioGroup>
   </FormControl>
 )}
+
 const LogForm=(props)=>{
   const { handleSubmit, pristine, reset, submitting } = props;
   const dispatch = useDispatch()
@@ -300,9 +265,37 @@ const LogForm=(props)=>{
   //   </div>
   // )};
   const [imageFile, setImageFile]=React.useState([]);
+const address = useSelector(state => state.data.address)
+const isDelivery = useSelector(state => state.data.addressDelivery)
+const setError = (error)=>{
+  dispatch(selectAddressError(error))
+}
+  const sub = (e)=>{
+    console.log("checked start" )
+    
+    console.log(e)
+
+    e.preventDefault();
+    if(isDelivery){
+      if(address){
+        if (!address.data.city && !address.data.settlement) {
+            setError("Укажите населённый пункт");
+          } else if (!address.data.settlement && !address.data.street) {
+            setError("Укажите улицу");
+          } else if (!address.data.house) {
+            setError("Укажите дом");
+          }
+    } else{
+        setError('Введите адрес')
+    }
+    }
+    console.log("checked")
+    handleSubmit(e)
+    
+}
 
   return(
-<form onSubmit={handleSubmit} className='regForm'>
+<form onSubmit={sub} className='regForm'>
 
       <Grid spacing={2} container justify='center' className='regFormContainer' style={{margin: 'auto'}}>
         <Grid sm={6} item className='FormTextFieldContainer'>
@@ -369,6 +362,7 @@ const LogForm=(props)=>{
               component={TextField}
               type="text"
               label="Расскажите о себе"
+              className="area"
               multiline={true}
               validate={[required, maxLength(600, 'Сообщение должно'), minLength(30, 'Сообщение должно')]}
             />
@@ -394,7 +388,7 @@ const LogForm=(props)=>{
     </form>
 )
 }
-const imageIsRequired = value => (!value ? "Required" : undefined);
+const imageIsRequired = value => (!value ? "Загрузите изображение" : undefined);
 import DropZoneField from "./components/dropzoneField";
 
 // export default connect(
@@ -404,7 +398,7 @@ import DropZoneField from "./components/dropzoneField";
 const LoginForm = reduxForm({
   form: 'applyForm', // a unique identifier for this form
 })(LogForm);
-import {setLoginModal, userLog} from '../../../store/actions'
+import {setApplyModalOpen, userLog} from '../../../store/actions'
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import CloseIcon from '@material-ui/icons/Close';
@@ -428,15 +422,21 @@ export default function LoginModal(){
     }
     //let email;
     //let pass;
-    const open =true//useSelector(state => state.data.LoginModalOpen)
+    const open = useSelector(state => state.data.ApplyModalOpen)
     const dispatch = useDispatch()
 
     const handleClose = () => {
-        dispatch(setLoginModal(false));
+        dispatch(setApplyModalOpen(false));
     };
-    const handleEnter=()=>{
-      dispatch(userLog(true));
-      dispatch(setLoginModal(false));
+    const handleEnter=(event, props)=>{
+      //dispatch(userLog(true));
+        console.log("Форма заполнена!" )
+        console.log(event)
+        for (let e in event){
+          console.log("the value of "+e+" is:")
+          console.log(event[e])
+        }
+      dispatch(setApplyModalOpen(false));
       history.push('/cabinet')
       console.log('enter')
       };

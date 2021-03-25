@@ -15,10 +15,32 @@ export const ACTION_ADD_TASK_ROW='ACTION_ADD_TASK_ROW'
 export const ACTION_DECREMENT_SCORE='ACTION_DECREMENT_SCORE'
 export const ACTION_CHANGE_TASK='ACTION_CHANGE_TASK'
 export const ACTION_SELECT_CITY='ACTION_SELECT_CITY'
+export const ACTION_SELECT_ADDRESS='ACTION_SELECT_ADDRESS'
+export const ACTION_SELECT_ADDRESS_ERROR='ACTION_SELECT_ADDRESS_ERROR'
+export const ACTION_SELECT_ADDRESS_DELIVERY='ACTION_SELECT_ADDRESS_DELIVERY'
+export const ACTION_APPLY_MODAL='ACTION_APPLY_MODAL'
 
 export const selectCity = (user)=>{
   return {
       type: ACTION_SELECT_CITY,
+      payload: user
+    }
+}
+export const selectAddress = (user)=>{
+  return {
+      type: ACTION_SELECT_ADDRESS,
+      payload: user
+    }
+}
+export const selectAddressError = (user)=>{
+  return {
+      type: ACTION_SELECT_ADDRESS_ERROR,
+      payload: user
+    }
+}
+export const selectAddressDelivery = (user)=>{
+  return {
+      type: ACTION_SELECT_ADDRESS_DELIVERY,
       payload: user
     }
 }
@@ -52,6 +74,13 @@ export const setRegEmailApproveModal = (bool)=>{
       payload: bool
     }
 }
+export const setApplyModalOpen= (bool)=>{
+  return {
+      type: ACTION_APPLY_MODAL,
+      payload: bool
+    }
+}
+
 export const setLoginModal = (bool)=>{
   return {
       type: ACTION_LOGIN_MODAL,

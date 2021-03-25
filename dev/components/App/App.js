@@ -39,7 +39,7 @@ import ApplyModal from '../Modal/ApplyModal/ApplyModal'
 
 const App = () => {
     //const { setValues, data } = useData();
-  
+    
   //const {location} = useReactRouter()
         return (
             <>  
@@ -47,7 +47,7 @@ const App = () => {
             <Grid item className='appWrap'>
                 <Header/>
                 <Provider store={store}>
-                <ApplyModal onSubmit={()=>{console.log("YEEP")}}/>
+                <ApplyModal/>
                 <Routes/>
                 </Provider>
                 
