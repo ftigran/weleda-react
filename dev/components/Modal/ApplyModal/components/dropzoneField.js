@@ -3,6 +3,7 @@ import DropZone from "react-dropzone";
 import ImagePreview from "./imagePreview";
 import Placeholder from "./placeholder";
 import ShowError from "./showError";
+import {DropzoneArea} from 'material-ui-dropzone'
 
 const DropZoneField = ({
   handleOnDrop,
@@ -11,19 +12,14 @@ const DropZoneField = ({
   label,
   meta: { error, touched }
 }) => (
-  <div className="preview-container">
-    <DropZone
-      accept="image/jpeg, image/png, image/gif, image/bmp"
-      className="upload-container"
-      onDrop={handleOnDrop}
-      onChange={file => input.onChange(file)}
-    >
-      {imagefile && imagefile.length > 0 ? (
-        <ImagePreview imagefile={imagefile} />
-      ) : (
-        <Placeholder error={error} touched={touched} />
-      )}
-    </DropZone>
+  <div className={touched &&error?"preview-container error":"preview-container"}>
+  <DropzoneArea
+        onChange={file => input.onChange(file)}
+        dropzoneText={label}
+        showFileNames={true}
+        showAlerts={false}
+        acceptedFiles={['image/*']}
+        />
     {touched && error && <ShowError error={error} />}
   </div>
 );

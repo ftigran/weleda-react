@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {DropzoneArea} from 'material-ui-dropzone'
 
 import Checkbox from '../../Checkbox/Checkbox'
 import {FormControl,Button, FormControlLabel,Radio,RadioGroup, InputLabel, List, ListItem, ListItemIcon,InsertDriveFile,ListItemText, Select, MenuItem, TextField as MatTextField} from '@material-ui/core';
@@ -230,7 +231,38 @@ const radioButton = ({ isControl=false,input, onChangeHandler,children,...rest }
     </RadioGroup>
   </FormControl>
 )}
+import ShowError from "./components/showError";
 
+class DropzoneAreaExample extends Component{
+  constructor({  meta: { error, touched }
+  }){
+    super();
+    this.state = {
+      files: []
+    };
+    this.error=error
+    this.touched=touched
+  }
+  handleChange(files){
+    this.setState({
+      files: files
+    });
+  }
+  render(){
+    return (
+      <div className="preview-container">
+      <DropzoneArea
+        onChange={this.handleChange.bind(this)}
+        dropzoneText="Загрузите фото"
+        showFileNames={true}
+        showAlerts={false}
+        acceptedFiles={['image/*']}
+        />
+        {this.error && <ShowError error={this.error} />}
+</div>
+    )
+  }
+}
 const LogForm=(props)=>{
   const { handleSubmit, pristine, reset, submitting } = props;
   const dispatch = useDispatch()
@@ -264,7 +296,7 @@ const LogForm=(props)=>{
   //     {touched && error && <ShowError error={error} />}
   //   </div>
   // )};
-  const [imageFile, setImageFile]=React.useState([]);
+const [imageFile, setImageFile]=React.useState([]);
 const address = useSelector(state => state.data.address)
 const isDelivery = useSelector(state => state.data.addressDelivery)
 const setError = (error)=>{
@@ -370,6 +402,7 @@ const setError = (error)=>{
         <Field
           name="imageToUpload"
           component={DropZoneField}
+          label="Загрузи фото"
           type="file"
           imagefile={imageFile}
           handleOnDrop={handleOnDrop}
@@ -388,7 +421,7 @@ const setError = (error)=>{
     </form>
 )
 }
-const imageIsRequired = value => (!value ? "Загрузите изображение" : undefined);
+const imageIsRequired = value => (value ?!value.length?"Загрузите изображение":undefined: undefined);
 import DropZoneField from "./components/dropzoneField";
 
 // export default connect(
