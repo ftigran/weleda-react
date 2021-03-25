@@ -11,6 +11,15 @@
     width: 100%;
     min-height: 99px;
     max-width:554px;
+    .MuiInputBase-input.MuiOutlinedInput-input{
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover, 
+        &:-webkit-autofill:focus, 
+        &:-webkit-autofill:active
+        {
+        -webkit-box-shadow: 0 0 0 30px white inset !important;
+        }
+    }
     .MuiFormHelperText-root.MuiFormHelperText-contained.Mui-error{
         font-size: 16px;
         line-height: 150%;
@@ -24,6 +33,7 @@
     }
     input{
         padding: 16px 20px;
+        
     }
     label, input{
     //color: #fff;
@@ -116,6 +126,7 @@
             margin-top: 7px;
             
         }
+        
         .MuiOutlinedInput-notchedOutline{
             border: 1px solid #008F3F;
             border-radius: 5px;
@@ -123,13 +134,7 @@
         }
         input{
             padding: 10px 10px;
-            &:-webkit-autofill,
-            &:-webkit-autofill:hover, 
-            &:-webkit-autofill:focus, 
-            &:-webkit-autofill:active
-            {
-            -webkit-box-shadow: 0 0 0 30px white inset !important;
-            }
+            
         }
         label, input{
         font-size: 8px;
