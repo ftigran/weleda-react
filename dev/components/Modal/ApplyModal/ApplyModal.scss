@@ -102,6 +102,14 @@ span{
 }
 .applyModal{
     max-width:none;
+    width: auto;
+    .FormTextFieldContainer{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        max-width:none;
+        column-gap: 20px;
+        
+    }
     .regFormContainer{
         max-width:1156px
     }
@@ -169,7 +177,7 @@ span{
             color: #f44336;
             //margin-top: 10px;
             position: absolute;
-            bottom: 0;
+            bottom: 10px;
             width: 100%;
             svg{
                 top: 4px !important;

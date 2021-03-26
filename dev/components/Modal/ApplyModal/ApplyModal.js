@@ -330,13 +330,20 @@ const setError = (error)=>{
 <form onSubmit={sub} className='regForm'>
 
       <Grid spacing={2} container justify='center' className='regFormContainer' style={{margin: 'auto'}}>
-        <Grid sm={6} item className='FormTextFieldContainer'>
+        <Grid sm={12} item className='FormTextFieldContainer'>
           <Field
               name="firstName"
               component={TextField}
               type="text"
               label="Имя"
               validate={[required, maxLength(20, 'Имя должно'), minLength(2, 'Имя должно'), kirilicName]}
+            />
+          <Field
+              name="lastName"
+              component={TextField}
+              type="text"
+              label="Фамилия"
+              validate={[required, maxLength(20, 'Фамилия должна'), minLength(2, 'Фамилия должна'), kirilicName]}
             />
             <Field
               name="fatherName"
@@ -347,23 +354,6 @@ const setError = (error)=>{
 
             />
             <Field
-              name="email"
-              component={TextField}
-              type="email"
-              label="Email"
-              validate={[required, email]}
-            />
-        </Grid>
-        <Grid sm={6} item className='FormTextFieldContainer'>
-          <Field
-              name="lastName"
-              component={TextField}
-              type="text"
-              label="Фамилия"
-              validate={[required, maxLength(20, 'Фамилия должна'), minLength(2, 'Фамилия должна'), kirilicName]}
-
-            />
-          <Field
               name="city"
               component={renderSelectField}
               validate={[required]}
@@ -380,6 +370,15 @@ const setError = (error)=>{
             <option value={5}>Красноярск</option>
             <option value={6}>Другой</option>
           </Field>
+            <Field
+              name="email"
+              component={TextField}
+              type="email"
+              label="Email"
+              validate={[required, email]}
+            />
+          
+          
            <Field
               name="phone"
               component={TextField}
