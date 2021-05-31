@@ -47,11 +47,10 @@ const App = () => {
             <Grid item className='appWrap'>
                 <Header/>
                 <Provider store={store}>
-                <ApplyModal/>
-                <Routes/>
+                    <ApplyModal/>
+                    <Routes/>
                 </Provider>
-                
-                    <ScrollSection/>
+                <ScrollSection/>
             </Grid>
             <Footer/>
             
@@ -65,11 +64,7 @@ const Routes= ()=>{
 
     return(
 <Switch location={location}>
-                            {/* <Route key='faq' location={location} path={"/faq"}
-                            render={() => 
-                                <FAQ/>} 
-                                exact
-                                /> */}
+
                             {isLogged?<Route path={"/cabinet"} render={() => <Cabinet/>}/>:<Route path={"/reg"} render={() => <Reg/>}/>}
                             <Route path={"/winners"} render={() => <Winners/>}/>
                             <Route key='index' location={location} path={"/"} render={() => 
