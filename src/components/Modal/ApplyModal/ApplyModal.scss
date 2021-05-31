@@ -1,434 +1,425 @@
-@import '../../../mixins.scss';
+@import "../../../mixins.scss";
 
-.LoginModal{
-    .LoginModalEmail{
-        margin: 35px 0 15px;
-    }
-    .regFormTitle{
-        margin-bottom: 58px;
-    }
-    .modalContainer{
-        align-self: flex-end;
-    }
-    .regBtnsWrap{
-        position: relative;
-        margin-top: 29px;
-    }
-.FormTextFieldContainer{
+.LoginModal {
+  .LoginModalEmail {
+    margin: 35px 0 15px;
+  }
+  .regFormTitle {
+    margin-bottom: 58px;
+  }
+  .modalContainer {
+    align-self: flex-end;
+  }
+  .regBtnsWrap {
+    position: relative;
+    margin-top: 29px;
+  }
+  .FormTextFieldContainer {
     margin-bottom: 5px;
-}    a{
+  }
+  a {
     text-decoration: none;
+  }
+  .sbrosWrapper {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    .modalContainer {
+      padding: 0;
     }
-    .sbrosWrapper{
-        position: absolute;
-        width: 100%;
-        top: 0px;
-        .modalContainer{
-            padding: 0;
-        }
-        .modalBtn {
-            position: absolute;
-            top: -55px;
-            right: 0;
-            //width: 130px;
-            span{
-                text-align:right;
+    .modalBtn {
+      position: absolute;
+      top: -55px;
+      right: 0;
+      //width: 130px;
+      span {
+        text-align: right;
+      }
+    }
+  }
+  .regForm {
+  }
+}
+.LoginModalReset {
+  font-family: "Gotham Pro";
+  font-style: normal;
+  font-weight: normal;
+  @include adaptiv-font(18, 22);
+  //font-size: 18px;
+  //line-height: 22px;
+  text-align: center;
 
-            }
-        }
+  color: #fff;
+  .MuiTextField-root {
+    margin: 35px 0 15px;
+  }
+  .modalContainer {
+    width: 100%;
+    button {
+      width: 100%;
     }
-.regForm{
-
+  }
 }
-    
-    
-}
-.LoginModalReset{
-    font-family: 'Gotham Pro';
-    font-style: normal;
-    font-weight: normal;
-    @include adaptiv-font(18, 22);
-    //font-size: 18px;
-    //line-height: 22px;
-    text-align: center;
-    
-    color: #fff;
-    .MuiTextField-root {
-        margin: 35px 0 15px;
+@media (max-width: 730px) {
+  .LoginModal {
+    .sbrosWrapper .modalBtn {
+      top: -35px;
     }
-    .modalContainer{
-        width: 100%;
-        button{
-            width: 100%;
-        }
+    form {
+      max-width: 316px;
     }
-}
-@media (max-width:730px){
-    .LoginModal{
-        .sbrosWrapper .modalBtn{
-            top: -35px;
-        }
-        form{
-            max-width:316px;
-        }
-        .regFormTitle{
-            margin-bottom: 30px;
-        }
-        .TextFields{
-            margin-bottom: 25px;
-        }
-        .MuiButton-sizeSmall{
-            max-width: 100px;
-            width: 100px;
-        }
-        .regBtnsWrap {
-            margin-top: 0px;
-        }
-        .regBtn{
-            margin-left: 16px;
-            min-width: auto;
-            width: 183px;
-        }
+    .regFormTitle {
+      margin-bottom: 30px;
     }
+    .TextFields {
+      margin-bottom: 25px;
+    }
+    .MuiButton-sizeSmall {
+      max-width: 100px;
+      width: 100px;
+    }
+    .regBtnsWrap {
+      margin-top: 0px;
+    }
+    .regBtn {
+      margin-left: 16px;
+      min-width: auto;
+      width: 183px;
+    }
+  }
 }
 //-select
-span{
-    &.MuiRadio-root{
-        color: rgba(0, 0, 0, 0.25);
-    }
-    &.MuiRadio-colorSecondary.Mui-checked{
-        color: #008F3F;
-    }
+span {
+  &.MuiRadio-root {
+    color: rgba(0, 0, 0, 0.25);
+  }
+  &.MuiRadio-colorSecondary.Mui-checked {
+    color: #008f3f;
+  }
 }
-.applyModal{
-    max-width:none;
-    width: auto;
-    .FormTextFieldContainer{
-        display:grid;
-        grid-template-columns: 1fr 1fr;
-        max-width:none;
-        column-gap: 20px;
-        
+.applyModal {
+  max-width: none;
+  width: auto;
+  .FormTextFieldContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: none;
+    column-gap: 20px;
+  }
+  .regFormContainer {
+    max-width: 1156px;
+  }
+  .areaContainer {
+    box-sizing: border-box;
+    .area {
+      margin-bottom: 30px;
     }
-    .regFormContainer{
-        max-width:1156px
-    }
-    .areaContainer{
-        box-sizing: border-box;
-        .area{
-            margin-bottom: 30px;
-        }
-    }
-    .MuiFormControl-root{
-        max-width:100%!important;
-        box-sizing: border-box;
-    }   
-    textarea{
-        min-height: 200px;
-        font-family: 'Neo Sans Weleda';
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 150%;
-        color: rgba(0, 0, 0, 0.25);
-    }
-    .react-dadata__container{
-        margin-top: 30px;
-    }
-    .preview-container{
-        margin-top: 50px;
-        background-color: rgba(6, 80, 4, 0.281);
-        //padding-bottom: 40px;
-        position: relative;
-        max-width: 100%;
-        color: rgba(0, 0, 0, 0.25);
-        border: 2px dashed #008F3F;
-        border-radius: 8px;
-        &.error{
-            border-color: #f44336;
-        background-color: #f443361a;
-        }
-        
-        .MuiDropzoneArea-root{
-            padding-bottom: 40px;
-
-            .MuiDropzoneArea-text{
-                margin-top: 40px;
-            }
-            background-color: transparent;
-            border: none;
-            min-height: auto;
-            &.MuiDropzoneArea-active{
-                background-color: #008F3F;
-            }
-            svg{
-                color: rgba(0, 0, 0, 0.25);
-            }
-            .MuiDropzonePreviewList-root{
-                width: 100%;
-                margin-left: 0;
-                margin-right: 0;
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-        }
-        
-        .error{
-            color: #f44336;
-            //margin-top: 10px;
-            position: absolute;
-            bottom: 10px;
-            width: 100%;
-            svg{
-                top: 4px !important;
-            }
-        }
-    }
-    .checkboxFormControl{
-        margin-top: 30px;
-    }
-    .applyModalSelect.MuiFormControl-root{
-        padding-bottom: 34px;
-        width: 100%;
-        min-height: 99px;
-        .MuiFormHelperText-root.Mui-error{
-            font-size: 16px;
+  }
+  .MuiFormControl-root {
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+  textarea {
+    min-height: 200px;
+    font-family: "Neo Sans Weleda";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
     line-height: 150%;
-    margin-left: 1px;
-    color: #f44336;
-    margin-top: 23px;
+    color: rgba(0, 0, 0, 0.25);
+  }
+  .react-dadata__container {
+    margin-top: 30px;
+  }
+  .preview-container {
+    margin-top: 50px;
+    background-color: rgba(6, 80, 4, 0.281);
+    //padding-bottom: 40px;
+    position: relative;
+    max-width: 100%;
+    color: rgba(0, 0, 0, 0.25);
+    border: 2px dashed #008f3f;
+    border-radius: 8px;
+    &.error {
+      border-color: #f44336;
+      background-color: #f443361a;
+    }
 
-        }
-        .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
-            border-color: #f44336;
-        }
-        .MuiOutlinedInput-root{
-        height: 100%;
-            &Mui-error{
-                fieldset{
-                    border: 1px solid #008F3F;
-                }
-            }
-        }
-        fieldset{
-            border: 1px solid #008F3F;
-            border-radius: 8px;
-            height: 73px;
-        }
-        svg{
-            top: 21px;
-        }
-        select{
-            padding-left: 18px;
-            font-family: 'Neo Sans Weleda';
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 150%;
+    .MuiDropzoneArea-root {
+      padding-bottom: 40px;
+
+      .MuiDropzoneArea-text {
+        margin-top: 40px;
+      }
+      background-color: transparent;
+      border: none;
+      min-height: auto;
+      &.MuiDropzoneArea-active {
+        background-color: #008f3f;
+      }
+      svg {
         color: rgba(0, 0, 0, 0.25);
-        padding-bottom: 0px;
-        padding-top: 17px;
-        height: 100%;
-        &:focus{
-            background: initial;
+      }
+      .MuiDropzonePreviewList-root {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
+    .error {
+      color: #f44336;
+      //margin-top: 10px;
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      svg {
+        top: 4px !important;
+      }
+    }
+  }
+  .checkboxFormControl {
+    margin-top: 30px;
+  }
+  .applyModalSelect.MuiFormControl-root {
+    padding-bottom: 34px;
+    width: 100%;
+    min-height: 99px;
+    .MuiFormHelperText-root.Mui-error {
+      font-size: 16px;
+      line-height: 150%;
+      margin-left: 1px;
+      color: #f44336;
+      margin-top: 23px;
+    }
+    .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+      border-color: #f44336;
+    }
+    .MuiOutlinedInput-root {
+      height: 100%;
+      &Mui-error {
+        fieldset {
+          border: 1px solid #008f3f;
         }
-        option:first-child{
-            display: none;
-        }
-        option:hover{
-            background-color: red;
-            color:red !important
-        }
-        option: {
-            background-color: red;
-            color:red !important
-        }
-        }
-        .MuiFormLabel-root{
-        font-family: 'Neo Sans Weleda';
-        font-style: normal;
-        font-weight: normal;
-        font-size: 24px;
+      }
+    }
+    fieldset {
+      border: 1px solid #008f3f;
+      border-radius: 8px;
+      height: 73px;
+    }
+    svg {
+      top: 21px;
+    }
+    select {
+      padding-left: 18px;
+      font-family: "Neo Sans Weleda";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 150%;
+      color: rgba(0, 0, 0, 0.25);
+      padding-bottom: 0px;
+      padding-top: 17px;
+      height: 100%;
+      &:focus {
+        background: initial;
+      }
+      option:first-child {
+        display: none;
+      }
+      option:hover {
+        background-color: red;
+        color: red !important;
+      }
+      option: {
+        background-color: red;
+        color: red !important;
+      }
+    }
+    .MuiFormLabel-root {
+      font-family: "Neo Sans Weleda";
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 150%;
+      z-index: 1;
+      /* identical to box height, or 36px */
+      //top: -3px;
+      //left: 6px;
+      //background-color: #fff;
+      color: rgba(0, 0, 0, 0.25);
+      background: #fff;
+      padding-left: 10px;
+      padding-right: 10px;
+      left: 8px;
+      top: -7px;
+      &.MuiInputLabel-shrink {
+        transform: translate(3px, -10px);
+        font-size: 16px;
         line-height: 150%;
-        z-index: 1;
-    /* identical to box height, or 36px */
-        //top: -3px;
-        //left: 6px;
-        //background-color: #fff;
-        color: rgba(0, 0, 0, 0.25);
+        padding-right: 10px;
         background: #fff;
         padding-left: 10px;
-        padding-right: 10px;
-        left:8px;
-        top: -7px;
-        &.MuiInputLabel-shrink {
-            transform: translate(3px, -10px);
-            font-size: 16px;
-            line-height: 150%;
-            padding-right: 10px;
-            background: #fff;
-            padding-left: 10px;
-        }
-
-        }
+      }
     }
+  }
 
-//     .MuiSelect-root{
-//         font-family: 'Neo Sans Weleda';
-//         font-style: normal;
-//         font-weight: normal;
-//         font-size: 24px;
-//         line-height: 150%;
-//     /* identical to box height, or 36px */
-//         top: -3px;
-//         left: 6px;
-//         //background-color: #fff;
-//         color: rgba(0, 0, 0, 0.25);
-//     }
-//     .MuiSelect-outlined{
-//         border: 1px solid #008F3F;
-//         border-radius: 8px;
-//         min-height: 70px;
-//     }
+  //     .MuiSelect-root{
+  //         font-family: 'Neo Sans Weleda';
+  //         font-style: normal;
+  //         font-weight: normal;
+  //         font-size: 24px;
+  //         line-height: 150%;
+  //     /* identical to box height, or 36px */
+  //         top: -3px;
+  //         left: 6px;
+  //         //background-color: #fff;
+  //         color: rgba(0, 0, 0, 0.25);
+  //     }
+  //     .MuiSelect-outlined{
+  //         border: 1px solid #008F3F;
+  //         border-radius: 8px;
+  //         min-height: 70px;
+  //     }
 
-// .MuiSelect-root{
-//     width: 100%;
-//     max-width:554px;
-   
-//     .MuiOutlinedInput-notchedOutline{
-        
+  // .MuiSelect-root{
+  //     width: 100%;
+  //     max-width:554px;
 
-//     }
-//     margin-bottom:30px;
-//     .MuiInputBase-root{
-//         border: none;
-//     }
-//     .MuiFormHelperText-root.MuiFormHelperText-contained.Mui-error{
-//         font-size: 16px;
-//         line-height: 150%;
-//         margin-left: 1px;
-//         margin-top: 16px;
-//     }
-//     .MuiOutlinedInput-notchedOutline{
-//         border: 1px solid #008F3F;//!
-//     }
-//     input{
-//         padding: 16px 20px;
-//     }
-//     label, input{
-//     //color: #fff;
-//     //font-family: 'Gotham Pro';
-//     //font-style: normal;
-//     //font-weight: normal;
-//     //@include adaptiv-font(18, 17);
+  //     .MuiOutlinedInput-notchedOutline{
 
+  //     }
+  //     margin-bottom:30px;
+  //     .MuiInputBase-root{
+  //         border: none;
+  //     }
+  //     .MuiFormHelperText-root.MuiFormHelperText-contained.Mui-error{
+  //         font-size: 16px;
+  //         line-height: 150%;
+  //         margin-left: 1px;
+  //         margin-top: 16px;
+  //     }
+  //     .MuiOutlinedInput-notchedOutline{
+  //         border: 1px solid #008F3F;//!
+  //     }
+  //     input{
+  //         padding: 16px 20px;
+  //     }
+  //     label, input{
+  //     //color: #fff;
+  //     //font-family: 'Gotham Pro';
+  //     //font-style: normal;
+  //     //font-weight: normal;
+  //     //@include adaptiv-font(18, 17);
 
+  //     //font-size: 18px;
+  //     //line-height: 17px;
+  //     &.Mui-focused{
+  //         color: rgba(0, 0, 0, 0.25);
+  //         &.Mui-error{
+  //             font-family: Neo Sans Weleda;
+  //             font-style: normal;
+  //             font-weight: normal;
+  //             font-size: 16px;
+  //             line-height: 150%;
+  //             color: #F05A29;
+  //         }
+  //         }
+  //         &.Mui-error{
+  //             color: rgba(0, 0, 0, 0.25);
+  //         }
+  //     }
+  //     .PrivateNotchedOutline-legendLabelled-7{
+  //         font-size: 16px;
+  //         margin-left: 5px;
+  //     }
+  //     .MuiInputLabel-outlined.MuiInputLabel-shrink {
+  //         transform: translate(3px, -10px);
+  //         font-size: 16px;
+  //         line-height: 150%;
+  //         padding-right: 10px;
+  //         background: #fff;
+  //         padding-left: 10px;
+  //     }
+  //     .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
+  //         border: 1px solid #F05A29;
+  //         //top: 0px;
+  //         //height: 100%;
+  //         // legend{
+  //         //     display: none;
 
-//     //font-size: 18px;
-//     //line-height: 17px;
-//     &.Mui-focused{
-//         color: rgba(0, 0, 0, 0.25);
-//         &.Mui-error{
-//             font-family: Neo Sans Weleda;
-//             font-style: normal;
-//             font-weight: normal;
-//             font-size: 16px;
-//             line-height: 150%;
-//             color: #F05A29;
-//         }
-//         }
-//         &.Mui-error{
-//             color: rgba(0, 0, 0, 0.25);
-//         }
-//     }
-//     .PrivateNotchedOutline-legendLabelled-7{
-//         font-size: 16px;
-//         margin-left: 5px;
-//     }
-//     .MuiInputLabel-outlined.MuiInputLabel-shrink {
-//         transform: translate(3px, -10px);
-//         font-size: 16px;
-//         line-height: 150%;
-//         padding-right: 10px;
-//         background: #fff;
-//         padding-left: 10px;
-//     }
-//     .MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline {
-//         border: 1px solid #F05A29;
-//         //top: 0px;
-//         //height: 100%;
-//         // legend{
-//         //     display: none;
-            
-//         // }
-//         &.Mui-error{
-//         }
-//     }
-//     .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-//         border: 1px solid #008F3F;
-//     }
-//     fieldset{
-        
-//         border: none;
-//         legend.PrivateNotchedOutline-legendNotched-4 {
-//             margin-top: -20px;
-//             font-family: Neo Sans Weleda;
-//             font-style: normal;
-//             font-weight: normal;
-//             padding: 0 8px;
-//             font-size: 1em;
-//             line-height: 150%;
-//         }
+  //         // }
+  //         &.Mui-error{
+  //         }
+  //     }
+  //     .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  //         border: 1px solid #008F3F;
+  //     }
+  //     fieldset{
 
-//     }
-// }
-// .TextFieldPhone{
-//     background-color: transparent;
-//     width: 100%;
-//     height: 100%
-// }
-// @media (max-width:730px){
-//     .MuiTextField-root{
-//         min-height: 39px;
-//         max-width:250px;
-//         .MuiFormHelperText-root.MuiFormHelperText-contained.Mui-error{
-//             font-size: 8px;
-//             margin-left: 1px;
-//             margin-top: 7px;
-            
-//         }
-//         .MuiOutlinedInput-notchedOutline{
-//             border: 1px solid #008F3F;
-//             border-radius: 5px;
-//             min-height: 34px;
-//         }
-//         input{
-//             padding: 10px 10px;
-//         }
-//         label, input{
-//         font-size: 8px;
-//         top: -11px;
-//         left: -6px;
-//         &.Mui-focused{
-//             &.Mui-error{
-//                 font-size: 8px;
-//             }
-//             }
-//         }
-//         .PrivateNotchedOutline-legendLabelled-7{
-//             font-size: 8px;
-//         }
-//         .MuiInputLabel-outlined.MuiInputLabel-shrink {
-//             transform: translate(25px, 4px);
-//             font-size: 8px;
-//         }
-//         fieldset{
-        
-//             legend.PrivateNotchedOutline-legendNotched-4 {
-//                 font-size: 8px;
-//             }
-    
-//         }
-//     }
-// }
+  //         border: none;
+  //         legend.PrivateNotchedOutline-legendNotched-4 {
+  //             margin-top: -20px;
+  //             font-family: Neo Sans Weleda;
+  //             font-style: normal;
+  //             font-weight: normal;
+  //             padding: 0 8px;
+  //             font-size: 1em;
+  //             line-height: 150%;
+  //         }
+
+  //     }
+  // }
+  // .TextFieldPhone{
+  //     background-color: transparent;
+  //     width: 100%;
+  //     height: 100%
+  // }
+  // @media (max-width:730px){
+  //     .MuiTextField-root{
+  //         min-height: 39px;
+  //         max-width:250px;
+  //         .MuiFormHelperText-root.MuiFormHelperText-contained.Mui-error{
+  //             font-size: 8px;
+  //             margin-left: 1px;
+  //             margin-top: 7px;
+
+  //         }
+  //         .MuiOutlinedInput-notchedOutline{
+  //             border: 1px solid #008F3F;
+  //             border-radius: 5px;
+  //             min-height: 34px;
+  //         }
+  //         input{
+  //             padding: 10px 10px;
+  //         }
+  //         label, input{
+  //         font-size: 8px;
+  //         top: -11px;
+  //         left: -6px;
+  //         &.Mui-focused{
+  //             &.Mui-error{
+  //                 font-size: 8px;
+  //             }
+  //             }
+  //         }
+  //         .PrivateNotchedOutline-legendLabelled-7{
+  //             font-size: 8px;
+  //         }
+  //         .MuiInputLabel-outlined.MuiInputLabel-shrink {
+  //             transform: translate(25px, 4px);
+  //             font-size: 8px;
+  //         }
+  //         fieldset{
+
+  //             legend.PrivateNotchedOutline-legendNotched-4 {
+  //                 font-size: 8px;
+  //             }
+
+  //         }
+  //     }
+  // }
 }

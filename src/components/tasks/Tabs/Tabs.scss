@@ -1,21 +1,21 @@
-@import '../../../mixins.scss';
+@import "../../../mixins.scss";
 
-.tabpage{
-    margin-top: 40px;
+.tabpage {
+  margin-top: 40px;
 
-    .MuiBox-root{
-        padding: 45px 0 25px;
-    }
+  .MuiBox-root {
+    padding: 45px 0 25px;
+  }
 }
-header.TabBar{
-    .MuiTabs-indicator{
-        background-color: transparent;
-    }
+header.TabBar {
+  .MuiTabs-indicator {
     background-color: transparent;
-    box-shadow: none;
-    display:flex;
-    align-items: center;
-button{
+  }
+  background-color: transparent;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  button {
     font-family: "Neo Sans Weleda";
     font-style: normal;
     font-weight: bold;
@@ -27,14 +27,14 @@ button{
     text-align: start;
     padding: 8px 7px;
     max-width: none;
-    span{
-align-items: flex-start;
-}
-    &:first-child{
-        margin-left: 60px;
-        span{
-            align-items: flex-end;
-            }
+    span {
+      align-items: flex-start;
+    }
+    &:first-child {
+      margin-left: 60px;
+      span {
+        align-items: flex-end;
+      }
     }
     //word-wrap: break-word;
     // font-family: 'Montserrat';
@@ -48,5 +48,5 @@ align-items: flex-start;
     // color: #10417B;
     // opacity: 0.2;
     // padding: 0 90px;
-}
+  }
 }

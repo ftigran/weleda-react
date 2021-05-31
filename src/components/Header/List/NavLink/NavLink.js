@@ -1,5 +1,5 @@
-import {NavLink} from 'react-router-dom'
-import React, {forwardRef} from 'react'
+import { NavLink } from "react-router-dom";
+import React, { forwardRef } from "react";
 
 // eslint-disable-next-line react/display-name
 export default forwardRef((props) => {
@@ -7,13 +7,13 @@ export default forwardRef((props) => {
     <NavLink
       {...props}
       isActive={(match, location) => {
-        if (!match || !location || location.hash !== '') {
-          return false
+        if (!match || !location || location.hash !== "") {
+          return false;
         }
-        return match.url === location.pathname
+        return match.url === location.pathname;
       }}
       exact
-      activeClassName={'active'}
+      activeClassName={"active"}
     />
-  )
-})
+  );
+});

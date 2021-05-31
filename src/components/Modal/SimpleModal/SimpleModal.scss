@@ -1,40 +1,40 @@
-@import '../../../mixins.scss';
+@import "../../../mixins.scss";
 
-.SimpleModal{
-    text-align: center;
-    max-width: adaptiv-get(840, 414);
-    .MuiButton-sizeLarge{
-        margin-top: 25px;
+.SimpleModal {
+  text-align: center;
+  max-width: adaptiv-get(840, 414);
+  .MuiButton-sizeLarge {
+    margin-top: 25px;
+  }
+  &Text {
+    margin: adaptiv-get(20, 10) 0;
+    max-width: adaptiv-get(510, 382);
+    // font-family: 'Gotham Pro';
+    // font-style: normal;
+    // font-weight: normal;
+    // @include adaptiv-font(20,24);
+    // //font-size: 20px;
+    // //line-height: 24px;
+    // text-align: center;
+    // margin: 35px 0;
+    // color: #FFFFFF;
+  }
+
+  &.ModalInsta {
+    p {
+      margin: 0;
     }
-    &Text{
-        margin: adaptiv-get(20, 10) 0;
-        max-width: adaptiv-get(510, 382);
-        // font-family: 'Gotham Pro';
-        // font-style: normal;
-        // font-weight: normal;
-        // @include adaptiv-font(20,24);
-        // //font-size: 20px;
-        // //line-height: 24px;
-        // text-align: center;
-        // margin: 35px 0;
-        // color: #FFFFFF;
+    p:first-of-type {
+      margin: adaptiv-get(20, 11) 0 adaptiv-get(35, 17);
     }
-    
-    &.ModalInsta{
-        p{
-            margin: 0;
-        }
-        p:first-of-type{
-            margin: adaptiv-get(20, 11) 0 adaptiv-get(35, 17);
-        }
-        .MuiButton-sizeLarge{
-            margin-top: adaptiv-get(37, 29);
-        }
-        .modalWindowClose{
-            right: 8px;
-            top: 6px;
-        }
+    .MuiButton-sizeLarge {
+      margin-top: adaptiv-get(37, 29);
     }
+    .modalWindowClose {
+      right: 8px;
+      top: 6px;
+    }
+  }
 }
 
 // button.SimpleModalBtn{
@@ -47,17 +47,16 @@
 
 //         }
 // }
-.react-dadata__suggestions{
-    margin-top: -29px;
+.react-dadata__suggestions {
+  margin-top: -29px;
 }
-@media (max-width:400px)
-{
-    .SimpleModal{
-        .MuiInputBase-root.MuiOutlinedInput-root{
-            max-width: none;
-        }
-        .MuiButtonBase-root.MuiButton-root{
-            min-width:auto;
-        }
+@media (max-width: 400px) {
+  .SimpleModal {
+    .MuiInputBase-root.MuiOutlinedInput-root {
+      max-width: none;
     }
+    .MuiButtonBase-root.MuiButton-root {
+      min-width: auto;
+    }
+  }
 }

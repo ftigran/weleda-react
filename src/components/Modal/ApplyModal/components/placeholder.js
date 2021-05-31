@@ -1,5 +1,5 @@
 import React from "react";
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 
 const Placeholder = ({ error, touched }) => (
   <div className={`placeholder-preview ${error && touched ? "has-error" : ""}`}>

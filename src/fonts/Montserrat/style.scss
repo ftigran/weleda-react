@@ -1,11 +1,11 @@
 @font-face {
-	font-family: 'Montserrat';
-	src: local('Montserrat'), local('Montserrat'),
-		url('./Montserrat-Black.eot') format('embedded-opentype'),
-		url('./Montserrat-Black.woff') format('woff'),
-		url('./Montserrat-Black.woff2') format('woff2'),
-		url('./Montserrat-Black.ttf') format('truetype'),
-		url('./Montserrat-Black.svg') format('svg');
-	font-weight: 900;
-	font-style: normal;
+  font-family: "Montserrat";
+  src: local("Montserrat"), local("Montserrat"),
+    url("./Montserrat-Black.eot") format("embedded-opentype"),
+    url("./Montserrat-Black.woff") format("woff"),
+    url("./Montserrat-Black.woff2") format("woff2"),
+    url("./Montserrat-Black.ttf") format("truetype"),
+    url("./Montserrat-Black.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
 }

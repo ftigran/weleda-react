@@ -1,100 +1,100 @@
-@import '../../mixins.scss';
+@import "../../mixins.scss";
 
-.modalContainer .modalBtn, .modalWindow .modalBtn{
-    // font-family: "Gotham Pro";
-    // font-style: normal;
-    // font-weight: bold;
-    // text-align: center;
-    // text-transform: uppercase;
-    // height: 45px;
-    // border: none;
-    // background: #FFFFFF;
-    // border-radius: 8px;
-    // color: #10417B;
-    // font-weight: bold;
-    // //font-size: 16px;
-    // @include adaptiv-font(16, 15);
-    // //line-height: 15px;
+.modalContainer .modalBtn,
+.modalWindow .modalBtn {
+  // font-family: "Gotham Pro";
+  // font-style: normal;
+  // font-weight: bold;
+  // text-align: center;
+  // text-transform: uppercase;
+  // height: 45px;
+  // border: none;
+  // background: #FFFFFF;
+  // border-radius: 8px;
+  // color: #10417B;
+  // font-weight: bold;
+  // //font-size: 16px;
+  // @include adaptiv-font(16, 15);
+  // //line-height: 15px;
+  // box-sizing: border-box;
+  .modalBtn {
+    // width: 200px;
     // box-sizing: border-box;
-    .modalBtn{
-        // width: 200px;
-        // box-sizing: border-box;
-    }
+  }
 }
-.modalContainer{
-    // box-sizing: border-box;
+.modalContainer {
+  // box-sizing: border-box;
 }
-.modalWindow{
-    background: #FFFFFF;
-    border-radius: 8px;
-    max-width: 1414px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: overlay;
-    max-height: 100%;
-    &{
-        &::-webkit-scrollbar {
-            width: 0.3em;
-          }
-           
-        &::-webkit-scrollbar-track {
-            //box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-            border-left: 1px solid #ccc;
-          }
-           
-        &::-webkit-scrollbar-thumb {
-            background-color: #008F3F;
-            border-radius: 5px;
-          }
+.modalWindow {
+  background: #ffffff;
+  border-radius: 8px;
+  max-width: 1414px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: overlay;
+  max-height: 100%;
+  & {
+    &::-webkit-scrollbar {
+      width: 0.3em;
     }
-    
-    .modalWindowClose{
-        color:#000;
-        position: absolute;
-        right: 6px;
-        top: -0.5px;
-        svg{
-            width: 34.5px;
-            height: 34.5px;
-        }
-    }
-    .modalBtn{
-        // width: 200px;
-    }
-//    background: #10417B;
-    padding: adaptiv-get(58, 25) adaptiv-get(145, 16)adaptiv-get(61, 30);
-    
-//    max-width: 600px;
-//    box-sizing: border-box;
-    margin: auto;
-//
-//    border-radius: 8px;
 
-    h2{
-        
- //       font-family: "Montserrat";
- //       font-style: normal;
- //       font-weight: bold;
- //       @include adaptiv-font(24, 29);
- //       //font-size: 24px;
- //       //line-height: 29px;
- //       text-align: center;
-      //  text-transform: uppercase;
-      //  margin: 0;
-      //  color: #FFFFFF;
+    &::-webkit-scrollbar-track {
+      //box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-left: 1px solid #ccc;
     }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #008f3f;
+      border-radius: 5px;
+    }
+  }
+
+  .modalWindowClose {
+    color: #000;
+    position: absolute;
+    right: 6px;
+    top: -0.5px;
+    svg {
+      width: 34.5px;
+      height: 34.5px;
+    }
+  }
+  .modalBtn {
+    // width: 200px;
+  }
+  //    background: #10417B;
+  padding: adaptiv-get(58, 25) adaptiv-get(145, 16) adaptiv-get(61, 30);
+
+  //    max-width: 600px;
+  //    box-sizing: border-box;
+  margin: auto;
+  //
+  //    border-radius: 8px;
+
+  h2 {
+    //       font-family: "Montserrat";
+    //       font-style: normal;
+    //       font-weight: bold;
+    //       @include adaptiv-font(24, 29);
+    //       //font-size: 24px;
+    //       //line-height: 29px;
+    //       text-align: center;
+    //  text-transform: uppercase;
+    //  margin: 0;
+    //  color: #FFFFFF;
+  }
 }
-.modal{
-    display: flex;
-    padding: 10px;
+.modal {
+  display: flex;
+  padding: 10px;
 }
 
-.modalWindow:focus{
-    outline: none;
+.modalWindow:focus {
+  outline: none;
 }
 
 // @media (max-width:1280px){
@@ -104,17 +104,17 @@
 
 //     }
 // }
-@media (max-width:730px){
-    .modal{
-        padding: 0;
+@media (max-width: 730px) {
+  .modal {
+    padding: 0;
+  }
+  .modalWindow {
+    border-radius: 0;
+    .MuiTextField-root {
+      max-width: 316px;
     }
-    .modalWindow {
-        border-radius: 0;
-        .MuiTextField-root{
-            max-width:316px;
-        }
-        .modalWindowClose{
-            display: none;
-                }
+    .modalWindowClose {
+      display: none;
     }
-}    
+  }
+}

@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
 
-import AppBar from '@material-ui/core/AppBar';
-import {Link} from '@material-ui/core';
-import Slide from '@material-ui/core/Slide';
-import Grid from '@material-ui/core/Grid';
+import AppBar from "@material-ui/core/AppBar";
+import { Link } from "@material-ui/core";
+import Slide from "@material-ui/core/Slide";
+import Grid from "@material-ui/core/Grid";
 
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import List from './List/List';
-import SliderList from './SlideList';
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import List from "./List/List";
+import SliderList from "./SlideList";
 
-import SlideList from './SlideList';
-import logo from '../../img/logo.svg'
-import './Header.scss'
+import SlideList from "./SlideList";
+import logo from "../../img/logo.svg";
+import "./Header.scss";
 //import {route} from '../App'
-import NavLink from './List/NavLink/NavLink'
+import NavLink from "./List/NavLink/NavLink";
 import { Provider, useDispatch } from "react-redux";
-import {store} from '../../store/store'
+import { store } from "../../store/store";
 
 const Header = () => {
-  const trigger = useScrollTrigger({target: window})
+  const trigger = useScrollTrigger({ target: window });
   const [scroll, setScroll] = useState(false);
 
   // useEffect(() => {
@@ -26,29 +26,31 @@ const Header = () => {
   //     setScroll(window.scrollY > 150);
   //   });
   //}, []);
-    return(
-      <>
+  return (
+    <>
       <Slide appear={false} direction="down" in={true}>
-          <AppBar className={"header"}>
-              <Grid className={'headerContainer'}
-              //height={{md: 50, lg: 70}}
-              container
-              justify={'space-between'}
-              alignItems={'flex-end'}>
-                <Link component={NavLink} className={'menu_item_in'} to="/">
-                  <img src={logo} className='headerLogo'/>
-                </Link>
-                <Provider store={store}>
-                            <List/>
-                            <SliderList/>
-                </Provider>
+        <AppBar className={"header"}>
+          <Grid
+            className={"headerContainer"}
+            //height={{md: 50, lg: 70}}
+            container
+            justify={"space-between"}
+            alignItems={"flex-end"}
+          >
+            <Link component={NavLink} className={"menu_item_in"} to="/">
+              <img src={logo} className="headerLogo" />
+            </Link>
+            <Provider store={store}>
+              <List />
+              <SliderList />
+            </Provider>
 
-                            {/* <SlideList/> */}
-            </Grid>
-            </AppBar>
+            {/* <SlideList/> */}
+          </Grid>
+        </AppBar>
       </Slide>
-      </>
-    )
-}
+    </>
+  );
+};
 
-export default Header
+export default Header;

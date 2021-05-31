@@ -1,50 +1,51 @@
-@import '../../mixins.scss';
+@import "../../mixins.scss";
 
-label.checkboxContainer{
-    align-self: center;
-    margin:0;
-    // font-family: 'Gotham Pro';
-    // font-style: normal;
-    // font-weight: normal;
-    // @include adaptiv-font(16, 19);
+label.checkboxContainer {
+  align-self: center;
+  margin: 0;
+  // font-family: 'Gotham Pro';
+  // font-style: normal;
+  // font-weight: normal;
+  // @include adaptiv-font(16, 19);
 
-    .MuiButtonBase-root, .MuiIconButton-label{
-        width: 20px;
-        height: 20px;
-        padding: 0;
+  .MuiButtonBase-root,
+  .MuiIconButton-label {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+  }
+  .MuiButtonBase-root {
+    margin-left: 104px;
+    margin-right: 20px;
+    input {
+      width: 20px;
+      left: auto;
+      top: 5px;
     }
-    .MuiButtonBase-root{
-        margin-left:104px;
-        margin-right: 20px;
-        input{
-            width: 20px;
-            left: auto;
-            top: 5px;
-        }
-    }
-    .MuiTypography-root{
-        font-family: Neo Sans Weleda;
-        
-font-size: 24px;
-line-height: 28px;
-/* or 117% */
+  }
+  .MuiTypography-root {
+    font-family: Neo Sans Weleda;
 
-text-decoration-line: underline;
+    font-size: 24px;
+    line-height: 28px;
+    /* or 117% */
 
-color: #000000;
-    }
-    //font-size: 16px;
-    //line-height: 19px;
-    //color: #FFFFFF;
-    //max-width: 300px;
-    // span.checkbox{
-    //     width: 30px;
-    //     height: 30px;
-    //     background: #FFFFFF !important;
-    //     border: 1px solid #DADBDD;
-    //     box-sizing: border-box;
-    //     border-radius: 4px;
-    //     margin-right: 10px;
-    //     svg{opacity: 0;}
-    // }
+    text-decoration-line: underline;
+
+    color: #000000;
+  }
+  //font-size: 16px;
+  //line-height: 19px;
+  //color: #FFFFFF;
+  //max-width: 300px;
+  // span.checkbox{
+  //     width: 30px;
+  //     height: 30px;
+  //     background: #FFFFFF !important;
+  //     border: 1px solid #DADBDD;
+  //     box-sizing: border-box;
+  //     border-radius: 4px;
+  //     margin-right: 10px;
+  //     svg{opacity: 0;}
+  // }
 }
