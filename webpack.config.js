@@ -13,10 +13,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 const webpack = require('webpack')
+const prettier = require('./webpack/prettier')
+const clean = require('./webpack/clean')
 
 const PATHS = {
     source: path.join(__dirname, 'src'),
-    build: path.join(__dirname, 'dist')
+    build: path.join(__dirname, 'build')
 }
 
 const common = merge([{
@@ -60,13 +62,17 @@ const common = merge([{
     },
     pug(),
     scss(),
-    images(),
+    images(PATHS.source, PATHS.build),
     fonts()
 ])
 
 module.exports = function (env) {
     if (env === 'production') {
-        return common
+        return merge([
+        
+        common,
+        prettier(),
+        clean()])
     }
     if (env === 'development') {
         return merge([
