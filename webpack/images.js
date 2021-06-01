@@ -15,7 +15,7 @@ module.exports = function(source, build) {
               
                           // To get relative path you can use
                           // const relativePath = path.relative(context, resourcePath);
-                          if (/fonts\/.*\.svg/g.test(resourcePath)) {
+                          if (/\.*[\/\\]fonts[\/\\].*\.svg/g.test(resourcePath)) {
                             return `webfonts/${url}`;
                           }
                           return `images/${url}`

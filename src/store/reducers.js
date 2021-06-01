@@ -45,7 +45,7 @@ const initialState = {
   prizSuccessModalOpen: false,
   adressModalOpen: false,
   instaPostModalOpen: false,
-  ApplyModalOpen: true,
+  ApplyModalOpen: false,
   priz: {},
   task: 1,
   rowsPrizi,
