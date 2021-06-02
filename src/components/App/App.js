@@ -57,15 +57,15 @@ const Routes = () => {
   return (
     <Switch location={location}>
       {isLogged ? (
-        <Route path={"/cabinet"} render={() => <Cabinet />} />
+        <Route path={"/:cabinet"} render={() => <Cabinet />} />
       ) : (
-        <Route path={"/reg"} render={() => <Reg />} />
+        <Route path={"/:reg"} render={() => <Reg />} />
       )}
-      <Route path={"/winners"} render={() => <Winners />} />
+      <Route path={"/:winners"} render={() => <Winners />} />
       <Route
         key="index"
         location={location}
-        path={"/"}
+        path={"/:"}
         render={() => <Main />}
         exact
       />

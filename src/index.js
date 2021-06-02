@@ -9,6 +9,7 @@ import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
+  // <BrowserRouter basename={"/pages/Weleda"}>
   <BrowserRouter basename={"/"}>
     <App />
   </BrowserRouter>,

@@ -30,7 +30,8 @@ const common = merge([{
             filename: 'js/[name].js'
         },
         devServer: {
-            historyApiFallback: true
+            historyApiFallback: true,
+            contentBase: path.join(__dirname, 'build/pages/Weleda'),
         },
         optimization: {
             minimizer: [
