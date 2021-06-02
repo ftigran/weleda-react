@@ -18,7 +18,7 @@ const Roadmap = () => {
           {/* <Grid item xs={8} className={'RoadmapContainer'}> */}
 
           <div className="RoadmapBlock">
-            <img src="./images/promo.png" className="RoadmapPromo" />
+            <img src="./images/promoTop.png" className="RoadmapPromo" />
 
             <span className="RoadmapNumb">
               1

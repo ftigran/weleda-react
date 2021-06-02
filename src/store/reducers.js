@@ -37,7 +37,7 @@ import {
 const initialState = {
   // error: false,
   // popupOpen: false,
-  isLogged: true,
+  isLogged: false,
   RegEmailApproveModalOpen: false,
   LoginModalOpen: false,
   ResetEmailApproveModalOpen: false,
