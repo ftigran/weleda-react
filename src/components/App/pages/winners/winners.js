@@ -10,8 +10,6 @@ import Button from "@material-ui/core/Button";
 import RegEmailApproveModal from "../../../Modal/RegEmailApproveModal/RegEmailApproveModal";
 import Top from "../../../Top/Top";
 import Roadmap from "../../../Roadmap/Roadmap";
-import winner from "../../../../img/winner.png";
-import winnerNabor from "../../../../img/winnerNabor.png";
 
 const main = () => {
   return (

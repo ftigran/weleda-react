@@ -4,8 +4,6 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 
 import "./Top.scss";
-import logo from "../../img/100YearsB.png";
-// import top from '../../img/top.png';
 import { Link } from "react-router-dom";
 import useReactRouter from "use-react-router";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
@@ -21,6 +19,7 @@ const Main = ({
       history.push(toLink);
       console.log(toLink);
     }
+    
   };
   return (
     <div className="Top" id="c_main">
@@ -44,7 +43,7 @@ const Main = ({
                 className="TopContainer4"
                 direction="column"
               >
-                <img src={logo} className="TopImgLogo" />
+                <img src="./images/100YearsB.png" className="TopImgLogo" />
                 <h1>
                   Стань
                   <br /> амбассадором бренда <br />

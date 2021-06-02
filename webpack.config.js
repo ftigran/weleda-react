@@ -70,7 +70,6 @@ const common = merge([{
 module.exports = function (env) {
     if (env === 'production') {
         return merge([
-        
         common,
         prettier(),
         clean()])

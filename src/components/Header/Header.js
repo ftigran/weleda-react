@@ -10,7 +10,6 @@ import List from "./List/List";
 import SliderList from "./SlideList";
 
 import SlideList from "./SlideList";
-import logo from "../../img/logo.svg";
 import "./Header.scss";
 //import {route} from '../App'
 import NavLink from "./List/NavLink/NavLink";
@@ -38,7 +37,7 @@ const Header = () => {
             alignItems={"flex-end"}
           >
             <Link component={NavLink} className={"menu_item_in"} to="/">
-              <img src={logo} className="headerLogo" />
+              <img src="./images/logo.svg" className="headerLogo" />
             </Link>
             <Provider store={store}>
               <List />

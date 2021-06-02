@@ -6,8 +6,6 @@ import MenuIcon from "@material-ui/icons/Menu";
 import List from "./List/List";
 import CloseIcon from "@material-ui/icons/Close";
 import "./SlideList.scss";
-// import logo from '../../img/logo.svg'
-import menu from "../../img/menu.svg";
 export default function SwipeableTemporaryDrawer() {
   const [state, setState] = React.useState(false);
 
@@ -41,7 +39,7 @@ export default function SwipeableTemporaryDrawer() {
   return (
     <div className="headerListItems">
       <Button onClick={toggleDrawer(true)} className={"headerMenu"}>
-        <img src={menu} height={18} />
+        <img src="./images/menu.svg" height={18} />
       </Button>
       <SwipeableDrawer
         anchor={"top"}

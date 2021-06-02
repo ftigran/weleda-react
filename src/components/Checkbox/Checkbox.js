@@ -8,8 +8,6 @@ import {
 } from "@material-ui/core";
 
 import "./Checkbox.scss";
-import check from "../../img/checkbox.svg";
-import checked from "../../img/checkboxChecked.svg";
 
 export default function ({
   label,
@@ -32,8 +30,8 @@ export default function ({
                 input.onChange(event);
               }}
               checked={!!input.value}
-              checkedIcon={<img src={checked} />}
-              icon={<img src={check} />}
+              checkedIcon={<img src="./images/checkboxChecked.svg" />}
+              icon={<img src="./images/checkbox.svg" />}
             />
           }
           className="checkboxContainer"

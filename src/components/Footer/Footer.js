@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 
 import "./Footer.scss";
-import logo from "../../img/100Years.png";
 
 export default class Main extends Component {
   render() {
@@ -16,7 +15,7 @@ export default class Main extends Component {
           alignItems="center"
         >
           <Grid item className={"footerLogo"}>
-            <img src={logo} />
+            <img src="./images/100Years.png" />
           </Grid>
           <Grid item className={"footerMail"}>
             Если у вас возникли какие-либо вопросы, пишите на

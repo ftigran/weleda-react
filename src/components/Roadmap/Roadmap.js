@@ -3,10 +3,6 @@ import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 
 import "./Roadmap.scss";
-import plane from "../../img/plane.png";
-import priz from "../../img/prizes.png";
-import promo from "../../img/promoTop.png";
-import birka from "../../img/birka.png";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import json2mq from "json2mq";
 const Roadmap = () => {
@@ -22,7 +18,7 @@ const Roadmap = () => {
           {/* <Grid item xs={8} className={'RoadmapContainer'}> */}
 
           <div className="RoadmapBlock">
-            <img src={promo} className="RoadmapPromo" />
+            <img src="./images/promo.png" className="RoadmapPromo" />
 
             <span className="RoadmapNumb">
               1
@@ -31,7 +27,7 @@ const Roadmap = () => {
             <h3>Зарегистрируй свой уникальный промокод</h3>
             <p>и присоединяйся к программе подготовки амбассадоров</p>
             <Grid item className="imgWrap">
-              <img src={birka} />
+              <img src="./images/birka.png" />
             </Grid>
           </div>
           <Grid
@@ -76,7 +72,7 @@ const Roadmap = () => {
               <p>или годовой запас косметики Weleda</p>
             </Grid>
             <Grid item sm={6} className={"RoadmapImgContainer"}>
-              <img src={plane} />
+              <img src="./images/plane.png" />
             </Grid>
           </Grid>
 

@@ -69,7 +69,6 @@ export const TaskSend = () => {
     </MatModal>
   );
 };
-import promocodeImg from "../../../img/wherePromocode.png";
 export const WherePromocode = () => {
   return (
     <Modal
@@ -83,7 +82,7 @@ export const WherePromocode = () => {
         Ваш уникальный промокод расположен на листовке, лежащей внутри
         подарочного набора «100 лет экспертизы Weleda», под QR-кодом.
       </p>
-      <img src={promocodeImg} width="100%" />
+      <img src="./images/wherePromocode.png" width="100%" />
     </Modal>
   );
 };

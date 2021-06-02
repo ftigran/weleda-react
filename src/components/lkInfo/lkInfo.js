@@ -67,8 +67,8 @@ const lkInfo = () => {
                 name="checkedB"
                 color="primary"
                 // onChange={handler}
-                checkedIcon={<img src={checked} />}
-                icon={<img src={check} />}
+                checkedIcon={<img src="./images/checkboxChecked.svg" />}
+                icon={<img src="./images/checkbox.svg" />}
               />
             }
             className="checkboxContainer"
@@ -82,5 +82,3 @@ const lkInfo = () => {
 export default lkInfo;
 
 import "../Checkbox/Checkbox.scss";
-import check from "../../img/checkbox.svg";
-import checked from "../../img/checkboxChecked.svg";

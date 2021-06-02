@@ -94,8 +94,9 @@ const App = () => {
     </div>
   );
 };
+
 export default App;
-import locked from "../../img/locked.svg";
+
 const Locked = (date) => {
   return (
     <Grid
@@ -107,7 +108,7 @@ const Locked = (date) => {
       data-locked={true}
     >
       <h3>Расскажи о своем знакомстве с продуктом Weleda</h3>
-      <img src={locked} />
+      <img src="./images/locked.svg" />
       <p>
         Доступ к данному заданию откроется
         <br />

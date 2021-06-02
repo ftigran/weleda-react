@@ -7,11 +7,11 @@ import App from "./components/App/App";
 //import list from "./components/Header/List/List";
 import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
-
+const basename = "/pages/Weleda";
+// const basename="/"
 ReactDOM.render(
-  // <BrowserRouter basename={"/pages/Weleda"}>
-  <BrowserRouter basename={"/"}>
-    <App />
+  <BrowserRouter basename={basename}>
+    <App basename={basename} />
   </BrowserRouter>,
 
   document.getElementById("root")

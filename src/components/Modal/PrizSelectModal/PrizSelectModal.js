@@ -66,7 +66,7 @@ const PSM = () => {
   );
   const getElems = () => {
     return itemsArr.map((item, id) => {
-      return <Item {...item} id={id+1} key={id} />;
+      return <Item {...item} id={id + 1} key={id} />;
     });
   };
   const GetWpar = ({ isDesktop }) => {
@@ -131,7 +131,7 @@ const Item = ({ id, title, subtitle, cost, isDigital = false }) => {
       >
         <Grid item className="priziItemWrap">
           <div className="prizItemImg">
-            <img src={`./images/${id}.png`} />
+            <img src={`./images/items/${id}.png`} />
           </div>
           <p className="priziItemTitle">{title}</p>
           <p className="priziItemSubtitle">{subtitle}</p>

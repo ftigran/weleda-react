@@ -1,4 +1,4 @@
-// const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = function(source, build) {
     return {
@@ -23,21 +23,21 @@ module.exports = function(source, build) {
                 },
             }, ],
         },
-        // plugins: [
-        //     new CopyWebpackPlugin({
-        //         patterns: [
-        //           {
-        //             from: source+'/img/',
-        //             to: build+'/images/',
-        //             toType: 'dir',
-        //           },
-        //         //   {
-        //         //     from: 'src/files/',
-        //         //     to: 'files/',
-        //         //     toType: 'dir',
-        //         //   },
-        //         ]
-        //       }),
-        //   ],
+        plugins: [
+            new CopyWebpackPlugin({
+                patterns: [
+                  {
+                    from: source+'/img/',
+                    to: build+'/images/',
+                    toType: 'dir',
+                  },
+                //   {
+                //     from: 'src/files/',
+                //     to: 'files/',
+                //     toType: 'dir',
+                //   },
+                ]
+              }),
+          ],
     };
 }

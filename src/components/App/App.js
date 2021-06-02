@@ -31,7 +31,7 @@ import Winners from "./pages/winners/winners";
 import Reg from "./pages/reg/reg";
 import ApplyModal from "../Modal/ApplyModal/ApplyModal";
 
-const App = () => {
+const App = ({ basename }) => {
   //const { setValues, data } = useData();
 
   //const {location} = useReactRouter()
@@ -42,7 +42,7 @@ const App = () => {
           <Header />
           <Provider store={store}>
             <ApplyModal />
-            <Routes />
+            <Routes basename={basename} />
           </Provider>
           <ScrollSection />
         </Grid>
@@ -51,21 +51,21 @@ const App = () => {
     </>
   );
 };
-const Routes = () => {
+const Routes = ({ basename }) => {
   const isLogged = useSelector((state) => state.data.isLogged);
 
   return (
     <Switch location={location}>
       {isLogged ? (
-        <Route path={"/:cabinet"} render={() => <Cabinet />} />
+        <Route path={`${basename}/cabinet`} render={() => <Cabinet />} />
       ) : (
-        <Route path={"/:reg"} render={() => <Reg />} />
+        <Route path={`${basename}/reg`} render={() => <Reg />} />
       )}
-      <Route path={"/:winners"} render={() => <Winners />} />
+      <Route path={`${basename}/winners`} render={() => <Winners />} />
       <Route
         key="index"
         location={location}
-        path={"/:"}
+        path={basename}
         render={() => <Main />}
         exact
       />
