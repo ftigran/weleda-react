@@ -8,7 +8,7 @@ import App from "./components/App/App";
 import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
 const basename = "/pages/Weleda";
-// const basename="/"
+// const basename = "";
 ReactDOM.render(
   <BrowserRouter basename={basename}>
     <App basename={basename} />

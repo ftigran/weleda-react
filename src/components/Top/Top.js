@@ -42,7 +42,7 @@ const Main = ({
                 className="TopContainer4"
                 direction="column"
               >
-                <img src='./images/100YearsB.png' className="TopImgLogo" />
+                <img src="./images/100YearsB.png" className="TopImgLogo" />
                 <h1>
                   Стань
                   <br /> амбассадором бренда <br />
