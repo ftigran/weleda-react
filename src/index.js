@@ -6,13 +6,11 @@ import App from "./components/App/App";
 
 //import list from "./components/Header/List/List";
 import "./index.scss";
-import { BrowserRouter } from "react-router-dom";
-const basename = "/pages/Weleda";
-// const basename = "";
+import { HashRouter } from "react-router-dom";
 ReactDOM.render(
-  <BrowserRouter basename={basename}>
-    <App basename={basename} />
-  </BrowserRouter>,
+  <HashRouter basename={"/"}>
+    <App />
+  </HashRouter>,
 
   document.getElementById("root")
 );

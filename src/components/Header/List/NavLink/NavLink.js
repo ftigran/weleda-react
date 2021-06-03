@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import React, { forwardRef } from "react";
 
 // eslint-disable-next-line react/display-name
-export default forwardRef((props) => {
+export default forwardRef((props, ref) => {
   return (
     <NavLink
       {...props}
