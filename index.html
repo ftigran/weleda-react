@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width">
+    <title>Weleda</title>
+  <link href="index.css" rel="stylesheet"></head>
+  <body> 
+    <div id="pre-loader">
+      <svg>
+        <g>
+          <path d="M 50,100 A 1,1 0 0 1 50,0"></path>
+        </g>
+        <g>
+          <path d="M 50,75 A 1,1 0 0 0 50,-25"></path>
+        </g>
+        <defs>
+          <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:rgba(0, 171, 136, 0.5);stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:#008F3F;stop-opacity:1"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div id="root"></div>
+    <script>
+      window.onload = function() {
+      const pLoader = document.getElementById('pre-loader')
+      pLoader.classList.add('anim_fade_out')
+      setTimeout(function () {
+      pLoader.remove()
+      }, 500)
+      }
+    </script>
+  <script type="text/javascript" src="js/index.js"></script></body>
+</html>
